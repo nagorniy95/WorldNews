@@ -113,18 +113,14 @@ echo "</div>";
 <!-- ==================================== Author NEWS ==================================== -->
 <!-- ===================================================================================== -->
     <div class="row">
-        <?php foreach($mynews as $news){; ?>
+        <?php for($i=0; $i < 3; $i++){ ?>
         <div class='col-md-4 col-sm-6 col-12'>
-            <img class="" src="<?php  ?>">
-            <h3><a href="cryptoArticle.php?id=<?php echo $news->id; ?>"><?php echo $news->title; ?></a></h3>
+            <img class="crypto_news_image" src="images/<?php echo $mynews[$i]->file; ?>" height="300px">
+            <h3><a href="cryptoArticle.php?id=<?php echo $mynews[$i]->id; ?>"><?php echo $mynews[$i]->title; ?></a></h3>
         </div>
         <?php }; ?>
     </div>
 </div><!-- end container -->
-
-
-
-
 
 <!-- ============ Footer ============ -->
 <?php include "../../views/footer.php"; ?>
