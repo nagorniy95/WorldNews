@@ -7,6 +7,7 @@
     <script src="../../libs/jquery/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../libs/fontawesome/css/all.css">
+	<link rel="stylesheet" href="style.css" >
 </head>
 
 <body>

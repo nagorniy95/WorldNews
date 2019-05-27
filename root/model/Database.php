@@ -1,12 +1,11 @@
 <?php
-
 class Database
 {
     // my properties
-    private static $user = '';
-    private static $pass = '';
-    private static $db = '';
-    private static $dsn = 'mysql:host=; dbname=';
+    private static $user = 'novacorp_adampr';
+    private static $pass = '73y1z9sXeRXM';
+    private static $db = 'novacorp_webproj';
+    private static $dsn = 'mysql:host=novacorp.mysql.tools; dbname=novacorp_webproj';
     private static $dbcon;
     private function __construct()
     {
@@ -29,7 +28,6 @@ class Database
         return self::$dbcon;
     } // end getDb function
 } // end Database class
-
 /*  
 NOTES
 PDO - PHP data object

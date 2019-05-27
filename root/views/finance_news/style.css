@@ -1,0 +1,11 @@
+
+/*----FINANCIAL NEWS----*/
+#scroll_fin_articles{
+	
+height: 800px; 
+width: 300px; 
+background: #fff; 
+border: 1px solid #C1C1C1; 
+overflow-y: scroll; 
+
+}
