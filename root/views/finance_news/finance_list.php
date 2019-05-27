@@ -3,7 +3,7 @@ require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
 $dbcon = Database::getDb();
 $f = new Finance();
-$finance_news = $f->getAllFinance($dbcon);
+$finance_news = $f->getAllArticle($dbcon);
 
 ?>
  
