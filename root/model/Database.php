@@ -1,5 +1,4 @@
 <?php
-
 class Database
 {
     // my properties
@@ -29,7 +28,6 @@ class Database
         return self::$dbcon;
     } // end getDb function
 } // end Database class
-
 /*  
 NOTES
 PDO - PHP data object
