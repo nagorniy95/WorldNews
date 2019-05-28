@@ -3,9 +3,9 @@ require_once '../../model/Database.php';
 require_once '../../model/Category.php';
 
 $dbcon = Database::getDb();
-$s = new Category();
+$c = new Category();
 
-$sport_news = $s->getAllCategories($dbcon);
+$sport_category = $c->getAllCategories($dbcon);
 
  ?>
 <!DOCTYPE html>
@@ -16,6 +16,18 @@ $sport_news = $s->getAllCategories($dbcon);
 	<link rel="stylesheet" href="../../libs/fullpage/jquery.fullpage.min.css">
 	<script src="../../libs/jquery/jquery-3.3.1.min.js"></script>
 	<script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
+	<style>
+		.section{
+			-webkit-background-size: cover;
+			background-size: cover;
+		}
+		<?php 
+		foreach ($sport_category as $sport) {
+			echo "#section" . $sport->id . "{";
+			echo "background-image: url(" . $sport->image . ");}";
+		}
+		?>
+	</style>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
@@ -26,12 +38,12 @@ $sport_news = $s->getAllCategories($dbcon);
 	</script>
 </head>
 <body>
+	
 	<div id="fullpage">	
 	<?php 
-		foreach ($sport_news as $sport) {
-			echo "<div class='section'>";
+		foreach ($sport_category as $sport) {
+			echo "<div class='section' id=section" . $sport->id .">";
 			echo "<h2>" . $sport->name . "</h2>";
-			echo "<p>" . $sport->image . "</p>";
 			echo "<p>" . $sport->description . "</p>";
 			echo "</div>";
 		}
