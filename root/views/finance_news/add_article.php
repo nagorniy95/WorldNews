@@ -10,7 +10,7 @@ $dateErr ="";
 $imageErr ="";
 $isValid = true;
 
-$title = $category = $author = $content = $fin_date = $image = "";
+$title = $category = $author = $content = $date = $image = "";
 
 if (isset ($_POST['addArticle'])){
 
@@ -19,7 +19,15 @@ if (isset ($_POST['addArticle'])){
 	$author = $_POST['author'];
 	$content = $_POST['content'];
 	$date = $_POST['date'];
-	$image = $_POST['image'];
+	$image = $_FILES['image'];
+	
+	$extension = explode('.', $_FILES['image']['file']);
+    $extension = array_pop($extension);
+    $image = strtolower(time().'-'. $file.'.'.$extension);
+    move_uploaded_file(
+        $_FILES['image']['file'],
+        __DIR__.'/images/'.$image
+    );
 	
 	if(empty($title)){	
 	$titleErr = "Please Enter the Article Title";
@@ -49,8 +57,8 @@ if (isset ($_POST['addArticle'])){
 	if ($isValid === true){
 		
 		 $db = Database::getDb();
-        $addArticle = new Finance();
-        $count = $addArticle->addArticle($title, $category, $author, $content, $date, $image,$db);
+        $addArt = new Finance();
+        $count = $addArt->addArticle($title, $category, $author, $content, $date, $image,$db);
 
         if($count){
             echo "<p class='FinanceSuccess'> New Article added <p>";
@@ -60,14 +68,14 @@ if (isset ($_POST['addArticle'])){
 
     $db = Database::getDb();
     $f = new Finance();
-    //$fin_news = $f->addArticle($title, $category, $author, $content, $date, $image, $db);
+    $fin_news = $f->addArticle($title, $category, $author, $content, $date, $image, $db);
     
 
 ?>
 <div class="container">
   <h3>Add New Article</h3><br/>
   
-	<form action="" method="POST" id="financeForm" enctype="multipart/form-data">		
+	<form action="" method="POST" id="addArticle" enctype="multipart/form-data">		
       <label for="title">Article Title:</label>
       <input type="text" id="title" name="title" placeholder="Title..." class="form-control"/><br/>
         <span id="titleErr" style="color:red;">
@@ -119,8 +127,8 @@ if (isset ($_POST['addArticle'])){
           ?>
         </span> 
     </div>
-	  <div id="fin_date">
-      <label for="fin_date">Date:</label>
+	  <div id="date">
+      <label for="date">Date:</label>
       <input type="text" id="date" name="date" placeholder="mm/dd/yy" class="form-control"/><br/>
       <span id="dateErr" style="color:red;">
           <?php
