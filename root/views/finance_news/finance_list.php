@@ -1,6 +1,7 @@
 <?php 
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
+
 $dbcon = Database::getDb();
 $f = new Finance();
 $finance_news = $f->getAllArticle($dbcon);
@@ -38,7 +39,7 @@ $finance_news = $f->getAllArticle($dbcon);
 							"<td>" . $finance->category . "</td>" .
 							"<td>" . $finance->author . "</td>" .
 							"<td>" . $finance->content . "</td>" .
-							"<td>" . $finance->fin_date . "</td>" .
+							"<td>" . $finance->date . "</td>" .
 							"<td>" . $finance->image . "</td>" .
 							
 							 "<td>" .
