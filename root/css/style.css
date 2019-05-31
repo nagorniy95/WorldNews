@@ -1,3 +1,12 @@
+/* Header  */
+.header-logo{
+	width: 150px;
+	height: 100px;
+}
+#header .nav-link{
+	text-transform: uppercase;
+}
+
 /* Footer Social Media Icons */
 ul.social-network {
 	list-style: none;
