@@ -5,14 +5,44 @@ $page_title = "World News";
 // ============================================================================== HEADER 
 include "header.php";
 ?>
-<link rel="stylesheet" href="../libs/owlcarousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../libs/owlcarousel/owl.theme.default.min.css">
-<script src="../libs/jquery/jquery.min.js"></script>
-<script src="../libs/owlcarousel/owl.carousel.min.js"></script>
 
-<div class="owl-carousel owl-theme">
-    <div class="item"><h4>1</h4></div>
-    <div class="item"><h4>2</h4></div>
+<div class="owl-carousel">
+    <div class="item">
+
+    	<?php
+    	$json_url = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
+		// get JSON data
+		$json = file_get_contents($json_url);
+		// convert json to array format
+		$data = json_decode($json);
+    		echo "<div class='row'>";
+			for ($x = 0; $x < 1; $x++) {
+			    echo "<div class='col-md-12 col-sm-12 col-12'><div class='article col-8 justify-content-center'>";
+			        echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+			        echo "<h4> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h4>";
+			    echo "</div></div>";
+			}
+			echo "</div>";
+    	?>
+    </div>
+    <div class="item">
+
+    	<?php
+    	$json_url = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
+		// get JSON data
+		$json = file_get_contents($json_url);
+		// convert json to array format
+		$data = json_decode($json);
+    		echo "<div class='row'>";
+			for ($x = 0; $x < 1; $x++) {
+			    echo "<div class='col-md-12 col-sm-12 col-12'><div class='article col-8 justify-content-center'>";
+			        echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+			        echo "<h4> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h4>";
+			    echo "</div></div>";
+			}
+			echo "</div>";
+    	?>
+    </div>
     <div class="item"><h4>3</h4></div>
     <div class="item"><h4>4</h4></div>
     <div class="item"><h4>5</h4></div>
@@ -31,15 +61,17 @@ include "header.php";
 	    loop:true,
 	    margin:10,
 	    nav:true,
+	    mouseDrag: false,
 	    responsive:{
 	        0:{
 	            items:1
 	        },
 	        600:{
-	            items:3
+	            items:3,
+	            mouseDrag: true
 	        },
 	        1000:{
-	            items:5
+	            items:3
 	        }
 	    }
 	})
