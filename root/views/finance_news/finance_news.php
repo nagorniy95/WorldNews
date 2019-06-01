@@ -87,9 +87,9 @@ for($i=0; $i<4; $i++){
 		echo '<td>' . $data_calendar->Category . '</td>';
 		echo '<td colspan="2">' . $data_calendar->Event . '</td>';
 		//echo '<td colspan="2">' . $data_calendar->Source . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_calendar->Previous . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_calendar->Forecast . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_calendar->TEForecast . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_calendar->Previous . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_calendar->Forecast . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_calendar->TEForecast . '</td>';
 		echo '<td>' . $data_calendar->Ticker . '</td>';
 		//echo '<td>' . $data_calendar->Symbol . '</td>';
 		
@@ -135,11 +135,11 @@ for($i=0; $i<4; $i++){
 		//echo '<td>' . $data_index->Date. '</td>';
 		//echo '<td>' . $data_index->Market Cap. '</td>';
 		echo '<td>' . $data_index->Importance . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_index->DailyChange . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_index->DailyPercentualChange . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_index->yesterday . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_index->lastWeek . '</td>';
-		echo '<td style="color:green;font-weight:bold;">' . $data_index->lastMonth . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->DailyChange . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->DailyPercentualChange . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->yesterday . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->lastWeek . '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->lastMonth . '</td>';
 		echo '<td>' . $data_index->LastUpdate. '</td>';
 		
 		"</tr>";

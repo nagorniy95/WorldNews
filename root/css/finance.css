@@ -1,0 +1,28 @@
+/*=================================Finance=================================*/
+h1{
+	color:#C33636;
+}
+#scroll_fin_articles{
+
+height: 500px; 
+width: 350px; 
+background: #fff; 
+border: 1px solid #C1C1C1; 
+overflow-y: scroll; 
+margin-bottom:10px;
+border-top: 2px solid #C33636;
+}
+
+/*====calendar=====*/
+.thead {
+	background-color:#C33636;
+	color:white;
+}
+hr{
+	background-color:#C33636;
+	height:3px;
+}
+/*=======rating=========*/
+.rating {
+	border-top: 2px solid #C33636;
+}

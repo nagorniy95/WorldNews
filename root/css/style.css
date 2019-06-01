@@ -147,44 +147,4 @@ a.socialIcon:hover, .socialHoverClass {
 	margin-bottom: 20px;
 }
 
-*
-/*=================================Finance=================================*/
-h1{
-	color:#C33636;
-}
-#scroll_fin_articles{
 
-height: 500px; 
-width: 350px; 
-background: #fff; 
-border: 1px solid #C1C1C1; 
-overflow-y: scroll; 
-margin-bottom:10px;
-border-top: 2px solid #C33636;
-}
-
-/*====calendar=====*/
-.thead {
-	background-color:#C33636;
-	color:white;
-}
-hr{
-	background-color:#C33636;
-	height:3px;
-}
-/*=======rating=========*/
-.rating {
-	border-top: 2px solid #C33636;
-}
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px) {
-
-	table,
-	thead,
-	tbody,
-	th,
-	td,
-	tr {
-		display: block;
-		width: 100%;
-	}

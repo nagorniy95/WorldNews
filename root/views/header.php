@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../libs/owlcarousel/owl.carousel.min.css">
     <script src="../libs/owlcarousel/owl.carousel.min.js"></script>
 	<link rel="stylesheet" href="../../css/style.css" >
+	<link rel="stylesheet" href="../../css/finance.css" >
 </head>
 
 <body>
