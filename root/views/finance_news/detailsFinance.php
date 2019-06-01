@@ -2,16 +2,16 @@
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
 
-if (isset($_GET['id'])){
+session_start();
+
+	//if (isset($_SESSION['id'])){
 	
-	$id = $_GET['id'];
-	$dbcon = Database::getDb();
+	//$id_user = $_SESSION['id'];
+	$db = Database::getDb();
+	$id = $_POST['id'];
+	$f = new Finance();
+	$finance = $f->getArticleById($id,$db);
 	
-	$fin = new Finance();
-	$count = $fin->getFinanceById($id,$dbcon);
-	
-	
-}
 
 
 
@@ -22,13 +22,14 @@ if (isset($_GET['id'])){
 		<div class="col-md-12">
 			<div class="bg-mattBlackLight my-2 p-3">
 				
-				<h1><?php echo $count->title; ?></h1>
+				<h1><?php echo $finance->title; ?></h1>
 		        <?php
-		        echo  "category : " . $count->category . "<br /><br/>";
-		       echo  "author : " . $count->author . "<br /></br>";
-		       echo  "content: " . $count->content . "<br /><br/>";   
-               echo  "fin_date: " . $count->fin_date . "<br /><br/>"; 
-               echo  "image: " . $count->image . "<br /><br/>";     			   
+		       echo  "Category : " . $finance->category . "<br /><br/>";
+		       echo  "Author : " . $finance->author . "<br /></br>";
+		       echo  "Content: " . $finance->content . "<br /><br/>";   
+               echo  "Date: " . $finance->date . "<br /><br/>";  
+			   echo  "Image Title: " . $finance->image_title . "<br /><br/>";  
+               echo  "Image: " . $finance->image . "<br /><br/>";     			   
                 ?> 
 				
 		<br/>
