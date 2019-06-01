@@ -4,11 +4,18 @@
 class Crypto
 {
     public function getCryptoById($id, $db){
-        $sql = "SELECT * FROM crypto_news WHERE id = :id ";
+        // $sql = "SELECT * FROM crypto_news AS cn
+        //                 JOIN crypto_news_images AS cni
+        //                 ON cn.image = cni.id
+        //                 WHERE cn.id = :id and cni.id = :id ";
+        $sql = "SELECT cn.id, cni.id, cn.title, cn.category, cn.author, cn.article, cni.file, cni.name FROM crypto_news AS cn
+                        JOIN crypto_news_images AS cni
+                        ON cn.image = cni.id
+                        WHERE cn.id = :id and cni.id = :id ";
         $pst = $db->prepare($sql);
         $pst->bindParam(':id', $id);
         $pst->execute();
-        $result =  $pst->fetch(PDO::FETCH_OBJ);
+        $result = $pst->fetch(PDO::FETCH_OBJ);
 
         return $result;
     }
@@ -47,12 +54,24 @@ class Crypto
         return $result;
     }
 
-    public function updateCrypto($id, $title, $category, $author, $article, $image_title, $db){
+    public function updateCrypto($id, $title, $category, $author, $article, $image_title, $image, $db){
+        // image update-------------------------------
+        $sql = "UPDATE crypto_news_images
+                SET name = :image_title,
+                    file = :image
+                WHERE id = :id";
+        $pst = $db->prepare($sql);
+        $pst->bindParam(':image', $image);
+        $pst->bindParam(':image_title', $image_title);
+        $pst->bindParam(':id', $id);
+        $result = $pst->execute();
+
+        // articel update-------------------------------
         $sql = "UPDATE crypto_news
                 SET title = :title,
                 category = :category,
                 author = :author,
-                article = :article,
+                article = :article
                 WHERE id = :id";
         $pst = $db->prepare($sql);
         $pst->bindParam(':id', $id);
@@ -61,15 +80,6 @@ class Crypto
         $pst->bindParam(':author', $author);
         $pst->bindParam(':article', $article);
         $result = $pst->execute();
-
-        // image update-------------------------------
-        // $sql = "UPDATE crypto_news_images
-        //         SET file = :img
-        //         WHERE product_id = :id";
-        // $pst = $db->prepare($sql);
-        // $pst->bindParam(':img', $img);
-        // $pst->bindParam(':id', $id);
-        // $result = $pst->execute();
 
         return $result;
     }
@@ -83,9 +93,9 @@ class Crypto
         $sql = "DELETE FROM crypto_news WHERE id = :id";
         $pst = $db->prepare($sql);
         $pst->bindParam(':id', $id);
-        $count = $pst->execute();
+        $result = $pst->execute();
 
-        return $count;
+        return $result;
     }
     
 } // end Crypto class

@@ -74,11 +74,11 @@ if(isset($_POST['addnews'])){
             <div class="row">
                 <form action='updateCrypto.php' method='POST' class="col-md-6">
                     <input type='hidden' value='<?= $news->id; ?>' name='id' />
-                    <input type='submit' value='Update' name='update' class="btn btn-primary" />
+                    <input type='submit' value='Update' name='update' class="btn btn-default" />
                 </form>
                 <form action='deleteCrypto.php' method='POST' class="col-md-6">
                     <input type='hidden' value='<?= $news->id; ?>' name='id' />
-                    <input type='submit' value='Delete' name='delete' class="btn btn-danger" onclick="return confirm('Are you sure to delete?')" />
+                    <input type='submit' value='Delete' name='delete' class="btn btn-default" onclick="return confirm('Are you sure to delete?')" />
                 </form>
             </div>
         </div>
