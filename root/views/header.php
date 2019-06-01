@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../libs/owlcarousel/owl.carousel.min.css">
     <script src="../libs/owlcarousel/owl.carousel.min.js"></script>
-	<link rel="stylesheet" href="../css/style.css" >
+	<link rel="stylesheet" href="../../css/style.css" >
 </head>
 
 <body>
     <header id="header">
         <nav class="navbar navbar-expand-lg static-top" style="background-color: #FFFFFF!important; color: white">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="../../source/logo.png" alt="" class="header-logo">
+                <a class="navbar-brand" href="../../views/index.php">
+                    <img src="../../img/logo.png" alt="WorldNews" class="header-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
+                            <a class="nav-link" href="../../views/index.php">Home
                             <span class="sr-only">(current)</span>
                             </a>
                         </li>
@@ -42,7 +42,7 @@
                             <a class="nav-link" href="#">Technology</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Crypto Currency</a>
+                            <a class="nav-link" href="../../views/Crypto/crypto.php">Crypto Currency</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Finance</a>

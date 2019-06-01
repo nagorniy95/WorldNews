@@ -4,123 +4,156 @@ session_start();
 $page_title = "World News";
 // ============================================================================== HEADER 
 include "header.php";
-?>
 
-<div class="owl-carousel">
-    <div class="item">
-
-    	<?php
-    	$json_url = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
-		// get JSON data
-		$json = file_get_contents($json_url);
-		// convert json to array format
-		$data = json_decode($json);
-    		echo "<div class='row'>";
-			for ($x = 0; $x < 1; $x++) {
-			    echo "<div class='col-md-12 col-sm-12 col-12'><div class='article col-8 justify-content-center'>";
-			        echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
-			        echo "<h4> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h4>";
-			    echo "</div></div>";
-			}
-			echo "</div>";
-    	?>
-    </div>
-    <div class="item">
-
-    	<?php
-    	$json_url = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
-		// get JSON data
-		$json = file_get_contents($json_url);
-		// convert json to array format
-		$data = json_decode($json);
-    		echo "<div class='row'>";
-			for ($x = 0; $x < 1; $x++) {
-			    echo "<div class='col-md-12 col-sm-12 col-12'><div class='article col-8 justify-content-center'>";
-			        echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
-			        echo "<h4> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h4>";
-			    echo "</div></div>";
-			}
-			echo "</div>";
-    	?>
-    </div>
-    <div class="item"><h4>3</h4></div>
-    <div class="item"><h4>4</h4></div>
-    <div class="item"><h4>5</h4></div>
-    <div class="item"><h4>6</h4></div>
-    <div class="item"><h4>7</h4></div>
-    <div class="item"><h4>8</h4></div>
-    <div class="item"><h4>9</h4></div>
-    <div class="item"><h4>10</h4></div>
-    <div class="item"><h4>11</h4></div>
-    <div class="item"><h4>12</h4></div>
-</div>
-
-<script>
-	$(document).ready(function(){
-	  $('.owl-carousel').owlCarousel({
-	    loop:true,
-	    margin:10,
-	    nav:true,
-	    mouseDrag: false,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:3,
-	            mouseDrag: true
-	        },
-	        1000:{
-	            items:3
-	        }
-	    }
-	})
-	});
-</script>
-<?php
-// ============================================ Crypto NEWS ============================
-// =====================================================================================
-// API URL
+// For crypto news API
 $json_url = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
 // get JSON data
 $json = file_get_contents($json_url);
 // convert json to array format
 $data = json_decode($json);
 
-echo "<h2><span class='underline'>Latest Crypto News<span></h2>";
-echo "<div class='row'>";
-for ($x = 0; $x < 3; $x++) {
-    echo "<div class='col-md-4 col-sm-6 col-12'><div class='article col-8 justify-content-center'>";
-        echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
-        echo "<h4> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h4>";
-    echo "</div></div>";
-}
-echo "</div>";
-echo "<hr>";
+?>
+<div class="container-fluid">
+	<div class="owl-carousel">
+	    <div class="item">
+	    	<?php
+				for ($x = 0; $x < 1; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 1; $x < 2; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 2; $x < 3; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 3; $x < 4; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 4; $x < 5; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 5; $x < 6; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 6; $x < 7; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	</div>
+</div> <!-- end container fluid -->
+<div class="container">
 
-// ============================================ Technology NEWS ========================
-// =====================================================================================
-//news api
-$json_url = "https://newsapi.org/v2/everything?q=apple&from=2019-05-09&to=2019-05-09&sortBy=popularity&apiKey=458f68f850bc4146b897905b151b4745";
+	<?php
+	// ============================================ Technology NEWS ========================
+	// =====================================================================================
+	//news api
+	$json_url = "https://newsapi.org/v2/everything?q=apple&from=2019-05-09&to=2019-05-09&sortBy=popularity&apiKey=458f68f850bc4146b897905b151b4745";
+	$json = file_get_contents($json_url);
+	$data = json_decode($json, TRUE);
 
-$json = file_get_contents($json_url);
+	echo "<h2 class='uppercase'>Techno News</h2>";
+	echo "<hr class='red_line'>";
 
-$data = json_decode($json, TRUE);
+	echo "<div class='row'>";
+		echo "<div class='col-md-8'>";
+		for($i=0; $i<1; $i++){
+			echo "<div class='home_techno_block home_techno_block_main'>";
+			    echo "<img src='" . $data['articles'][$i]['urlToImage'] . "' /><br>";
+			    echo "<h4 class='uppercase'>" . $data['articles'][$i]['title'] . "</h4><br>";
+			    echo "<p>" . $data['articles'][$i]['content'] . "</p>";
+			    echo "<a href='" .  $data['articles'][$i]['url'] . "'>Read more...</a><br>";
+		    echo "</div>";
+		}
+		echo "<hr>";
+		for($i=1; $i<2; $i++){
+			echo "<div class='home_techno_block home_techno_block_main'>";
+			    // echo "<img src='" . $data['articles'][$i]['urlToImage'] . "' /><br>";
+			    echo "<h4 class='uppercase'>" . $data['articles'][$i]['title'] . "</h4><br>";
+			    echo "<p>" . $data['articles'][$i]['content'] . "</p>";
+			    echo "<a href='" .  $data['articles'][$i]['url'] . "'>Read more...</a><br>";
+		    echo "</div>";
+		}
+		echo "</div>";
+		echo "<div class='col-md-4'>";
+		for($i=3; $i<7; $i++){
+			echo "<div class='home_techno_block'>";
+			    echo "<img src='" . $data['articles'][$i]['urlToImage'] . "' /><br>";
+			    echo "<h6><a href='" .  $data['articles'][$i]['url'] . "'>" . $data['articles'][$i]['title']. "</a></h6><br>";
+		    echo "</div>";
+		}
+		echo "</div>";
+	echo "</div>";
+	?>
+</div> <!-- end container-->
 
-echo "<h2>News</h2>";
-
-for($i=0; $i<4; $i++){
-    echo "Author: " . $data['articles'][$i]['author'] . "<br>";
-    echo "Title: " . $data['articles'][$i]['title']. "<br>";
-    echo "<a href='" .  $data['articles'][$i]['url'] . "'> Description: " . $data['articles'][$i]['description']. "</a><br><hr>";
-}
-
-
-
-
-
-
-
+<?php
 // ============================================================================== FOOTER
 include "footer.php";
 
