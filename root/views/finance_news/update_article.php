@@ -14,7 +14,7 @@ if(isset($_POST['update'])){
 }
  if(isset($_POST['updateArt'])){
 	 
-	 //image upload-------
+	 //image upload------------
 	$image_title = $_POST['image_title'];
 	$image_title = str_replace( ' ', '-', $image_title);
 	$image_title = preg_replace('/[^0-9a-zA-Z_]/', '', $image_title);
