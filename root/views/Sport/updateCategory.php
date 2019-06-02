@@ -13,7 +13,8 @@ if(isset($_POST['updateCategory'])){
     $c = new Category();
     $category = $c->getCategoryById($id, $dbcon);
 
-    echo $category->id;
+    // echo $category->id;
+    echo $category->image;
 
 
 }
@@ -22,10 +23,6 @@ if(isset($_POST['updCategory'])){
     $file_temp = $_FILES['upfile']['tmp_name'];
     //original path and file name of the uploaded file
     $file_name = $_FILES['upfile']['name'];
-    //size of the uploaded file in bytes
-    $file_size = $_FILES['upfile']['size'];
-    //type of the file(if browser provides)
-    $file_type = $_FILES['upfile']['type'];
     //error number
     $file_error = $_FILES['upfile']['error'];
     
@@ -44,8 +41,13 @@ if(isset($_POST['updCategory'])){
 
     $id = $_POST['cid'];
     $name = $_POST['name'];
-    $image = $target_path;
     $description = $_POST['description'];
+    // $image = $target_path;
+    if(is_null($target_path) || $target_path == 'uploads/'){
+        $image = $category->image;
+    } else{
+        $image = $target_path;
+    }
     
     $dbcon = Database::getDb();
     $c = new Category();

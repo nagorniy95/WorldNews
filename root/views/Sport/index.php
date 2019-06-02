@@ -6,9 +6,9 @@ $dbcon = Database::getDb();
 $c = new Category();
 
 $sport_category = $c->getAllCategories($dbcon);
-
+include "../header.php";
  ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -16,6 +16,9 @@ $sport_category = $c->getAllCategories($dbcon);
 	<link rel="stylesheet" href="../../libs/fullpage/jquery.fullpage.min.css">
 	<script src="../../libs/jquery/jquery-3.3.1.min.js"></script>
 	<script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
+	
+</head>
+<body> -->
 	<style>
 		.section{
 			-webkit-background-size: cover;
@@ -36,14 +39,11 @@ $sport_category = $c->getAllCategories($dbcon);
 
 		});
 	</script>
-</head>
-<body>
-	
 	<div id="fullpage">	
 	<?php 
 		foreach ($sport_category as $sport) {
 			echo "<div class='section' id=section" . $sport->id .">";
-			echo "<h2>" . $sport->name . "</h2>";
+			echo "<h2><a href='news.php'>" . $sport->name . "</a></h2>";
 			echo "<p>" . $sport->description . "</p>";
 			echo "</div>";
 		}
