@@ -26,3 +26,43 @@ hr{
 .rating {
 	border-top: 2px solid #C33636;
 }
+.tab-overwrite{
+	width: 100%;
+	max-width: 100%;
+}
+/*========table list articles==========*/
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+	font-size:10px;
+}
+/*==============add rticles=============*/
+
+#submit_button{
+	background-color:#C33636;
+	margin-top:20px;
+}
+
+
+
+
+media only screen and (max-width: 760px),(min-device-width: 768px){
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		
+		max-width: 100%;
+		margin:auto;
+	}
+	
+	.container {
+		width: 100%;
+	}
+	h3 {
+		display: inline-block;
+		margin: 10px 30px;
+	}
+}

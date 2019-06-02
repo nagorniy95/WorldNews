@@ -16,7 +16,18 @@ session_start();
 
 
 ?>
+<!doctype html>
+<html lang="en">
 
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/finance.css" >
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 	<div class="container">
 	  <div class="row">
 		<div class="col-md-12">
@@ -29,7 +40,8 @@ session_start();
 		       echo  "Content: " . $finance->content . "<br /><br/>";   
                echo  "Date: " . $finance->date . "<br /><br/>";  
 			   echo  "Image Title: " . $finance->image_title . "<br /><br/>";  
-               echo  "Image: " . $finance->image . "<br /><br/>";     			   
+              echo "<img class='ArticlePhoto' src= 'images/$finance->image '.   alt='Finance Article Image' style=\"height:200px;\"/>" ;
+			 // echo  "Image: " . $finance->image . "<br /><br/>";     			   
                 ?> 
 				
 		<br/>
@@ -38,3 +50,5 @@ session_start();
 	</div>
  </div>
 </div> 
+</body>
+</html>

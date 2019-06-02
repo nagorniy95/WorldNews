@@ -78,11 +78,27 @@ if (isset ($_POST['addArticle'])){
     
 
 ?>
+ <!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/finance.css" >
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 <div class="container">
+	<div class="row">
+		<div class="col-xl-8 offset-xl-2 py-5">
   <h3>Add New Article</h3><br/>
   
 	<form action="" method="POST" id="addArticle" enctype="multipart/form-data">		
-      <label for="title">Article Title:</label>
+      
+	  <div>
+	  <label for="title">Article Title:</label>
       <input type="text" id="title" name="title" placeholder="Title..." class="form-control"/><br/>
         <span id="titleErr" style="color:red;">
           <?php
@@ -160,7 +176,7 @@ if (isset ($_POST['addArticle'])){
 		<div>
       <label for="image">Image:</label>
       <input type="file" name="image" id="image" class="btn btn-default">
-	  <input type="Reset" name="Reset" value="Reset" class="btn btn-default" />
+	  <input type="button" name="Reset" value="Reset" class="btn btn-secondary" />
 	  <br/>
       <span id="imageErr" style="color:red;">
           <?php
@@ -170,7 +186,11 @@ if (isset ($_POST['addArticle'])){
           ?>
         </span> 
    </div>
-      <input type="submit" name="addArticle" value="Add Article" id="submit" class="btn btn-default"> 
+      <input type="submit" name="addArticle" value="Add Article" id="submit_button" class="btn btn-lg btn-primary"  > 
 </form>
    <p><a href="FinanceAdmin.php">Back to List</a></p>
 </div>
+</div>
+</div>
+</body>
+</html>

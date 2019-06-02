@@ -7,24 +7,32 @@ $f = new Finance();
 $finance_news = $f->getAllArticle($db);
 
 ?>
- 
+ <!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/finance.css" >
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
  <div class="content">
     <div class="container">
        <div class="table-wrapper">
-            <div class="panel-body">
-			<h2>Financial News</h2>
-			</div>
 			<table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Title</th>						
-						<th>Category</th>
-						<th>Author</th>
-						<th>Content</th>
-                        <th>Date</th>
-						<th>Image</th>
-						<th>Image Title</th>
+                        <th style="width: 4.5%">Id</th>
+                        <th style="width: 12.5%">Title</th>						
+						<th style="width: 7.5%" >Category</th>
+						<th style="width: 5.5%">Author</th>
+						<th style="width: 30%" colspan="2">Content</th>
+                        <th style="width: 5.5%">Date</th>
+						<th style="width: 5.5%">Image</th>
+						<th style="width: 5.5%">Image Title</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +46,7 @@ $finance_news = $f->getAllArticle($db);
 							"<td>" . $finance->title . "</td>" .
 							"<td>" . $finance->category . "</td>" .
 							"<td>" . $finance->author . "</td>" .
-							"<td>" . $finance->content . "</td>" .
+							"<td colspan=\"2\">" . $finance->content . "</td>" .
 							"<td>" . $finance->date . "</td>" .
 							"<td>" . $finance->image . "</td>" .
 							"<td>" . $finance->image_title . "</td>" .
@@ -71,3 +79,6 @@ $finance_news = $f->getAllArticle($db);
 		
     </div>     
 			</div>
+</body>
+</html>
+			

@@ -43,10 +43,10 @@ $myart = $userArticle->getAllArticle(Database::getDb());
 
 for($i=0; $i<4; $i++){
     echo  ' <div class="card-deck" style="width:16rem;margin-bottom:10px;float:left;margin-right:30px;width:250px; height:450px;">'
-    . '<img class="card-img-right" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
-    . '<div class="card-body" >'
-    . '<p style="font-size:16px;color:#C33636;" class="card-title">' .  $data['articles'][$i]['source']['name'] . '</p>'
-    . '<p style="font-size:16px">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
+    . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
+    . '<div class="card-body" style="width:250px; >'
+        . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
+    . '<p style="font-size:16px;">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
    // . '<p style="font-size:16px; font-weight:bold">' . $data['articles'][$i]['title'] . '</p>'
     //. '<p class="card-text">' . $data['articles'][$i]['description'] . '</p>' 
     .'<p><a style="color:black;font-weight:bold;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
@@ -62,7 +62,7 @@ for($i=0; $i<4; $i++){
   
   <h3 class="title_calendar" style="text-align:center;">ECONOMIC CALENDAR</h3>
  <div class="table_calendar">
- <table  class="table table-sm  table-striped  table-hover table-responsive" style="font-size:10px;">
+ <table  class="table table-sm  table-striped  table-hover tab-content container-fluid tab-overwrite" style="font-size:10px;">
   <thead class="thead">
     <tr>
 	<th scope="col">Date</th>
@@ -105,7 +105,7 @@ for($i=0; $i<4; $i++){
 </div>
 <div>
 	<h3  style="text-align:center;">TODAY ON THE MARKET</h3>
-	<table class="table table-sm  table-striped  table-hover table-responsive"style="font-size:10px;">
+	<table class="table table-sm  table-striped  table-hover "style="font-size:10px;">
 	<thead class="thead">
   <tr >
 	<th>Symbol</th>
@@ -193,7 +193,7 @@ for($i=4; $i<12; $i++){
     . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
    // . '<p class="card-text">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
     //. '<h6 class="card-title">' . $data['articles'][$i]['title'] . '</h6>'
-    .'<p style="font-size:12px;font-weight:bold;><a style="color:black;" href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].' </a></p>'
+     .'<p><a style="color:black;font-weight:bold;font-size:12px;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
    // . '<p class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
     . '</div>'
     . '</div>';
