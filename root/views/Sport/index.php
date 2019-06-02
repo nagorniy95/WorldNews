@@ -6,7 +6,7 @@ $dbcon = Database::getDb();
 $c = new Category();
 
 $sport_category = $c->getAllCategories($dbcon);
-include "../header.php";
+include dirname( __FILE__) . "../../header.php";
  ?>
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +23,16 @@ include "../header.php";
 		.section{
 			-webkit-background-size: cover;
 			background-size: cover;
+		}
+		#header{
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			width: 100%;
+		}
+		.section{
+			padding-top: 200px;
 		}
 		<?php 
 		foreach ($sport_category as $sport) {
@@ -43,7 +53,7 @@ include "../header.php";
 	<?php 
 		foreach ($sport_category as $sport) {
 			echo "<div class='section' id=section" . $sport->id .">";
-			echo "<h2><a href='news.php'>" . $sport->name . "</a></h2>";
+			echo "<h2><a href=news.php?id=" . $sport->id . ">" . $sport->name . "</a></h2>";
 			echo "<p>" . $sport->description . "</p>";
 			echo "</div>";
 		}

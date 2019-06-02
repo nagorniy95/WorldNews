@@ -1,11 +1,20 @@
 <?php 
 
 class Sport
-{
+{	
+	public function getAllSportByCategory ($dbcon, $category){
+		$sql = "SELECT * FROM sport_news WHERE category = :category";
+		$pst = $dbcon->prepare($sql);
+		$pst->bindParam(':category', $category);
+		$pst->execute();
+		
+		$sport = $pst->fetchAll(PDO::FETCH_OBJ);
+		return $sport;
+	}
 	public function getAllSport ($dbcon){
 		$sql = "SELECT * FROM sport_news";
 		$pst = $dbcon->prepare($sql);
-		// $pst->bindParam(':id', $id);
+		$pst->bindParam(':category', $category);
 		$pst->execute();
 		
 		$sport = $pst->fetchAll(PDO::FETCH_OBJ);

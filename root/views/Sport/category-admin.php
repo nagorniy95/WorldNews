@@ -35,7 +35,7 @@ $description = $_POST['description'];
 
 
 $c->addCategory($dbcon, $name, $image, $description);
- header("Location: index-admin.php");
+ header("Location: category-admin.php");
 }
  ?>
  <!DOCTYPE html>
@@ -46,14 +46,14 @@ $c->addCategory($dbcon, $name, $image, $description);
  </head>
  <body>
  	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
-    <label for="name">Name:</label><br>
-    <input type="text" name="name" id="name" /><br/>
-    <label for="description">Description: </label><br>
-    <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea><br>
-    <label for="upfile">Select Image</label><br>
-    <input type="file" name="upfile" id="upfile" >
-    <input type="submit" name="addCategory" value="Add New Category" class="form-button">
-</form>
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name" /><br/>
+        <label for="description">Description: </label><br>
+        <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea><br>
+        <label for="upfile">Select Image</label><br>
+        <input type="file" name="upfile" id="upfile" >
+        <input type="submit" name="addCategory" value="Add New Category" class="form-button">
+    </form>
 <br><br><br><br>
 <?php 
 foreach($sport_category as $sport){
