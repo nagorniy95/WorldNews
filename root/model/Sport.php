@@ -46,7 +46,7 @@ class Sport
         return $count;
 	}
 
-	public function updateSport($title, $category, $author, $content, $date, $image, $dbcon)
+	public function updateSport($id, $title, $category, $author, $content, $date, $image, $dbcon)
 	{
 		$sql = "UPDATE sport_news
 				SET title=:title,
@@ -58,6 +58,7 @@ class Sport
 				WHERE id=:id";
 		$pst = $dbcon->prepare($sql);
 
+		$pst->bindParam(':id', $id);
 		$pst->bindParam(':title', $title);
 		$pst->bindParam(':category', $category);
 		$pst->bindParam(':author', $author);

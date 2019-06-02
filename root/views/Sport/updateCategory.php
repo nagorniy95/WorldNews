@@ -54,7 +54,7 @@ if(isset($_POST['updCategory'])){
 
     $count = $c->updateCategory($id, $name, $image, $description, $dbcon);
     if($count){
-        header("Location: index-admin.php");
+        header("Location: category-admin.php");
     } else {
         echo  "problem updating";
     }
