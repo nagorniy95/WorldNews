@@ -1,12 +1,11 @@
 <?php 
 require_once '../../model/Database.php';
 require_once '../../model/Category.php';
-require_once '../../model/Sport.php';
+
 
 $dbcon = Database::getDb();
 $s = new Sport();
-$c = new Category();
-$category = $c->getAllCategories($dbcon);
+
 if(isset($_GET['id'])){
 	$category = $_GET['id'];
 	$sport  = $s->getAllSportByCategory($dbcon, $category);

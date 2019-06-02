@@ -60,22 +60,13 @@ if(isset($_POST['updCategory'])){
     }
 }
  ?>
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Document</title>
- </head>
- <body>
- 	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
- 		<input type="hidden" name="cid" value="<?= $category->id; ?>" />
-    	<label for="name">Name:</label><br>
-    	<input type="text" name="name" id="name" value="<?= $category->name; ?>" /><br/>
-    	<label for="description">Description: </label><br>
-    	<textarea type="text" name="description" id="description" cols="30" rows="10"><?= $category->description; ?></textarea><br>
-    	<label for="upfile">Select Image</label><br>
-    	<input type="file" name="upfile" id="upfile" >
-    	<input type="submit" name="updCategory" value="Update Category" class="form-button">
-	</form>
- </body>
- </html>
+ <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+ 	<input type="hidden" name="cid" value="<?= $category->id; ?>" />
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" id="name" value="<?= $category->name; ?>" /><br/>
+    <label for="description">Description: </label><br>
+    <textarea type="text" name="description" id="description" cols="30" rows="10"><?= $category->description; ?></textarea><br>
+    <label for="upfile">Select Image</label><br>
+    <input type="file" name="upfile" id="upfile" >
+    <input type="submit" name="updCategory" value="Update Category" class="form-button">
+</form>

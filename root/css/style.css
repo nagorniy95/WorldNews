@@ -146,5 +146,8 @@ a.socialIcon:hover, .socialHoverClass {
 .home_techno_block_main img{
 	margin-bottom: 20px;
 }
-
+/*------------------------Admin dashboard---------------------*/
+.admin-panel ul{
+	list-style: none;
+}
 

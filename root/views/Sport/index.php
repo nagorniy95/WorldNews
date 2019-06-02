@@ -8,17 +8,6 @@ $c = new Category();
 $sport_category = $c->getAllCategories($dbcon);
 include dirname( __FILE__) . "../../header.php";
  ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="../../libs/fullpage/jquery.fullpage.min.css">
-	<script src="../../libs/jquery/jquery-3.3.1.min.js"></script>
-	<script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
-	
-</head>
-<body> -->
 	<style>
 		.section{
 			-webkit-background-size: cover;

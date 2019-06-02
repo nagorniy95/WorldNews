@@ -38,14 +38,7 @@ $c->addCategory($dbcon, $name, $image, $description);
  header("Location: category-admin.php");
 }
  ?>
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Document</title>
- </head>
- <body>
- 	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+ 	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm" id="ajaxForm">
         <label for="name">Name:</label><br>
         <input type="text" name="name" id="name" /><br/>
         <label for="description">Description: </label><br>
@@ -71,6 +64,3 @@ foreach($sport_category as $sport){
 
 
 ?>
-
- </body>
- </html>

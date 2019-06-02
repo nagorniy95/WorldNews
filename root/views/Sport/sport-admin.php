@@ -41,7 +41,6 @@ if(isset($_POST['addSport'])){
 	header("Location: sport-admin.php");
 
 }
-include dirname( __FILE__) . "../../header.php";
  ?>
  <!-- <body> -->
  	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
@@ -79,4 +78,3 @@ include dirname( __FILE__) . "../../header.php";
          "</li>";
 }
 	 ?>
-</body>

@@ -13,9 +13,6 @@ if(isset($_POST['updateSport'])){
     $dbcon = Database::getDb();
     $s = new Sport();
     $sport = $s->getSportById($id, $dbcon);
-
-    // echo $category->id;
-    echo $sport->image;
 }
 if(isset($_POST['updSport'])){
     //image upload--------------------------------------
@@ -45,7 +42,6 @@ if(isset($_POST['updSport'])){
 	$content = $_POST['content'];
 	$date = date("Y.m.d");
 
-    // $image = $target_path;
     if(is_null($target_path) || $target_path == 'uploads/'){
         $image = $sport->image;
     } else{
@@ -63,9 +59,7 @@ if(isset($_POST['updSport'])){
         echo  "problem updating";
     }
 }
-include dirname( __FILE__) . "../../header.php";
  ?>
- <!-- <body> -->
 <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
 		<input type="hidden" name="sid" value="<?= $sport->id; ?>" />
     	<label for="title">Title:</label><br>
