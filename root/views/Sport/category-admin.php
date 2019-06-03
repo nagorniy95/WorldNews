@@ -37,30 +37,45 @@ $description = $_POST['description'];
 $c->addCategory($dbcon, $name, $image, $description);
  header("Location: category-admin.php");
 }
+include dirname( __FILE__) . "../../admin-header.php";
  ?>
- 	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm" id="ajaxForm">
-        <label for="name">Name:</label><br>
-        <input type="text" name="name" id="name" /><br/>
-        <label for="description">Description: </label><br>
-        <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea><br>
-        <label for="upfile">Select Image</label><br>
-        <input type="file" name="upfile" id="upfile" >
-        <input type="submit" name="addCategory" value="Add New Category" class="form-button">
-    </form>
-<br><br><br><br>
-<?php 
-foreach($sport_category as $sport){
-    echo "<li>" .  $sport->name  .
-    	 "<form action='updateCategory.php' method='post'>" .
-         "<input type='hidden' value='$sport->id' name='id' />".
-         "<input type='submit' value='updateCategory' name='updateCategory' />".
-         "</form>" .
-         "<form action='deleteCategory.php' method='post'>" .
-         "<input type='hidden' value='$sport->id' name='id' />".
-         "<input type='submit' value='deleteCategory' name='deleteCategory' />".
-         "</form>" .
-         "</li>";
-}
+ <h1>Sport Category</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <ul>
+                <li><a href="#">Sport Categories</a></li>
+                <li><a href="sport-admin.php">Sport News</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <form action="" method="post" enctype="multipart/form-data" class="CategoryForm" id="ajaxForm">
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name" /><br/>
+                <label for="description">Description: </label><br>
+                <textarea type="text" name="description" id="description" cols="30" rows="10"></textarea><br>
+                <label for="upfile">Select Image</label><br>
+                <input type="file" name="upfile" id="upfile" ><br>
+                <input type="submit" name="addCategory" value="Add New Category" class="form-button">
+            </form>
+        </div>
+        <div class="col-md-4">
+            <?php 
+                foreach($sport_category as $sport){
+                echo "<li>" .  $sport->name  .
+                    "<form action='updateCategory.php' method='post'>" .
+                    "<input type='hidden' value='$sport->id' name='id' />".
+                    "<input type='submit' value='updateCategory' name='updateCategory' />".
+                    "</form>" .
+                    "<form action='deleteCategory.php' method='post'>" .
+                    "<input type='hidden' value='$sport->id' name='id' />".
+                    "<input type='submit' value='deleteCategory' name='deleteCategory' />".
+                    "</form>" .
+                    "</li>";
+                }
+            ?>
+        </div>
+    </div>
+</div>
+ 	
 
-
-?>
