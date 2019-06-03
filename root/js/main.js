@@ -12,15 +12,22 @@ $(document).ready(function(){
     dots: false,
     responsive:{
         0:{
-            items:1,
-            touchDrag: true
+            items:1
+        },
+        375:{
+            items:2
         },
         600:{
-            items:3,
-            touchDrag: true
+            items:3
+        },
+        900:{
+            items:4
         },
         1000:{
-            items:4
+            items:5
+        },
+        1600:{
+            items:6
         }
     }
 })

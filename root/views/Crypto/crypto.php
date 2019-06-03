@@ -105,8 +105,16 @@ $jsonObject = json_decode($response);
         echo "</div></div>";
     }
     echo "</div>";
+    echo "<div class='row justify-content-md-center'>";
+    for ($x = 3; $x < 6; $x++) {
+        echo "<div class='col-md-4 col-sm-12 col-12'><div class='article'>";
+            echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+            echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+        echo "</div></div>";
+    }
+    echo "</div>";
     ?>
-    <hr>
+    <hr class='red_line'>
 
     <!-- ==================================== Author NEWS ==================================== -->
     <!-- ===================================================================================== -->

@@ -16,6 +16,12 @@ body{
 .uppercase{
 	text-transform: uppercase;
 }
+.red{
+	color: red;
+}
+.green{
+	color: green;
+}
 /* =============================== Header =========================  */
 .header-logo{
 	width: auto;
@@ -103,6 +109,9 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 /* ========================== Home page (index.php) ==========================*/
+.my-carousel-container{
+	padding: 0;
+}
 .owl-carousel{
 	position: relative;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -213,6 +222,12 @@ a.socialIcon:hover, .socialHoverClass {
 /* remove background on hover for the first row */
 #coinm_table tr:first-child:hover{
 	background-color: #fff;
+}
+.article h5,
+.article a{
+	margin-top: 10px;
+	margin-bottom: 40px;
+	color: rgb(145,145,145);
 }
 
 .article img{
