@@ -48,13 +48,13 @@
                             <a class="nav-link" href="../../views/Crypto/crypto.php">Crypto Currency</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Finance</a>
+                            <a class="nav-link" href="../../views/finance_news/finance_news.php">Finance</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="../../views/Contact/contact_pub.php">Contact</a>
                         </li>
                     </ul>
                 </div>

@@ -4,10 +4,7 @@ body{
 	padding:0;
 	
 }
-body{
-		background-image:url("../images/9.jpg");
-		
-}
+
 h1{
 	color:#C33636;
 }
@@ -50,11 +47,36 @@ table {
 #submit_button{
 	background-color:#C33636;
 	margin-top:20px;
-	width:15px;
+	margin-bottom:20px;
+	
+}
+#submit_button:hover{
+	background-color:white;
+	color: #C33636;
 }
 
+#background-contact{
+	background:url(contact.png);
+}
+/*==================Contact====================*/
+#contact-form{
+	width: 40%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: #C33636;
+	border-radius: 10px 10px 10px 10px;
+	margin-bottom:20px;
+}
 
-
+#contact-form label{
+	color:white;
+	font-size:18px;
+}
+.contact-heading{
+	text-align:center;
+	color:white;
+}
 
 media only screen and (max-width: 760px),(min-device-width: 768px){
 	table,

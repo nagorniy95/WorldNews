@@ -3,6 +3,7 @@ require_once '../../views/header.php';
 require_once '../../model/Database.php';
 require_once '../../model/contact.php';
 
+
 		$name ='';
 		$email ='';
 		$subject ='';	
@@ -72,14 +73,15 @@ require_once '../../model/contact.php';
 
 ?>
 <body>
-<main class="contact">
+<main >
 <div class="container">
          <div class="row">
-		 <div class="col-sm-8">
+		 <div id="contact-form" class="col-md-6 col-sm-4">
+			<h2 class="contact-heading">CONTACT US</h2>
              <form  method="post" action="contact_pub.php">
-                 <h1>Contact Us</h1>
+                 
 				 <!--message-->
-				<div class="container">
+				<div>
 				<?php
 				if(isset($msg)){
 				?>
@@ -106,11 +108,11 @@ require_once '../../model/contact.php';
                     </div>   
                     <div class="txt">
                     <label for="form_message">Message *</label>
-                    <textarea id="form_message" name="message" class="form-control"  placeholder="Message" cols="40" rows="3" ><?= $message; ?></textarea>
+                    <textarea id="form_message" name="message" class="form-control"  placeholder="Message" cols="40" rows="6" ><?= $message; ?></textarea>
                     </div>
-                    <input type="submit" name="submit" class="btn-send" value="Submit"> 
+                    <input type="submit" name="submit" id="submit_button" class="btn btn-lg btn-primary"  value="Submit"> 
                     </form>
-				    <a  class="link_home_page" href="">Back  to Home Page</a>
+				    
 					</div>
 		</div>		
 </div>		

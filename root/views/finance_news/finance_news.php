@@ -46,9 +46,6 @@ for($i=0; $i<6; $i++){
     . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
     . '<div class="card-body" style="width:250px;" >'
         . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
-    //. '<p style="font-size:16px;">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
-   // . '<p style="font-size:16px; font-weight:bold">' . $data['articles'][$i]['title'] . '</p>'
-    //. '<p class="card-text">' . $data['articles'][$i]['description'] . '</p>' 
     .'<p><a style="color:black;font-weight:bold;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
 	//. '<p style="font-size: 14px;class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
     . '</div>'
@@ -166,7 +163,7 @@ for($i=0; $i<6; $i++){
     echo 
     "<li class= 'myArticle list-group-item'>" . 
     "<div class='IndArticle'>" . 
-         "<img class='ArticlePhoto' src= 'images/$finance->image '.   alt='Finance Article Image' style=\"height:300px;\"/>" .
+         "<img class='ArticlePhoto' src= 'images/$finance->image '.   alt='Finance Article Image' style=\"height:460px;\"/>" .
         "<h2 class='financetitle'>$finance->title </h2>" . "<br/>" . 
         "<div class='financeContent'>" .
             "<p> $finance->content </p>" .
