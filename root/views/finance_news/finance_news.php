@@ -41,16 +41,16 @@ $myart = $userArticle->getAllArticle(Database::getDb());
 	  <h3 style="text-align:center;"> TOP NEWS</h3>	
 <?php
 
-for($i=0; $i<4; $i++){
-    echo  ' <div class="card-deck" style="width:16rem;margin-bottom:10px;float:left;margin-right:30px;width:250px; height:450px;">'
+for($i=0; $i<6; $i++){
+    echo  ' <div class="card-deck" style="width:16rem;margin-bottom:0px;float:left;margin-right:30px;width:250px; height:450px;">'
     . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
-    . '<div class="card-body" style="width:250px; >'
+    . '<div class="card-body" style="width:250px;" >'
         . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
-    . '<p style="font-size:16px;">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
+    //. '<p style="font-size:16px;">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
    // . '<p style="font-size:16px; font-weight:bold">' . $data['articles'][$i]['title'] . '</p>'
     //. '<p class="card-text">' . $data['articles'][$i]['description'] . '</p>' 
     .'<p><a style="color:black;font-weight:bold;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
-	. '<p style="font-size: 14px;class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
+	//. '<p style="font-size: 14px;class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
     . '</div>'
     . '</div>';
 }
@@ -186,7 +186,7 @@ for($i=0; $i<4; $i++){
   <h3  style="text-align:center;"> LATEST NEWS</h3>
   <?php
 
-for($i=4; $i<12; $i++){
+for($i=6; $i<14; $i++){
     echo ' <div class="media" style="margin-bottom:10px;height:170px;">'
     . '<img class="media-left" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:130px;width:200px;padding-top:5px;padding-left:10px; " >'
     . '<div class="media-body"  style="display:inline-block;padding-left:5px;">'
