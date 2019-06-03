@@ -10,7 +10,13 @@
 	<link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-	<header>
-		<a href="../index.php">Back to web site</a>
+	<header class="admin-header">
+		<div class="admin-logo">
+			<a href="../index.php"><img class="img-responsive" src="../../img/logo.png" alt=""></a>
+		</div>
+		<ul class="admin-menu">
+			<li class="admin-title">Admin Dashboard</li>
+			
+		</ul>
 	</header>
 	

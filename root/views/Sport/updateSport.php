@@ -7,7 +7,7 @@ $dbcon = Database::getDb();
 
 $c = new Category();
 $category = $c->getAllCategories($dbcon);
-if(isset($_POST['updateSport'])){
+if(isset($_POST['Update'])){
     $id = $_POST['id'];
 
     $dbcon = Database::getDb();

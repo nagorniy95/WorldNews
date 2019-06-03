@@ -1,6 +1,7 @@
 <?php 
 require_once '../../model/Database.php';
 require_once '../../model/Category.php';
+require_once '../../model/Sport.php';
 
 
 $dbcon = Database::getDb();
@@ -19,11 +20,7 @@ include dirname( __FILE__) . "../../header.php";
  ?>
  <!-- body -->
 <style>
-	.img-responsive{
-		display: block;
-		width: 100%;
-		height: auto;
-	}
+	
 	.thumbnail-text{
 		height: 45px;
 		overflow: hidden;
