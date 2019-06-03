@@ -9,7 +9,7 @@ if(isset($_POST['deleteCategory'])){
     $count = $c->deleteCategory($id, $dbcon);
 
     if($count){
-        header("Location: index-admin.php");
+        header("Location: category-admin.php");
     }
 }
 ?>

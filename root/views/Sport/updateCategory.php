@@ -13,7 +13,8 @@ if(isset($_POST['updateCategory'])){
     $c = new Category();
     $category = $c->getCategoryById($id, $dbcon);
 
-    echo $category->id;
+    // echo $category->id;
+    echo $category->image;
 
 
 }
@@ -22,10 +23,6 @@ if(isset($_POST['updCategory'])){
     $file_temp = $_FILES['upfile']['tmp_name'];
     //original path and file name of the uploaded file
     $file_name = $_FILES['upfile']['name'];
-    //size of the uploaded file in bytes
-    $file_size = $_FILES['upfile']['size'];
-    //type of the file(if browser provides)
-    $file_type = $_FILES['upfile']['type'];
     //error number
     $file_error = $_FILES['upfile']['error'];
     
@@ -44,36 +41,32 @@ if(isset($_POST['updCategory'])){
 
     $id = $_POST['cid'];
     $name = $_POST['name'];
-    $image = $target_path;
     $description = $_POST['description'];
+    // $image = $target_path;
+    if(is_null($target_path) || $target_path == 'uploads/'){
+        $image = $category->image;
+    } else{
+        $image = $target_path;
+    }
     
     $dbcon = Database::getDb();
     $c = new Category();
 
     $count = $c->updateCategory($id, $name, $image, $description, $dbcon);
     if($count){
-        header("Location: index-admin.php");
+        header("Location: category-admin.php");
     } else {
         echo  "problem updating";
     }
 }
  ?>
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Document</title>
- </head>
- <body>
- 	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
- 		<input type="hidden" name="cid" value="<?= $category->id; ?>" />
-    	<label for="name">Name:</label><br>
-    	<input type="text" name="name" id="name" value="<?= $category->name; ?>" /><br/>
-    	<label for="description">Description: </label><br>
-    	<textarea type="text" name="description" id="description" cols="30" rows="10"><?= $category->description; ?></textarea><br>
-    	<label for="upfile">Select Image</label><br>
-    	<input type="file" name="upfile" id="upfile" >
-    	<input type="submit" name="updCategory" value="Update Category" class="form-button">
-	</form>
- </body>
- </html>
+ <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+ 	<input type="hidden" name="cid" value="<?= $category->id; ?>" />
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" id="name" value="<?= $category->name; ?>" /><br/>
+    <label for="description">Description: </label><br>
+    <textarea type="text" name="description" id="description" cols="30" rows="10"><?= $category->description; ?></textarea><br>
+    <label for="upfile">Select Image</label><br>
+    <input type="file" name="upfile" id="upfile" >
+    <input type="submit" name="updCategory" value="Update Category" class="form-button">
+</form>
