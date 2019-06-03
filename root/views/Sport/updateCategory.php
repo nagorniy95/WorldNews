@@ -6,15 +6,12 @@ $dbcon = Database::getDb();
 $c = new Category();
 
 
-if(isset($_POST['updateCategory'])){
+if(isset($_POST['Update'])){
     $id = $_POST['id'];
 
     $dbcon = Database::getDb();
     $c = new Category();
     $category = $c->getCategoryById($id, $dbcon);
-
-    // echo $category->id;
-    echo $category->image;
 
 
 }

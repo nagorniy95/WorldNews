@@ -2,7 +2,7 @@
 require_once '../../model/Database.php';
 require_once '../../model/Category.php';
 
-if(isset($_POST['deleteCategory'])){
+if(isset($_POST['Delete'])){
     $id= $_POST['id'];
     $dbcon = Database::getDb();
     $c = new Category();

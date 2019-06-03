@@ -39,16 +39,20 @@ $c->addCategory($dbcon, $name, $image, $description);
 }
 include dirname( __FILE__) . "../../admin-header.php";
  ?>
- <h1>Sport Category</h1>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            <ul>
-                <li><a href="#">Sport Categories</a></li>
-                <li><a href="sport-admin.php">Sport News</a></li>
-            </ul>
-        </div>
-        <div class="col-md-6">
+ 
+<div class="container-fluid p-0 fill-height">
+    <div class="row no-gutters">
+            <div class="col-md-2">
+                <div class="admin-menu-wrapper">
+                    <ul>
+                        <li><a href="#" class="admin-active">Sport Categories</a></li>
+                        <li><a href="sport-admin.php">Sport News</a></li>
+                    </ul>
+                </div>
+            </div>
+        <div class="col-md-7">
+            <div class="form-wrapper">
+            <h1 class="admin-form-title">Sport Category</h1>
             <form action="" method="post" enctype="multipart/form-data" class="CategoryForm" id="ajaxForm">
                 <label for="name">Name:</label><br>
                 <input type="text" name="name" id="name" /><br/>
@@ -58,22 +62,25 @@ include dirname( __FILE__) . "../../admin-header.php";
                 <input type="file" name="upfile" id="upfile" ><br>
                 <input type="submit" name="addCategory" value="Add New Category" class="form-button">
             </form>
+            </div>
         </div>
-        <div class="col-md-4">
-            <?php 
+        <div class="col-md-3">
+            <div class="admin-list-wrapper">
+                <h3 class="admin-list-title">List of Categories</h3>
+                <?php 
                 foreach($sport_category as $sport){
-                echo "<li>" .  $sport->name  .
+                echo "<p>" .  $sport->name . "</p>"  .
                     "<form action='updateCategory.php' method='post'>" .
                     "<input type='hidden' value='$sport->id' name='id' />".
-                    "<input type='submit' value='updateCategory' name='updateCategory' />".
+                    "<input type='submit' value='Update' name='Update' class='admin-update'/>".
                     "</form>" .
                     "<form action='deleteCategory.php' method='post'>" .
                     "<input type='hidden' value='$sport->id' name='id' />".
-                    "<input type='submit' value='deleteCategory' name='deleteCategory' />".
-                    "</form>" .
-                    "</li>";
+                    "<input type='submit' value='Delete' name='Delete' class='admin-delete'/>".
+                    "</form>";
                 }
             ?>
+            </div>
         </div>
     </div>
 </div>

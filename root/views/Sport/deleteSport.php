@@ -2,7 +2,7 @@
 require_once '../../model/Database.php';
 require_once '../../model/Sport.php';
 
-if(isset($_POST['deleteSport'])){
+if(isset($_POST['Delete'])){
     $id= $_POST['id'];
     $dbcon = Database::getDb();
     $c = new Sport();
