@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../libs/owlcarousel/owl.carousel.min.css">
     <script src="../../libs/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../../libs/jquery/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../../libs/jquery/jquery-3.3.1.min.js"></script> -->
     <script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
 	<link rel="stylesheet" href="../../css/style.css" >
-	<link rel="stylesheet" href="../../css/finance.css" >
+	<!-- <link rel="stylesheet" href="../../css/finance.css" > -->
 </head>
 
 <body>
