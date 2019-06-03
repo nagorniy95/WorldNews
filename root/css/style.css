@@ -119,9 +119,16 @@ a.socialIcon:hover, .socialHoverClass {
     left: 20px;
 }
 .owl-next{
+	outline:none;
     position: absolute;
     top: 30%;
     right: 20px;
+}
+.owl-prev:active,
+.owl-prev:focus,
+.owl-next:active,
+.owl-next:focus{
+	outline:none;
 }
 .owl-carousel{
 	margin-bottom: 60px;

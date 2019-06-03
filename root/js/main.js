@@ -2,13 +2,13 @@
 $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:20,
+    margin:15,
     nav:true,
     center: true,
     autoplay: true,
     autoplayHoverPause: true,
-    smartSpeed: 2000,
-    autoplayTimeout: 15000,
+    smartSpeed: 1500,
+    autoplayTimeout: 12000,
     dots: false,
     responsive:{
         0:{
