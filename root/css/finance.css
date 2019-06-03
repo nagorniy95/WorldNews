@@ -1,4 +1,13 @@
 /*=================================Finance=================================*/
+body{
+	margin:0;
+	padding:0;
+	
+}
+body{
+		background-image:url("../images/9.jpg");
+		
+}
 h1{
 	color:#C33636;
 }
@@ -41,6 +50,7 @@ table {
 #submit_button{
 	background-color:#C33636;
 	margin-top:20px;
+	width:15px;
 }
 
 

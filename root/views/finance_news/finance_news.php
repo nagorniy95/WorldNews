@@ -7,7 +7,7 @@ require_once 'market.php';
 require_once 'rating.php';
 require_once 'articles.php';
 
-session_start();
+//session_start();
 
 //top news
 $API = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=df9979ebd8de4540ba9e6b1233d4ea75";
