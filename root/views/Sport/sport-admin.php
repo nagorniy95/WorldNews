@@ -41,40 +41,58 @@ if(isset($_POST['addSport'])){
 	header("Location: sport-admin.php");
 
 }
+include dirname( __FILE__) . "../../admin-header.php";
  ?>
  <!-- <body> -->
- 	<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
-    	<label for="title">Title:</label><br>
-    	<input type="text" name="title" id="title" /><br/>
-		<label for="category_id">Select the category</label><br>
-		<select name="category_id" id="category_id" >
-        <?php foreach ($category as $cat){
-            echo "<option value='$cat->id'>" . $cat->name . "</option>";
-        }?>      
-    	</select><br />
-    	<label for="title">Author:</label><br>
-    	<input type="text" name="author" id="author" /><br/>
-		<label for="content">Description: </label><br>
-    	<textarea type="text" name="content" id="content" cols="30" rows="10"></textarea><br>
-    	<label for="upfile">Select Image</label><br>
-    	<input type="file" name="upfile" id="upfile" >
-    	<input type="submit" name="addSport" value="Add New Sport News" class="form-button">
-	</form>
-	<br>
-	<br>
-	<br>
-	<br>
-	<?php 
-	foreach($sport_news as $sport){
-    echo "<li>" .  $sport->title  .
-    	 "<form action='updateSport.php' method='post'>" .
-         "<input type='hidden' value='$sport->id' name='id' />".
-         "<input type='submit' value='updateSport' name='updateSport' />".
-         "</form>" .
-         "<form action='deleteSport.php' method='post'>" .
-         "<input type='hidden' value='$sport->id' name='id' />".
-         "<input type='submit' value='deleteSport' name='deleteSport' />".
-         "</form>" .
-         "</li>";
-}
-	 ?>
+<h1>Sport News</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="admin-menu-wrapper">
+                <ul>
+                    <li><a href="category-admin.php">Sport Categories</a></li>
+                    <li><a href="#">Sport News</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+                <label for="title">Title:</label><br>
+                <input type="text" name="title" id="title" /><br/>
+                <label for="category_id">Select the category</label><br>
+                <select name="category_id" id="category_id" >
+                <?php foreach ($category as $cat){
+                    echo "<option value='$cat->id'>" . $cat->name . "</option>";
+                }?>      
+                </select><br />
+                <label for="title">Author:</label><br>
+                <input type="text" name="author" id="author" /><br/>
+                <label for="content">Description: </label><br>
+                <textarea type="text" name="content" id="content" cols="30" rows="10"></textarea><br>
+                <label for="upfile">Select Image</label><br>
+                <input type="file" name="upfile" id="upfile" ><br>
+                <input type="submit" name="addSport" value="Add New Sport News" class="form-button">
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="list-wrapper">
+                <?php 
+                foreach($sport_news as $sport){
+                echo "<li>" .  $sport->title  .
+                    "<form action='updateSport.php' method='post'>" .
+                    "<input type='hidden' value='$sport->id' name='id' />".
+                    "<input type='submit' value='updateSport' name='updateSport' />".
+                    "</form>" .
+                    "<form action='deleteSport.php' method='post'>" .
+                    "<input type='hidden' value='$sport->id' name='id' />".
+                    "<input type='submit' value='deleteSport' name='deleteSport' />".
+                    "</form>" .
+                    "</li>";
+                }
+            ?>
+            </div>
+        </div>
+    </div>
+</div> 	
+</body>
+</html>
