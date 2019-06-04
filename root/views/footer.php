@@ -109,6 +109,9 @@
       </div>
       <!-- Footer Links -->
 
+      
+      <!-- Scripts -->
+       <script src="../js/main.js"></script>
     </footer>
 </body>
 

@@ -59,14 +59,14 @@ if(isset($_POST['addnews'])){
         <label for="crypto_image">Image:</label><br/>
         <input type="file" name="crypto_image" id="crypto_image"><br/>
 
-        <input type="Reset" name="Reset" value="Reset" class="btn btn-default" />
-        <input type="submit" name="addnews" value="Submit" class="btn btn-default" /><br/><br/>
-        <input type="button" value="Go Back to Crypto News" class="btn btn-default" onClick="document.location.href='../Crypto/crypto.php'" />    </form><hr>
+        <input type="Reset" name="Reset" value="Reset" class="btn-crypto" />
+        <input type="submit" name="addnews" value="Submit" class="btn-crypto" /><br/><br/>
+        <input type="button" value="Go Back to Crypto News" class="btn-crypto" onClick="document.location.href='../Crypto/crypto.php'" />    </form><hr>
 <!-- ==================================== Author NEWS ==================================== -->
 <!-- ===================================================================================== -->
 <?php $c = new Crypto(); $mynews = $c->getAllCrypto(Database::getDb()); ?>
+    <h3 align="center">Crypto News List</h3><br>
     <div class="row">
-        <h3 align="center">Crypto News List</h3><br>
         <?php foreach($mynews as $news){ ?>
         <div class='col-md-4 col-sm-6 col-12' align="center">
             <img class="crypto_news_image" src="images/<?php echo $news->file; ?>" height="250px">
@@ -74,18 +74,17 @@ if(isset($_POST['addnews'])){
             <div class="row">
                 <form action='updateCrypto.php' method='POST' class="col-md-6">
                     <input type='hidden' value='<?= $news->id; ?>' name='id' />
-                    <input type='submit' value='Update' name='update' class="btn btn-primary" />
+                    <input type='submit' value='Update' name='update' class="btn-crypto" />
                 </form>
                 <form action='deleteCrypto.php' method='POST' class="col-md-6">
                     <input type='hidden' value='<?= $news->id; ?>' name='id' />
-                    <input type='submit' value='Delete' name='delete' class="btn btn-danger" onclick="return confirm('Are you sure to delete?')" />
+                    <input type='submit' value='Delete' name='delete' class="btn-crypto" onclick="return confirm('Are you sure to delete?')" />
                 </form>
             </div>
         </div>
         <?php }; ?>
     </div>
 </div><!-- end container -->
-
 
 <!-- ============ Footer ============ -->
 <?php include "../../views/footer.php"; ?>

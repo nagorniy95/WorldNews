@@ -13,11 +13,9 @@ $handle = curl_init();
 	curl_close($handle);
 //parse your data to satisfy your needs....
 //showing result
-
+	$data_event = json_decode($data_event);
+	//echo getType($data_event);
 
 	
-//echo ($data_event);
-
-
 ?>
 

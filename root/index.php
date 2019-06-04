@@ -1,8 +1,8 @@
 <?php
-// header("Location: views/index.php");
-// die();
+header("Location: views/index.php");
+die();
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <style>
 body, html {
@@ -51,17 +51,17 @@ hr {
 
 <div class="bgimg">
   <div class="topleft">
-    <p>WordNews</p>
+    <p>WorldNews</p>
   </div>
   <div class="middle">
     <h1>COMING SOON</h1>
     <hr>
-    <p>14 days left</p>
+    <p>10 days left</p>
   </div>
   <div class="bottomleft">
-    <p>&copy; WordNews 2019</p>
+    <p>&copy; WorldNews 2019</p>
   </div>
 </div>
 
 </body>
-</html>
+</html> -->

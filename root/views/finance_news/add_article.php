@@ -2,15 +2,18 @@
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
 
+session_start();
+
 $titleErr = "";
 $categoryErr ="";
 $authorErr ="";
 $contentErr ="";
 $dateErr ="";
+$image_titleErr ="";
 $imageErr ="";
 $isValid = true;
 
-$title = $category = $author = $content = $date = $image = "";
+$title = $category = $author = $content = $date = $image_title = $image = "";
 
 if (isset ($_POST['addArticle'])){
 
@@ -19,13 +22,16 @@ if (isset ($_POST['addArticle'])){
 	$author = $_POST['author'];
 	$content = $_POST['content'];
 	$date = $_POST['date'];
-	$image = $_FILES['image'];
 	
-	$extension = explode('.', $_FILES['image']['file']);
+	$image_title = $_POST['image_title'];
+	$image_title = str_replace( ' ', '-', $image_title);
+	$image_title = preg_replace('/[^0-9a-zA-Z_]/', '', $image_title);
+	$image = $_FILES['image'];
+	$extension = explode('.', $_FILES['image']['name']);
     $extension = array_pop($extension);
-    $image = strtolower(time().'-'. $file.'.'.$extension);
+    $image = strtolower(time().'-'. $image_title.'.'.$extension);
     move_uploaded_file(
-        $_FILES['image']['file'],
+        $_FILES['image']['tmp_name'],
         __DIR__.'/images/'.$image
     );
 	
@@ -49,6 +55,10 @@ if (isset ($_POST['addArticle'])){
 	$dateErr = "Please Enter Date";
 	$isValid = false;	
 	}
+	if(empty($image_title)){	
+	$image_titleErr = "Please Enter  an Image Title";
+	$isValid = false;	
+	}
 	if(empty($image)){	
 	$imageErr = "Please Enter  an Image";
 	$isValid = false;	
@@ -56,27 +66,39 @@ if (isset ($_POST['addArticle'])){
 	
 	if ($isValid === true){
 		
-		 $db = Database::getDb();
+		$db = Database::getDb();
         $addArt = new Finance();
-        $count = $addArt->addArticle($title, $category, $author, $content, $date, $image,$db);
+        $count = $addArt->addArticle($title, $category, $author, $content, $date, $image_title,$image,$db);
 
         if($count){
             echo "<p class='FinanceSuccess'> New Article added <p>";
         }
     }  
 }
-
-    $db = Database::getDb();
-    $f = new Finance();
-    $fin_news = $f->addArticle($title, $category, $author, $content, $date, $image, $db);
     
 
 ?>
+ <!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/finance.css" >
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 <div class="container">
+	<div class="row">
+		<div class="col-xl-8 offset-xl-2 py-5">
   <h3>Add New Article</h3><br/>
   
 	<form action="" method="POST" id="addArticle" enctype="multipart/form-data">		
-      <label for="title">Article Title:</label>
+      
+	  <div>
+	  <label for="title">Article Title:</label>
       <input type="text" id="title" name="title" placeholder="Title..." class="form-control"/><br/>
         <span id="titleErr" style="color:red;">
           <?php
@@ -89,6 +111,7 @@ if (isset ($_POST['addArticle'])){
     <div id="financeCategory">
       <label for="category">Category:</label>
 	  <select id="category" name="category" placeholder="Category..." class="form-control">
+		  <option value="Default">Default</option>
 		  <option value="Banking">Banking</option>
 		  <option value="Insurance">Insurance</option>
 		  <option value="Markets">Markets</option>
@@ -129,7 +152,7 @@ if (isset ($_POST['addArticle'])){
     </div>
 	  <div id="date">
       <label for="date">Date:</label>
-      <input type="text" id="date" name="date" placeholder="mm/dd/yy" class="form-control"/><br/>
+      <input type="text" id="date" name="date" placeholder="mm/dd/yyyy" class="form-control"/><br/>
       <span id="dateErr" style="color:red;">
           <?php
               if(isset($dateErr)) {
@@ -139,9 +162,21 @@ if (isset ($_POST['addArticle'])){
         </span> 
     </div>
 	  <div id="image">
+	  <label for="image_title">Image Title:</label><br/>
+        <input type="text" name="image_title" id="image_title" placeholder="Image title..." class="form-control" />
+		<br/>
+		<span id="image_titleErr" style="color:red;">
+          <?php
+              if(isset($image_titleErr)) {
+                  echo $image_titleErr;
+                          }
+          ?>
+        </span> 
+		</div>
+		<div>
       <label for="image">Image:</label>
       <input type="file" name="image" id="image" class="btn btn-default">
-	  <input type="Reset" name="Reset" value="Reset" class="btn btn-default" />
+	  <input type="button" name="Reset" value="Reset" class="btn btn-secondary" />
 	  <br/>
       <span id="imageErr" style="color:red;">
           <?php
@@ -150,7 +185,12 @@ if (isset ($_POST['addArticle'])){
                           }
           ?>
         </span> 
-   
-      <input type="submit" name="addArticle" value="Add Article" id="submit" class="btn btn-default"> 
+   </div>
+      <input type="submit" name="addArticle" value="Add Article" id="submit_button" class="btn btn-lg btn-primary"  > 
 </form>
+   <p><a href="FinanceAdmin.php">Back to List</a></p>
 </div>
+</div>
+</div>
+</body>
+</html>
