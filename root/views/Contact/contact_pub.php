@@ -111,9 +111,8 @@ require_once '../../model/contact.php';
                     <textarea id="form_message" name="message" class="form-control"  placeholder="Message" cols="40" rows="6" ><?= $message; ?></textarea>
                     </div>
                     <input type="submit" name="submit" id="submit_button" class="btn btn-lg btn-primary"  value="Submit"> 
-                    </form>
-				    
-					</div>
+                    </form>				    
+				</div>
 		</div>		
 </div>		
 	</main>

@@ -1,7 +1,7 @@
 <?php 
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
-require_once '../../views/admin-header.php'; 
+//require_once '../../views/admin-header.php'; 
 
 $db = Database::getDb();
 $f = new Finance();
