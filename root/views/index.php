@@ -13,7 +13,7 @@ $json = file_get_contents($json_url);
 $data = json_decode($json);
 
 ?>
-<div class="container-fluid">
+<div class="container-fluid my-carousel-container">
 	<div class="owl-carousel">
 	    <div class="item">
 	    	<?php
@@ -106,6 +106,32 @@ $data = json_decode($json);
 				}
 	    	?>
 	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 7; $x < 8; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
+	    <div class="item">
+	    	<?php
+				for ($x = 8; $x < 9; $x++) {
+				    echo "<div class=''>";
+				    	echo "<div class='crypto_article'>";
+				       		echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
+				       		echo "<br>";
+				        	echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
+				    	echo "</div>";
+				    echo "</div>";
+				}
+	    	?>
+	    </div>
 	</div>
 </div> <!-- end container fluid -->
 <div class="container">
@@ -140,9 +166,18 @@ $data = json_decode($json);
 			    echo "<a href='" .  $data['articles'][$i]['url'] . "'>Read more...</a><br>";
 		    echo "</div>";
 		}
+		echo "<hr>";
+		for($i=2; $i<3; $i++){
+			echo "<div class='home_techno_block home_techno_block_main'>";
+			    // echo "<img src='" . $data['articles'][$i]['urlToImage'] . "' /><br>";
+			    echo "<h4 class='uppercase'>" . $data['articles'][$i]['title'] . "</h4><br>";
+			    echo "<p>" . $data['articles'][$i]['content'] . "</p>";
+			    echo "<a href='" .  $data['articles'][$i]['url'] . "'>Read more...</a><br>";
+		    echo "</div>";
+		}
 		echo "</div>";
 		echo "<div class='col-md-4'>";
-		for($i=3; $i<7; $i++){
+		for($i=4; $i<9; $i++){
 			echo "<div class='home_techno_block'>";
 			    echo "<img src='" . $data['articles'][$i]['urlToImage'] . "' /><br>";
 			    echo "<h6><a href='" .  $data['articles'][$i]['url'] . "'>" . $data['articles'][$i]['title']. "</a></h6><br>";
