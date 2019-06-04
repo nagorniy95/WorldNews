@@ -7,6 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     print_r($_SESSION);
     exit;
 }
+
+include 'header.php';
 ?>
 <!DOCTYPE html>
 <html>

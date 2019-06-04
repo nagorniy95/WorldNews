@@ -220,12 +220,14 @@ function display_error() {
 		echo '</div>';
 	}
 }	
+$page_title = "World News";
+include dirname( __FILE__) . "../../header.php";
 ?>
 
 <html>
 <head>
 	<title>Registration system PHP and MySQL</title>
-	<link rel="stylesheet" href="login.css">
+
 
 <!-- Bootstrap CDN -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -271,5 +273,6 @@ function display_error() {
 		Already a member? <a href="login.php">Sign in</a>
 	</p>
 </form>
+<?php include dirname( __FILE__) . "../../footer.php"; ?>
 </body>
 </html>
