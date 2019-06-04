@@ -33,16 +33,15 @@ $myart = $userArticle->getAllArticle(Database::getDb());
 
 <!-- PAGE CONTENT -->
 <main>
-<div class="container fluid">
+<div class="container">
 <div class="row">
-  <div class="col-sm-6
-  col-md-6">
+  <div class="col-sm-12 col-md-6 col-12">
   <!-----------------top  news-------------------->
 	  <h3 style="text-align:center;"> TOP NEWS</h3>	
 <?php
 
 for($i=0; $i<4; $i++){
-    echo  ' <div class="card-deck" style="width:16rem;margin-bottom:0px;float:left;margin-right:30px;width:250px; height:450px;">'
+    echo  ' <div class="card-deck" id="top_news" style="width:16rem;margin-bottom:0px;float:left;margin-right:30px;width:250px; height:450px;">'
     . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
     . '<div class="card-body" style="width:250px;" >'
         . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
@@ -54,7 +53,7 @@ for($i=0; $i<4; $i++){
 
 ?>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-12 col-md-6 col-12">
   <!--------------------economic calendar-------------->
   
   <h3 class="title_calendar" style="text-align:center;">ECONOMIC CALENDAR</h3>
@@ -191,11 +190,11 @@ for($i=0; $i<4; $i++){
 
 <!----------------------------Articles--------------->
 <div class="row">
-  <div class="col-8">
+  <div class="col-8 col-md-8 col-sm-12 ">
   <?php
   foreach($myart as $finance){
     echo 
-    "<li class= 'myArticle list-group-item'>" . 
+    "<div class= 'myArticle list-group-item'>" . 
     "<div class='IndArticle'>" . 
          "<img class='ArticlePhoto' src= 'images/$finance->image '.   alt='Finance Article Image' style=\"height:460px;\"/>" .
         "<h2 class='financetitle'>$finance->title </h2>" . "<br/>" . 
@@ -206,19 +205,19 @@ for($i=0; $i<4; $i++){
 		 "<p class='financeCategory'> Category: $finance->category </p>" .
         "<p class='date'> $finance->date </p>" . 
     "</div>" .
-    "</li>";
+    "</div>";
 }
 
   ?>
   </div>
   <!-------------------------list news--------------------------->
   
-  <div class="col-4" >
+  <div class="col-4 col-sm-12 col-md-4" >
   <h3  style="text-align:center;"> LATEST NEWS</h3>
   <?php
 
 for($i=4; $i<12; $i++){
-    echo ' <div class="media" style="margin-bottom:10px;height:170px;">'
+    echo ' <div class="media" id="latest_news" style="margin-bottom:10px;height:170px;">'
     . '<img class="media-left" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:130px;width:200px;padding-top:5px;padding-left:10px; " >'
     . '<div class="media-body"  style="display:inline-block;padding-left:5px;">'
     . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
@@ -261,9 +260,7 @@ for($i=4; $i<12; $i++){
 		echo '<td>' . $data_rating->Country . '</td>';
 			echo '<td>' . $data_rating->TE . '</td>';
 		echo '<td>' . $data_rating->TE_Outlook. '</td>';
-		echo '<td>' . $data_rating->SP_Outlook . '</td>';
-		
-		
+		echo '<td>' . $data_rating->SP_Outlook . '</td>';	
 		"</tr>";
 	
 }
