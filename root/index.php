@@ -1,8 +1,8 @@
 <?php
-// header("Location: views/index.php");
-// die();
+header("Location: views/index.php");
+die();
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <style>
 body, html {
@@ -64,4 +64,4 @@ hr {
 </div>
 
 </body>
-</html>
+</html> -->
