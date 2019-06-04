@@ -3,7 +3,7 @@ session_start();
 // Page title
 $page_title = "WorldNews";
 // ==================================== HEADER ====================================
-include "../views/header.php";
+include "header.php";
 ?>
 <!--  ==================================== MAIN CONTENT AREA ==================================== -->
 
@@ -14,4 +14,4 @@ include "../views/header.php";
 <h5>World News</h5>
 <h6>World News</h6>
 <!-- ==================================== FOOTER ==================================== -->
-<?php include "../views/footer.php"; ?>
+<?php include "footer.php"; ?>

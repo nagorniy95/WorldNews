@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title><?php echo $page_title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale =1">
-    <script src="../../libs/jquery/jquery.min.js"></script>
-    
-    <link rel="stylesheet" href="../../libs/fontawesome/css/all.css">
+    <script src="../libs/jquery/jquery.min.js"></script>
+    <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
     <header id="header">
-        <nav class="navbar navbar-expand-lg static-top" style="background-color: #FFFFFF!important; color: white">
+        <nav class="navbar navbar-light navbar-expand-lg static-top" style="background-color: #FFFFFF!important; color: white">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="../../source/logo.png" alt="" class="header-logo">
