@@ -211,7 +211,7 @@ for($i=0; $i<4; $i++){
   ?>
   </div>
   <!-------------------------list news--------------------------->
-  
+  <!-- nnn-->
   <div class="col-4 col-sm-12 col-md-4" >
   <h3  style="text-align:center;"> LATEST NEWS</h3>
   <?php
