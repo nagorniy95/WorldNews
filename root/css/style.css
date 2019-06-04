@@ -391,6 +391,14 @@ border-top: 2px solid #C33636;
 	background-color:#C33636;
 	height:3px;
 }
+.plus{
+	color:#58AA2C;
+	font-weight:bold;
+}
+.minus{
+	color:red;
+	
+}
 /*=======rating=========*/
 .rating {
 	border-top: 2px solid #C33636;
@@ -399,6 +407,7 @@ border-top: 2px solid #C33636;
 	width: 100%;
 	max-width: 100%;
 }
+
 /*========table list articles==========*/
 .table-fin {
     table-layout: fixed;

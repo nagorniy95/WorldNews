@@ -41,7 +41,7 @@ $myart = $userArticle->getAllArticle(Database::getDb());
 	  <h3 style="text-align:center;"> TOP NEWS</h3>	
 <?php
 
-for($i=0; $i<6; $i++){
+for($i=0; $i<4; $i++){
     echo  ' <div class="card-deck" style="width:16rem;margin-bottom:0px;float:left;margin-right:30px;width:250px; height:450px;">'
     . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
     . '<div class="card-body" style="width:250px;" >'
@@ -84,10 +84,31 @@ for($i=0; $i<6; $i++){
 		echo '<td>' . $data_calendar->Category . '</td>';
 		echo '<td colspan="2">' . $data_calendar->Event . '</td>';
 		//echo '<td colspan="2">' . $data_calendar->Source . '</td>';
-		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_calendar->Previous . '</td>';
-		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_calendar->Forecast . '</td>';
-		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_calendar->TEForecast . '</td>';
+		echo "<td><span id='data_column' ";
+         if(( $data_calendar->Previous ) < 0){
+        	 echo " class='minus' ";
+         }else{ 
+        	 echo " class='plus' ";
+         }
+         echo " >" . round( $data_calendar->Previous ,  ) . "&#37;</span></td>" ;
+		
+		echo "<td><span id='data_column' ";
+         if(( $data_calendar->Forecast ) < 0){
+        	 echo " class='minus' ";
+         }else{ 
+        	 echo " class='plus' ";
+         }
+		 echo " >" . round( $data_calendar->Forecast ,  ) . "&#37;</span></td>" ;
+
+		echo "<td><span id='data_column' ";
+         if(( $data_calendar->TEForecast ) < 0){
+        	 echo " class='minus' ";
+         }else{ 
+        	 echo " class='plus' ";
+         }
+		 echo " >" . round( $data_calendar->TEForecast ,  ) . "&#37;</span></td>" ;
 		echo '<td>' . $data_calendar->Ticker . '</td>';
+		
 		//echo '<td>' . $data_calendar->Symbol . '</td>';
 		
 		"</tr>";
@@ -132,8 +153,21 @@ for($i=0; $i<6; $i++){
 		//echo '<td>' . $data_index->Date. '</td>';
 		//echo '<td>' . $data_index->Market Cap. '</td>';
 		echo '<td>' . $data_index->Importance . '</td>';
-		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->DailyChange . '</td>';
-		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->DailyPercentualChange . '</td>';
+		echo "<td><span id='data_column' ";
+         if(( $data_index->DailyChange ) < 0){
+        	 echo " class='minus' ";
+         }else{ 
+        	 echo " class='plus' ";
+         }
+         echo " >" . round( $data_index->DailyChange ,  ) . "&#37;</span></td>" ;
+		
+		echo "<td><span id='data_column' ";
+         if(( $data_index->DailyPercentualChange ) < 0){
+        	 echo " class='minus' ";
+         }else{ 
+        	 echo " class='plus' ";
+         }
+         echo " >" . round( $data_index->DailyPercentualChange , 2 ) . "&#37;</span></td>" ;
 		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->yesterday . '</td>';
 		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->lastWeek . '</td>';
 		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_index->lastMonth . '</td>';
@@ -183,7 +217,7 @@ for($i=0; $i<6; $i++){
   <h3  style="text-align:center;"> LATEST NEWS</h3>
   <?php
 
-for($i=6; $i<14; $i++){
+for($i=4; $i<12; $i++){
     echo ' <div class="media" style="margin-bottom:10px;height:170px;">'
     . '<img class="media-left" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:130px;width:200px;padding-top:5px;padding-left:10px; " >'
     . '<div class="media-body"  style="display:inline-block;padding-left:5px;">'
