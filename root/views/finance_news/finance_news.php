@@ -102,7 +102,7 @@ for($i=0; $i<6; $i++){
 </div>
 <div>
 	<h3  style="text-align:center;">TODAY ON THE MARKET</h3>
-	<table class="table table-sm  table-striped  table-hover "style="font-size:10px;">
+	<table id="table-fin" class="table table-sm  table-striped  table-hover "style="font-size:10px;">
 	<thead class="thead">
   <tr >
 	<th>Symbol</th>
@@ -152,7 +152,7 @@ for($i=0; $i<6; $i++){
 </div>
 
 
-<h1>FINANCE</h1>
+<h1 class="heading">FINANCE</h1>
 <hr class="line">
 
 <!----------------------------Articles--------------->
@@ -209,7 +209,7 @@ for($i=6; $i<14; $i++){
   
   <div id="scroll_fin_articles" >
  
-<table id="table_rating" class="table table-sm  table-striped  table-hover" style="font-size:10px;">
+<table id="table_fin" class="table table-sm  table-striped  table-hover" style="font-size:10px;">
   <thead class="thead">
   <tr >
 	<th>Country</th>
