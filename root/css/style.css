@@ -367,13 +367,11 @@ a.socialIcon:hover, .socialHoverClass {
 /*---------------------------------------------*/
 /*=================================Finance=================================*/
 
-.heading{
-	color:#C33636;
-}
+
 #scroll_fin_articles{
 
-height: 500px; 
-width: 350px; 
+height: 700px; 
+width: 400px; 
 background: #fff; 
 border: 1px solid #C1C1C1; 
 overflow-y: scroll; 
@@ -412,8 +410,7 @@ border-top: 2px solid #C33636;
 
 /*====calendar=====*/
 .thead  {
-	background-color:#C33636;
-	color:white;
+	border-top:2px solid #C33636;
 }
 .line{
 	background-color:#C33636;
@@ -430,11 +427,13 @@ border-top: 2px solid #C33636;
 /*=======rating=========*/
 .rating {
 	border-top: 2px solid #C33636;
+	width:500px;
 }
 .tab-overwrite{
 	width: 100%;
 	max-width: 100%;
 }
+
 
 /*========table list articles==========*/
 .table-fin {

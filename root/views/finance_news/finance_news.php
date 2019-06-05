@@ -6,6 +6,8 @@ require_once 'event.php';
 require_once 'market.php';
 require_once 'rating.php';
 require_once 'articles.php';
+require_once 'historical.php';
+require_once 'articles_api.php';
 
 //session_start();
 
@@ -25,22 +27,20 @@ $dbcon = Database::getDb();
 $userArticle = new Finance();
 $myart = $userArticle->getAllArticle(Database::getDb());
 
-//article api
-
 
 ?>
 
 
 <!-- PAGE CONTENT -->
 <main>
-<div class="container">
+<div class="container-fluid">
 <div class="row">
   <div class="col-sm-12 col-md-6 col-12">
   <!-----------------top  news-------------------->
 	  <h3 style="text-align:center;"> TOP NEWS</h3>	
 <?php
 
-for($i=0; $i<4; $i++){
+for($i=0; $i<6; $i++){
     echo  ' <div class="card-deck" id="top_news" style="width:16rem;margin-bottom:0px;float:left;margin-right:30px;width:250px; height:450px;">'
     . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
     . '<div class="card-body" style="width:250px;" >'
@@ -56,9 +56,9 @@ for($i=0; $i<4; $i++){
   <div class="col-sm-12 col-md-6 col-12">
   <!--------------------economic calendar-------------->
   
-  <h3 class="title_calendar" style="text-align:center;">ECONOMIC CALENDAR</h3>
- <div class="table_calendar">
- <table  class="table table-sm  table-striped  table-hover tab-content container-fluid tab-overwrite" style="font-size:10px;">
+  <h3 class="title_fin" style="text-align:center;">ECONOMIC CALENDAR</h3>
+ <div class="table_fin">
+ <table  class="table table-sm  table-striped  table-hover tab-content container-fluid tab-overwrite" style="font-size:11px;"> 
   <thead class="thead">
     <tr>
 	<th scope="col">Date</th>
@@ -121,8 +121,8 @@ for($i=0; $i<4; $i++){
  </table>
 </div>
 <div>
-	<h3  style="text-align:center;">TODAY ON THE MARKET</h3>
-	<table id="table-fin" class="table table-sm  table-striped  table-hover "style="font-size:10px;">
+	<h3  style="text-align:center;margin-top:20px;">TODAY ON THE MARKET</h3>
+	<table id="table-fin" class="table table-sm  table-striped  table-hover "style="font-size:11px;">
 	<thead class="thead">
   <tr >
 	<th>Symbol</th>
@@ -181,6 +181,43 @@ for($i=0; $i<4; $i++){
   ?>
  </table>
   </div>
+ <!--historical-->
+<div class="row">
+	<div class="col-sm-12 col-3">
+	<h3  style="text-align:center;margin-top:40px;">Historical</h3>
+	<table id="table-fin" class="table table-sm  table-striped  table-hover "style="font-size:11px;">
+	<thead class="thead">
+  <tr >
+	<th>Symbol</th>
+	<th>Date</th>
+	<th>Open</th>
+	<th>High</th>
+	<th>Low</th>
+	<th>Close</th>
+  </tr>
+  </thead>
+	<?php
+  foreach($data_history as $data_history)
+{
+	
+	echo "<tr>";
+		echo '<td>' . $data_history->Symbol . '</td>';
+		echo '<td>' . $data_history->Date . '</td>';
+		echo '<td>' . $data_history->Open. '</td>';
+		echo '<td style="color:#58AA2C;font-weight:bold;">' . $data_history->High . '</td>';
+		echo '<td style="color:red;font-weight:bold;">' . $data_history->Low. '</td>';
+		echo '<td>' . $data_history->Close . '</td>';	
+		"</tr>";
+	
+}
+//var_dump($data_index);
+ 
+   
+  ?>
+ </table>
+  </div>  
+ </div> 
+   
 </div>
 </div>
 
@@ -190,7 +227,35 @@ for($i=0; $i<4; $i++){
 
 <!----------------------------Articles--------------->
 <div class="row">
-  <div class="col-8 col-md-8 col-sm-12 ">
+
+  <div class="col-3 col-sm-12 col-md-3" >
+  <h3 style="text-align:center;">LATEST ARTICLES</h3>
+<?php
+ foreach($data_article as $data_article)
+ //for ($x = 0; $x < 4; $x++){
+	 {
+	echo
+	    "<div class=\"card\" style=\"width: 26rem;border:none;\">".
+			"<div class=\"card-body\">".			
+			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href=\"'$data_article->url '\" class=\"card-link\" >  $data_article->title </a></p>".
+			"<p><a style=\"color:black;\" href=\"'$data_article->url'\" class=\"card-link\" >  $data_article->description </a></p>".
+			//"<p> $data_article->description </p>".
+			"<p> $data_article->date</p>".
+			"<p style=\"color: #C33636;\"> $data_article->country</p>".
+			"<p> $data_article->category </p>".	
+			"<p> $data_article->symbol</p>".
+			//"<p> $data_article->URL </p>".
+			  
+			"</div>".
+			"</div>";
+	
+}
+  
+  ?>
+
+  
+  </div>
+  <div class="col-6 col-md-6 col-sm-12 ">
   <?php
   foreach($myart as $finance){
     echo 
@@ -212,16 +277,16 @@ for($i=0; $i<4; $i++){
   </div>
   <!-------------------------list news--------------------------->
   <!-- nnn-->
-  <div class="col-4 col-sm-12 col-md-4" >
+  <div class="col-3 col-sm-12 col-md-3" >
   <h3  style="text-align:center;"> LATEST NEWS</h3>
   <?php
 
-for($i=4; $i<12; $i++){
+for($i=6; $i<12; $i++){
     echo ' <div class="media" id="latest_news" style="margin-bottom:10px;height:170px;">'
     . '<img class="media-left" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:130px;width:200px;padding-top:5px;padding-left:10px; " >'
     . '<div class="media-body"  style="display:inline-block;padding-left:5px;">'
     . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
-   // . '<p class="card-text">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
+    //. '<p class="card-text">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
     //. '<h6 class="card-title">' . $data['articles'][$i]['title'] . '</h6>'
      .'<p><a style="color:black;font-weight:bold;font-size:12px;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
    // . '<p class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
@@ -240,15 +305,17 @@ for($i=4; $i<12; $i++){
   </div>
  
   
-  <div id="scroll_fin_articles" >
- 
-<table id="table_fin" class="table table-sm  table-striped  table-hover" style="font-size:10px;">
-  <thead class="thead">
+  <div id="scroll_fin_articles" > 
+	<table id="table_rating" class="table table-sm  table-striped  table-hover" style="font-size:11px;">
+  <thead>
   <tr >
 	<th>Country</th>
 	<th>TE</th>
 	<th>TE_Outlook</th>
+	<th>SP</th>
 	<th>SP_Outlook</th>
+	<th>Moodys</th>
+	<th>Moodys_Outlook</th>
 	
   </tr>
   </thead>
@@ -260,7 +327,10 @@ for($i=4; $i<12; $i++){
 		echo '<td>' . $data_rating->Country . '</td>';
 			echo '<td>' . $data_rating->TE . '</td>';
 		echo '<td>' . $data_rating->TE_Outlook. '</td>';
+	   echo '<td>' . $data_rating->SP. '</td>';
 		echo '<td>' . $data_rating->SP_Outlook . '</td>';	
+		echo '<td>' . $data_rating->Moodys . '</td>';
+		echo '<td>' . $data_rating->Moodys_Outlook . '</td>';
 		"</tr>";
 	
 }

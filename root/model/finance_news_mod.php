@@ -59,8 +59,6 @@ class Finance
          $pdost->bindParam(':date', $date);
 		 $pdost->bindParam(':image_title', $image_title);
 		 $pdost->bindParam(':image', $image);
-		
-		
 
          $count = $pdost->execute();
          return $count;

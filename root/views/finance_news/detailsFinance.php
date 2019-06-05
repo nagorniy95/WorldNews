@@ -40,8 +40,7 @@ session_start();
 		       echo  "Content: " . $finance->content . "<br /><br/>";   
                echo  "Date: " . $finance->date . "<br /><br/>";  
 			   echo  "Image Title: " . $finance->image_title . "<br /><br/>";  
-              echo "<img class='ArticlePhoto' src= 'images/$finance->image '.   alt='Finance Article Image' style=\"height:200px;\"/>" ;
-			 // echo  "Image: " . $finance->image . "<br /><br/>";     			   
+               echo "<img class='ArticlePhoto' src= 'images/$finance->image '.   alt='Finance Article Image' style=\"height:200px;\"/>" ;			   
                 ?> 
 				
 		<br/>

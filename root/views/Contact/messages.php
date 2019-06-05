@@ -15,6 +15,8 @@ $contacts = $c->getAllContacts($dbcon);
 <head>
 <!-- Required meta tags -->
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/finance.css" >
@@ -53,13 +55,17 @@ $contacts = $c->getAllContacts($dbcon);
 							"<td>" . $contact->message . "</td>" .
 							
 							
-							"<td><a href=\"details.php?id=$contact->id\" class=\"details\" title=\"Details\" data-toggle=\"tooltip\"><i class=\"fas fa-info\"></i></a></td>" .
-							"<td><a href=\"https://mail.google.com/mail/\" class=\"message\" title=\"Message\"data-toggle=\"tooltip\"><i class=\"fas fa-envelope icon\"></i></a></td>" .
-							
-							
-							"<td><form action='delete.php' method='post'>" .
+							 "<td>" .
+						    "<form action='details.php' method='post'>" . 
+							"<input type='hidden' value='$contact->id' name='id' />" . 
+							"<input type='submit' value='Details' name='details' />" .
+							"</form>" .
+							"</td>" .
+		                    "<td><a href=\"https://mail.google.com/mail/\" class=\"message\" title=\"Message\"data-toggle=\"tooltip\"><i class=\"fas fa-envelope icon\" style=\"font-size:30px;\"></i></a></td>" .
+							"<td>".
+							"<form action='delete.php' method='post'>" .
 							"<input type='hidden' value='$contact->id' name='id' />".
-							"<input type='submit' value='Delete' name='delete' />".
+							"<input type='submit' value='Delete' name='delete' class=\"btn btn-danger\" onclick=\"return confirm('Are you sure to delete?')\" />".
 							"</form></td>
 							</tr>";
 						  }
