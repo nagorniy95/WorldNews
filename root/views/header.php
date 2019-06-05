@@ -16,21 +16,27 @@
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- OWL carusel for index page -->
+    <!-- OWL carousel for index page -->
     <link rel="stylesheet" href="../../libs/owlcarousel/owl.carousel.min.css">
     <script src="../../libs/owlcarousel/owl.carousel.min.js"></script>
     <!-- Fullpage for sport news page -->
     <script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
     <!-- MAIN styles -->
-    <link rel="stylesheet" href="../../css/style.css" >
+    <link rel="stylesheet" href="../css/style.css" >
+
 </head>
 
 <body>
+    <header id="header-top">
+        <a href="#"><i class="fa fa-user"></i> Login/</a>
+        <a href="#"><i class="fa fa-user-plus"></i> Sign up</a>
+    </header>
+    <hr />
     <header id="header">
-        <nav class="navbar navbar-expand-lg static-top" style="background-color: #FFFFFF!important; color: white">
+        <nav class="navbar navbar-light navbar-expand-lg static-top" style="background-color: #FFFFFF!important; color: white">
             <div class="container">
                 <a class="navbar-brand" href="../../views/index.php">
-                    <img src="../../img/logo.png" alt="WorldNews" class="header-logo">
+                    <img src="../img/logo.png" alt="WorldNews" class="header-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

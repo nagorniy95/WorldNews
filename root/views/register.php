@@ -1,5 +1,5 @@
 
-<?php require_once '../../model/Database.php'; 
+<?php require_once '../model/Database.php'; 
 
 $dbcon = Database::getDb();
 
@@ -194,7 +194,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       ?>
         <!-- if all requirements are met for registeration, redirect to welcome page -->
         <script type="text/javascript">
-        window.location.href = "welcome1.php";
+        window.location.href = "welcome.php";
         </script>
       <?php  
       }
@@ -220,19 +220,17 @@ function display_error() {
 		echo '</div>';
 	}
 }	
-$page_title = "World News";
-include dirname( __FILE__) . "../../header.php";
 ?>
 
 <html>
 <head>
 	<title>Registration system PHP and MySQL</title>
 
-
 <!-- Bootstrap CDN -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+<?php include "header.php"; ?>
 <div class="header">
 	<h2>Register</h2>
 </div>
@@ -273,6 +271,6 @@ include dirname( __FILE__) . "../../header.php";
 		Already a member? <a href="login.php">Sign in</a>
 	</p>
 </form>
-<?php include dirname( __FILE__) . "../../footer.php"; ?>
+<?php include "footer.php"; ?> 
 </body>
 </html>
