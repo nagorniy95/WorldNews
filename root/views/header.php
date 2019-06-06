@@ -5,10 +5,10 @@
     <title><?php echo $page_title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale =1">
     <!-- jQuery -->
-    <script src="../libs/jquery/jquery.min.js"></script>
-    <script src="../libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../libs/jquery/jquery.min.js"></script>
+    <script src="../../libs/jquery/jquery-3.3.1.min.js"></script>
     <!-- Fontawesome for icons -->
-    <link rel="stylesheet" href="../libs/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../../libs/fontawesome/css/all.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap Toggle Bar Hamburger -->
@@ -20,12 +20,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- OWL carousel for index page -->
-    <link rel="stylesheet" href="../libs/owlcarousel/owl.carousel.min.css">
-    <script src="../libs/owlcarousel/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="../../libs/owlcarousel/owl.carousel.min.css">
+    <script src="../../libs/owlcarousel/owl.carousel.min.js"></script>
     <!-- Fullpage for sport news page -->
-    <script src="../libs/fullpage/jquery.fullpage.min.js"></script>
+    <script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
     <!-- MAIN styles -->
-    <link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../../css/style.css" >
 
 </head>
 
@@ -44,7 +44,7 @@
         <nav class="navbar navbar-light navbar-expand-lg static-top">
             <div class="container">
                 <a class="navbar-brand" href="../views/index.php">
-                    <img src="../img/logo.png" alt="WorldNews" class="header-logo">
+                    <img src="../../img/logo.png" alt="WorldNews" class="header-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
