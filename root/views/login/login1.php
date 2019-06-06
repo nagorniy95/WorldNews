@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
   if(empty($username_err) && empty($password_err)){
-    $sql = "SELECT id, first_name, last_name, username, user_type, image, email, password FROM users WHERE username = :username";
+    $sql = "SELECT id, first_name, last_name, username, user_type, email, password FROM users WHERE username = :username";
 
     if($stmt = $dbcon->prepare($sql)){
       $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
@@ -52,7 +52,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $first_name = $row["first_name"];
             $last_name = $row["last_name"];
             $email = $row["email"];
-            $image = $row["image"];
             $hashed_password = $row["password"];
 
             if(password_verify($password, $hashed_password)){
@@ -66,12 +65,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               $_SESSION["last_name"] = $last_name;
               $_SESSION["username"] = $username;
               $_SESSION["user_type"] = $user_type;
-              $_SESSION["image"] = $image;
               $_SESSION["email"] = $email;
 
               ?>  
               <script type="text/javascript">
-              window.location.href = 'welcome.php';
+              window.location.href = 'welcome1.php';
               </script>
               <?php
             }
@@ -106,16 +104,13 @@ function display_error() {
 		echo '</div>';
   }
 }
-// ================================== HEADER ===========================
-$page_title = "WorldNews";
-include "header.php";
 ?>
-<!-- ================================ MAIN CONTENT AREA ============================= -->
+<?php include dirname( __FILE__) . "../../header.php"; ?>
 <body>
 	<div class="header">
 		<h2>Login</h2>
 	</div>
-	<form method="post" class="login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
 		<?php echo display_error(); ?>
 
@@ -134,7 +129,7 @@ include "header.php";
 			Not yet a member? <a href="register.php">Sign up</a>
 		</p>
 	</form>
-<!-- ================================ FOOTER =======================================-->
-<?php include "footer.php"; ?>  
+
+  <?php include "../../views/footer.php"; ?>  
 </body>
 </html>

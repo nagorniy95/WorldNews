@@ -7,25 +7,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     print_r($_SESSION);
     exit;
 }
-
+$page_title = "WorldNews";
 include 'header.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-  <link rel="stylesheet" type="text/css" href="login.css">
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/login.js"></script>
 </head>
 <body>
 <!-- main -->
-  <main>  
+  <main id="welcome">  
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -97,23 +90,24 @@ include 'header.php';
         if($_SESSION["user_type"] == "user"){
             ?>
                 <a href="../index.php" class="btn btn-primary">Home Page </a>
-                <a href="logout.php" class="btn btn-danger" style="background-color:red;">Sign Out of Your Account</a>        
+                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>        
             <?php
         }
         else if($_SESSION["user_type"] == "admin"){
             ?>
                 <a href="admin.php" class="btn btn-primary">Admin Panel </a>
-                <a href="logout.php" class="btn btn-danger" style="background-color:red;">Sign Out of Your Account</a>        
+                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>        
             <?php
         }
         else{
             ?>
                 <a href="index.php" class="btn btn-primary">Home Page </a>
-                <a href="logout.php" class="btn btn-danger" style="background-color:red;">Sign Out of Your Account</a>        
+                <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>        
             <?php           
         }
     ?>
     </p>
   </main>
+  <?php include 'footer.php'; ?>
 </body>
 </html>
