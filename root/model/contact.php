@@ -11,7 +11,7 @@ class Contact
 	}
 	
     public function getAllContacts($dbcon){
-        $sql = "SELECT * FROM CONTACTS";
+        $sql = "SELECT * FROM contacts";
         $pdostm = $dbcon->prepare($sql);
         $pdostm->execute();
         $contacts = $pdostm->fetchAll(PDO::FETCH_OBJ);
@@ -36,16 +36,5 @@ class Contact
         $count = $pst->execute();
         return $count;
     }
-    public function detailContact($id, $name,  $email, $subject, $message, $db){
-        $sql = "SELECT * FROM CONTACTS
-                WHERE id = :id";
-        $pst = $db->prepare($sql);
-        $pst->bindParam(':id', $id);
-        $pst->bindParam(':name', $name);
-		$pst->bindParam(':email', $email);
-        $pst->bindParam(':subject', $subject);
-        $pst->bindParam(':message', $message);
-        $count = $pst->execute();
-        return $count;
-    }
+   
 }

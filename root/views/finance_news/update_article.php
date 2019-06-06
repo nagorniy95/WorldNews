@@ -97,7 +97,7 @@ if(isset($_POST['update'])){
             </div>
             <div id="content">
                 <label for="content">Article:</label>
-				 <textarea type="text" id="content" name="content" value="<?=$count->content; ?>"  required rows="12" cols="80" class="form-control"></textarea><br/>
+				 <textarea type="text" id="content" name="content" cols="30" rows="10" value="<?=$count->content; ?>"  required rows="12" cols="80" class="form-control"></textarea><br/>
             </div>
             <div id="edit_date">
                 <label for="date">Date:</label>
@@ -105,7 +105,7 @@ if(isset($_POST['update'])){
             </div>
 			<div id="edit_image_title">
                 <label for="image_title">Image Title:</label>
-                <input type="text" id="image_title" name="image" cols="30" rows="10" value="<?=$count->image_title; ?>" class="form-control"/><br/>		 
+                <input type="text" id="image_title" name="image"  value="<?=$count->image_title; ?>" class="form-control"/><br/>		 
             </div>
 			 <div id="edit_image">
                 <label for="image">Image:</label>

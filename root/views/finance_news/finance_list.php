@@ -16,14 +16,14 @@ $finance_news = $f->getAllArticle($db);
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/finance.css" >
+	<link rel="stylesheet" href="../../css/style.css" >
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
  <div class="content">
     <div class="container">
        <div class="table-wrapper">
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover "style="font-size:11px;">
                 <thead>
                     <tr>
                         <th style="width: 4.5%">Id</th>
