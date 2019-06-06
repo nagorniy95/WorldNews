@@ -16,7 +16,6 @@ if(isset($_POST['update'])){
 	  $db = Database::getDb();
       $fns = new Finance();
       $count = $fns->getArticleById($id, $db);
-      echo $count->id;
 }
  if(isset($_POST['updateArt'])){
 	  
@@ -97,7 +96,7 @@ if(isset($_POST['update'])){
             </div>
             <div id="content">
                 <label for="content">Article:</label>
-				 <textarea type="text" id="content" name="content" cols="30" rows="10" value="<?=$count->content; ?>"  required rows="12" cols="80" class="form-control"></textarea><br/>
+				 <textarea type="text" id="content" name="content" cols="30" rows="10" required rows="12" cols="80" class="form-control"><?=$count->content; ?></textarea><br/>
             </div>
             <div id="edit_date">
                 <label for="date">Date:</label>
