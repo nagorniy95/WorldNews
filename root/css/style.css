@@ -22,6 +22,15 @@ body{
 .green{
 	color: green;
 }
+.bold{
+	font-weight: bold;
+}
+.bold:hover{
+	color: #CCA7A7;
+}
+a .red{
+	text-decoration: none;
+}
 /* =============================== Header =========================  */
 #header-top{
 	background-color: #C33636;
@@ -35,15 +44,86 @@ body{
 .navbar{
 	padding-top: 0px;
 	padding-bottom: 0px;
+	background-color: #FFFFFF!important;
+	color:white;
 }
 .header-logo{
 	width: auto;
 	height: 100px;
 }
-#header .nav-link{
-	text-transform: uppercase;
+li.active{
+	border-bottom: 1px solid black;
 }
-
+/* ========================== LOGIN & REGISTRATION ==================== */
+.login{
+	text-align: center;
+	background-color: white;
+	margin: 30px;
+}
+.login .header{
+	margin: 20px auto 0px;
+	text-align: center;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+  line-height: 2;	
+}
+.login form, .content {
+	width: 40%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #C33636;
+	border-radius: 10px 10px 10px 10px;
+}
+.login .input-group {
+	margin: 10px 0px 10px 0px;
+}
+.login [type=text], .login [type=password], .login [type=email]{
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  height: 45px;
+  line-height: 45px;  
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: black;	
+}
+.login [type=file]{
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+  height: 45px;
+  line-height: 45px;  
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: black;		
+}
+.login [type='text']:focus, .login [type='password']:focus, .login [type='email']:focus {
+  outline: none;
+  border-color: #C33636;
+}
+.login [type=submit]{
+  margin-top: 25px;
+  width: 80%;
+  border: 0;
+  background-color: #C33636;
+  border-radius: 5px;
+  height: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;	
+}
+/*=========================== WELCOME ============================================ */
+#welcome .card{
+	border: 1px solid #C33636;
+}
+#welcome .btn-danger{
+	background-color: #C33636;
+}
+#welcome .btn-danger:hover{
+	background-color: red;
+}
 /* ========================== Footer Social Media Icons ========================== */
 .find-us{
  border-bottom: 1px solid #C33636;
@@ -73,6 +153,17 @@ ul.social-network li a{
 	color:#CCA7A7;
 }
 
+.news-footer a{
+	text-decoration: underline;
+}
+.news-footer a:hover {
+	color: #CCA7A7;
+}
+@media screen and (max-width: 768px){
+	.third-nav, .fourth-nav{
+		display: none;
+	}
+}
 /* ========================== Home page (index.php) ==========================*/
 .my-carousel-container{
 	padding: 0;

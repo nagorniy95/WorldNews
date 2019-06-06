@@ -16,16 +16,16 @@
             </ul>   
           </div>
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 news-footer">
             <h5>
-              NEWS DAII
+              DAILY NEWS
             </h5>
             <p>
               <a href="#">Get news from News World in your inbox each weekday morning</a>
             </p>   
           </div>
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 news-footer">
               <h5>
                 NEWS APP
               </h5>
@@ -56,15 +56,15 @@
         <div class="row text-center"> 
 
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 first-nav">
             <p>
-              <a href="#">Home</a>
+              <a href="../views/index.php">Home</a>
             </p>
             <p>
               <a href="#">News</a>
             </p>
             <p>
-              <a href="#">Sport</a>
+              <a href="../views/Sport">Sport</a>
 						</p>     
           </div>
 
@@ -77,17 +77,17 @@
               <a href="#">Technology</a>
             </p>
             <p>
-              <a href="#">Finance</a>
+              <a href="../views/finance_news/finance_news.php second-nav">Finance</a>
             </p>
             <p>
-              <a href="#">Crypto</a>
+              <a href="../views/Crypto/crypto.php">Crypto</a>
 						</p>                       
           </div>
 
           <hr class="w-100 clearfix d-md-none">
 
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 third-nav">
             <p>
               <a href="#">Terms of use</a>
             </p>
@@ -103,7 +103,7 @@
           <hr class="w-100 clearfix d-md-none">
 
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 fourth-nav">
             <p>
               <a href="#">Cookies</a>
             </p>
