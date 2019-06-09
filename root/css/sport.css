@@ -45,3 +45,7 @@
 .sport-date{
 	float: right;
 }
+.sportnews-title{
+	border-bottom: 1px solid #C33636;
+	font-size: 20px;
+}

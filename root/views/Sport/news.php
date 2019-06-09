@@ -27,6 +27,7 @@ include dirname( __FILE__) . "../../header.php";
 	}
 </style>
  <div class="container">
+ 	<h1 class="sportnews-title"> News</h1>
  	<div class="row">
  		<?php 
  		foreach ($sport as $sport) {
