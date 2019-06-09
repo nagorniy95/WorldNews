@@ -6,6 +6,7 @@ $dbcon = Database::getDb();
 $c = new Category();
 
 $sport_category = $c->getAllCategories($dbcon);
+$page_title = 'Sport';
 include dirname( __FILE__) . "../../header.php";
  ?>
 	<style>
@@ -30,14 +31,22 @@ include dirname( __FILE__) . "../../header.php";
 		}
 		?>
 	</style>
+	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				scrollingSpeed: 1000
+				scrollingSpeed: 1000,
+				anchors:['firstSlide', 'secondSlide', '3rdSlide'],
+				menu: '#menu'
 			});
 
 		});
 	</script>
+<ul id="menu">
+	<li data-menuanchor="firstSlide"><a href="#firstSlide">Football</a></li>
+	<li data-menuanchor="secondSlide"><a href="#secondSlide">Basketball</a></li>
+	<li data-menuanchor="3rdSlide"><a href="#3rdSlide">Hockey</a></li>
+</ul>
 	<div id="fullpage">	
 	<?php 
 		foreach ($sport_category as $sport) {
