@@ -434,34 +434,6 @@ overflow-y: scroll;
 margin-bottom:10px;
 border-top: 2px solid #C33636;
 }
-/*==========article=========*/
-.ArticlePhoto{
-	width:100%;
-}
-#top-news, #latest_news img{
-		width:100%;
-	}
-
-@media only screen and (max-width: 768px) {
-	.ArticlePhoto img{
-		width: 90%;
-		margin: 0 auto;
-	}
-	#top-news{
-		width:90%;
-	}
-}
-
-@media only screen and (max-width: 576px) {
-	.ArticlePhoto img{
-		width: 90%;
-		margin: 0 auto;
-	}
-	#top-news, #latest_news{
-		width:90%;
-		margin:auto;
-	}
-}
 
 
 /*====calendar=====*/
@@ -497,6 +469,7 @@ border-top: 2px solid #C33636;
     word-wrap: break-word;
 	font-size:10px;
 }
+
 /*==============add rticles=============*/
 
 #submit_button{
@@ -516,18 +489,58 @@ border-top: 2px solid #C33636;
 	width: 40%;
 	margin: 0px auto;
 	padding: 20px;
-	border: 1px solid #B0C4DE;
-	background: #C33636;
+	border: 2px solid #C33636;
 	border-radius: 10px 10px 10px 10px;
 	margin-bottom:20px;
 }
 
 #contact-form label{
-	color:white;
+	color:#C33636;
 	font-size:18px;
+	margin-top:20px;
 }
 .contact-heading{
 	text-align:center;
-	color:white;
+	color:#C33636;
+	max-width:100%;
+}
+#contact-form input{
+	
+	border-bottom: 2px solid #C33636;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+}
+#contact-form textarea{
+	
+	border-bottom: 2px solid #C33636;
 }
 /*===========================================================*/
+/*==========article=========*/
+.ArticlePhoto{
+	width:100%;
+}
+#top-news, #latest_news img{
+		width:100%;
+	}
+
+@media only screen and (max-width: 768px) {
+	.ArticlePhoto img{
+		width: 90%;
+		margin: 0 auto;
+	}
+	#top-news{
+		width:90%;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.ArticlePhoto img{
+		width: 90%;
+		margin: 0 auto;
+	}
+	#top-news, #latest_news{
+		width:90%;
+		margin:auto;
+	}
+}

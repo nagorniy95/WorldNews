@@ -68,7 +68,7 @@ for($i=0; $i<6; $i++){
 	<!--<th scope="col" colspan="2">Source</th>-->
 	<th scope="col">Previous</th>
 	<th scope="col">Forecast</th>
-	<th scope="col">TEForecast</th>
+	<th scope="col" >TEForecast</th>
 	<th scope="col">Ticker</th>
 	<!--<th>Symbol</th>	-->
   </tr>
@@ -225,9 +225,8 @@ for($i=0; $i<6; $i++){
 <hr class="line">
 
 <!----------------------------Articles--------------->
-<div class="container-fluid">
-<div class="row">
 
+<div class="row">
   <div class="col-3 col-sm-12 col-md-3" >
   <h3 style="text-align:center;">LATEST ARTICLES</h3>
 <?php
@@ -235,7 +234,6 @@ for($i=0; $i<6; $i++){
  //echo getType($data_article);
 $x= $data_article;
 
-echo '<pre>';
 // print_r( $data_article ); 
 
 
@@ -246,7 +244,7 @@ echo '<pre>';
 	echo
 	    "<div class=\"card\" style=\"width:24rem;border:none;\">".
 			"<div class=\"card-body\">".			
-			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href=\"".$data_article[$x]['url']. "\" class=\"card-link\" > ".$data_article[$x]['title']."</a></p>".
+			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href=\'".$data_article[$x]['url']. "\' class=\"card-link\" id=\"art-link\" > ".$data_article[$x]['title']."</a></p>".
 		    "<p><a style=\"color:black;\" href=\"".$data_article[$x]['url']."\" class=\"card-link\" >" . $data_article[$x]['description']. "</a></p>".
 			"<p>". $data_article[$x]['date']."</p>".
 			"<p style=\"color: #C33636;\">".$data_article[$x]['country']."</p>".
@@ -350,7 +348,7 @@ for($i=6; $i<12; $i++){
 
 </div>
 </div>
-</div>				
+				
 </main>	
 <!-- CONTAINER -->
 <?php 

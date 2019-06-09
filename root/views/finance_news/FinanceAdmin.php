@@ -1,5 +1,5 @@
 <?php
-
+require_once '../../admin-dashboard.php'; 
 ?>
  <div class="content">
         <main>
