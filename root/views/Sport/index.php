@@ -36,24 +36,49 @@ include dirname( __FILE__) . "../../header.php";
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				scrollingSpeed: 1000,
-				anchors:['firstSlide', 'secondSlide', '3rdSlide'],
-				menu: '#menu'
+				// anchors:['firstSlide', 'secondSlide', '3rdSlide'],
+				anchors:[
+					<?php 
+					$i = 0;
+					foreach ($sport_category as $sport) {
+						$i++;
+						echo "'" . $i . "slide',";
+					}
+				 ?>
+				],
+				
+				menu: '#sport-menu'
 			});
 
 		});
 	</script>
-<ul id="menu">
+	<ul id="sport-menu">
+		<?php 
+		$i=0;
+			foreach ($sport_category as $sport) {
+				$i++;
+				echo "<li data-menuanchor='" . $i . "slide'>";
+				echo "<a href='#" . $i . "slide'>" . $sport->name . "</a>"; 
+			}
+	 	?>
+	 </ul>
+<!-- <ul id="sport-menu">
 	<li data-menuanchor="firstSlide"><a href="#firstSlide">Football</a></li>
 	<li data-menuanchor="secondSlide"><a href="#secondSlide">Basketball</a></li>
 	<li data-menuanchor="3rdSlide"><a href="#3rdSlide">Hockey</a></li>
-</ul>
+</ul> -->
 	<div id="fullpage">	
 	<?php 
 		foreach ($sport_category as $sport) {
 			echo "<div class='section' id=section" . $sport->id .">";
+			echo "<div class='category-content'>";
 			echo "<h2><a href=news.php?id=" . $sport->id . ">" . $sport->name . "</a></h2>";
 			echo "<p>" . $sport->description . "</p>";
 			echo "</div>";
+			echo $i++;
+			echo "</div>";
+
+
 		}
 	 ?>
 	 </div>

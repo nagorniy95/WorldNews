@@ -25,6 +25,7 @@
     <!-- Fullpage for sport news page -->
     <script src="../../libs/fullpage/jquery.fullpage.min.js"></script>
     <!-- MAIN styles -->
+    <link rel="stylesheet" href="../../css/sport.css">
     <link rel="stylesheet" href="../../css/style.css" >
 
 </head>
