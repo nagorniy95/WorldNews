@@ -62,11 +62,6 @@ include dirname( __FILE__) . "../../header.php";
 			}
 	 	?>
 	 </ul>
-<!-- <ul id="sport-menu">
-	<li data-menuanchor="firstSlide"><a href="#firstSlide">Football</a></li>
-	<li data-menuanchor="secondSlide"><a href="#secondSlide">Basketball</a></li>
-	<li data-menuanchor="3rdSlide"><a href="#3rdSlide">Hockey</a></li>
-</ul> -->
 	<div id="fullpage">	
 	<?php 
 		foreach ($sport_category as $sport) {

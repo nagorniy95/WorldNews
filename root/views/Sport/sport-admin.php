@@ -96,7 +96,7 @@ include dirname( __FILE__) . "../../admin-header.php";
                 <?php 
                 foreach($sport_news as $sport){
                 echo "<p>" .  $sport->title . "</p>".
-                     "<p>" . $sport->name . "<p>" .
+                     "<p class='admin-news-category'> Category: " . $sport->name . "<p>" .
                     "<form action='updateSport.php' method='post'>" .
                     "<input type='hidden' value='$sport->id' name='id' />".
                     "<input type='submit' value='Update' name='Update' class='admin-update' />".

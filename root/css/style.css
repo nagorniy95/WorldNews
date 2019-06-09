@@ -436,6 +436,10 @@ ul.social-network li a{
 .admin-list-wrapper p {
 	margin: 15px 0 5px 0;
 }
+.admin-news-category{
+	font-size: 13px;
+	font-style: italic;
+}
 .admin-update, .admin-delete{
 	background-color: transparent;
 	border: none;
