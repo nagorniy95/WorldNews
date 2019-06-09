@@ -1,6 +1,12 @@
 <!-- Author: Artem Nahornyi; n01261269; -->
 <?php
 session_start();
+// it will redirect to login page if we dont have the login or register information in a session.
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: ../../views/login.php");
+    exit;
+}
+
 $page_title = "Add Crypto News";
 // ============ HEADER ==============
 include "../../views/header.php"; 
