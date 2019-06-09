@@ -179,7 +179,7 @@ for($i=0; $i<6; $i++){
  </table>
   </div>
  <!--historical-->
- <div class="container">
+ <!--<div class="container">-->
 <div class="row">
 	<div class="col-sm-12 col-3">
 	<h3  style="text-align:center;margin-top:40px;">Historical</h3>
@@ -219,8 +219,8 @@ for($i=0; $i<6; $i++){
 </div>
 </div>
 
-</div>
-</div>
+<!--</div>--->
+<!--</div>-->
 <h1 class="heading">FINANCE</h1>
 <hr class="line">
 
@@ -348,7 +348,7 @@ for($i=6; $i<12; $i++){
 
 </div>
 </div>
-				
+</div>				
 </main>	
 <!-- CONTAINER -->
 <?php 

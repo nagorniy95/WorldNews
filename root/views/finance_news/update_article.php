@@ -1,7 +1,7 @@
 <?php
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
-require_once '../../admin-dashboard.php'; 
+require_once '../../views/admin-header.php';
 
 $titleErr = "";
 $categoryErr ="";
@@ -116,6 +116,7 @@ if(isset($_POST['update'])){
      
 	
 </form>
+<a href="FinanceAdmin.php" >Back to List</a>
   </div>
 	</div>
 	</div>

@@ -1,6 +1,7 @@
 <?php
 require_once '../../model/Database.php';
 require_once '../../model/contact.php';
+require_once '../../views/admin-header.php';
 
 session_start();
 

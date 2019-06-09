@@ -1,6 +1,7 @@
 <?php
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
+require_once '../../views/admin-header.php';
 
 session_start();
 
@@ -44,7 +45,7 @@ session_start();
                 ?> 
 		<br/>		
 		<br/>
-		<a  href="financeAdmin.php" >Back to List</a>
+		<a  href="FinanceAdmin.php" >Back to List</a>
 		</div>
 	</div>
  </div>
