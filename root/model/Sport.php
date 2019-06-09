@@ -77,11 +77,11 @@ class Sport
 
 	public function getSportById($id, $dbcon)
 	{
-		$sql = "SELECT SELECT s.id, s.title, s.category, s.content, s.date, s.image, c.name
+		$sql = "SELECT s.id, s.title, s.category,s.author, s.content, s.date, s.image, c.name
 				FROM sport_news AS s
 				JOIN sport_category As c
 				ON s.category=c.id 
-				WHERE id = :id";
+				WHERE s.id = :id";
 		$pst = $dbcon->prepare($sql);
         $pst->bindParam(':id', $id);
         $pst->execute();

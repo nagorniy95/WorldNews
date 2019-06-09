@@ -32,7 +32,7 @@ include dirname( __FILE__) . "../../header.php";
  		foreach ($sport as $sport) {
  			echo "<div class='col-md-4'>" . $sport->title;
  			echo "<img class='img-responsive' src =" . $sport->image . ">";
- 			echo "<p class='thumbnail-text'>" . $sport->content . "</p>";
+ 			echo "<a href=details-news.php?id=" . $sport->id . " class='thumbnail-text'>" . $sport->content . "</a>";
  			echo "</div>";
  		}
  			
