@@ -174,19 +174,19 @@ ul.social-network li a{
 }
 .owl-prev span,
 .owl-next span{
-	font-size: 80px;
-	color: rgba(255,255,255,.99);
-	text-shadow: 2px 2px 6px #000;
+	font-size: 110px;
+	color: rgba(250,250,250,.99);
+	text-shadow: 5px 5px 10px #000;
 }
 .owl-prev{
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 20px;
 }
 .owl-next{
 	outline:none;
     position: absolute;
-    top: 30%;
+    top: 25%;
     right: 20px;
 }
 .owl-prev:active,
@@ -202,13 +202,12 @@ ul.social-network li a{
 .crypto_article h5{
 	color: rgb(20,20,20);
 }
-
 .red_line{
 	margin-top: 0;
 	margin-bottom: 2rem;
 	height: 2px;
-	color: red;
-	background-color: red;
+	color: rgb(213,10,32);
+	background-color: rgb(213,10,32);
 	border: none;
 }
 .home_techno_block{
@@ -272,24 +271,46 @@ ul.social-network li a{
 }
 /* change background on hover */
 #coinm_table tr:hover{
-	background-color: rgba(237,194, 64, 50%);
+	background-color: rgba(213,10,32, 50%);
 	transition: all 0.2s ease;
 }
 /* remove background on hover for the first row */
 #coinm_table tr:first-child:hover{
 	background-color: #fff;
 }
+.article h4,
 .article h5,
 .article a{
 	margin-top: 10px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	color: rgb(145,145,145);
 }
-
 .article img{
 	width: 100%;
 	border: 1px solid rgba(180,180,180,44%);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
+.crop{
+	width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.article_crop_image{
+	width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.crypto_button{
+	padding: 5px 10px;
+	border: 1px solid rgb(150,150,150);
+	border-radius: 3px;
+	background-color: rgba(240,240,240,.5);
+	color: #000;
+}
+
 @media only screen and (max-width: 768px) {
 	.article img{
 		width: 90%;

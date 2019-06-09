@@ -43,7 +43,7 @@
     <header id="header">
         <nav class="navbar navbar-light navbar-expand-lg static-top">
             <div class="container">
-                <a class="navbar-brand" href="../views/index.php">
+                <a class="navbar-brand" href="../../views/index.php">
                     <img src="../../img/logo.png" alt="WorldNews" class="header-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
                             <a class="nav-link uppercase" href="#">Technology</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../views/Crypto/crypto.php">Crypto Currency</a>
+                            <a class="nav-link uppercase" href="../../views/Crypto/crypto.php">Crypto Currency</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link uppercase" href="../views/finance_news/finance_news.php">Finance</a>

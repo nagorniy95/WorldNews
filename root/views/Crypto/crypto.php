@@ -95,19 +95,19 @@ $jsonObject = json_decode($response);
     // convert json to array format
     $data = json_decode($json);
 
-    echo "<h2><span class='underline'>News<span></h2>";
+    echo "<h2><span class='underline'>Crypto News<span></h2>";
     echo "<hr class='red_line'>";
     echo "<div class='row justify-content-md-center'>";
-    for ($x = 0; $x < 3; $x++) {
-        echo "<div class='col-md-4 col-sm-12 col-12'><div class='article'>";
+    for ($x = 0; $x < 4; $x++) {
+        echo "<div class='col-md-3 col-sm-12 col-12'><div class='article'>";
             echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
             echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
         echo "</div></div>";
     }
     echo "</div>";
     echo "<div class='row justify-content-md-center'>";
-    for ($x = 3; $x < 6; $x++) {
-        echo "<div class='col-md-4 col-sm-12 col-12'><div class='article'>";
+    for ($x = 4; $x < 8; $x++) {
+        echo "<div class='col-md-3 col-sm-12 col-12'><div class='article'>";
             echo "<img src=' " . $data->Data[$x]->imageurl  . " ' >";
             echo "<h5> <a href=' " . $data->Data[$x]->url  . " ' target='_blank' > " . $data->Data[$x]->title . "</a></h5>";
         echo "</div></div>";
