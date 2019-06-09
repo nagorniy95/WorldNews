@@ -319,56 +319,72 @@ ul.social-network li a{
 }
 /* ============================================================= */
 /*------------------------ Admin dashboard ---------------------*/
-.admin-header{
-	background-color: #0E0E0E;
-	height: auto;
+.admin-header, .admin-body{
+	background-color: #F2F2F2;
 }
-.admin-logo, .admin-menu{
-	display: inline-block;
-}
-.admin-menu{
-	padding: 0;
-	margin: 0;
-	min-height: 100%;
+.admin-login{
 	float: right;
-	line-height: 75px;
-	margin-right: 20px;
+	line-height: 90px;
+	position: relative;
+	margin-right: 40px;
+	text-transform: uppercase;
 }
-.admin-menu li{
-	display: inline-block;
+.admin-login a{
+	color: #C33636;
 }
-.admin-title{
-	font-size: 20px;
-	color: #DFDFDF ;
+.admin-login::before{
+	position: absolute;
+	display: block;
+	content: "|";
+	color: #D8C3BE;
+	font-size: 30px;
+	left: -40px;
+}
+.admin-right{
+	float: right;
 }
 .admin-logo{
 	max-width: 160px;
-	background-color: #DFDFDF;
 	display: inline-block;
 }
-.admin-active{
-	background-color: #A22C2C;
-}
 .admin-menu-wrapper{
-	background-color: #0E0E0E;
+	background-color: #C33636;
+	padding: 20px;
 	min-height: 100%;
 }
 .admin-menu-wrapper ul{
-	margin: 0;
-	padding: 0;
 	list-style: none;
+}
+.admin-menu-wrapper ul li{
+	margin-top: 30px;
+	text-transform: uppercase;
+	color: #c4c4c4;
+	font-weight: 700;
+	position: relative;
 }
 .admin-menu-wrapper ul li a{
 	display: block;
 	height: 30px;
-	border-bottom: 1px solid #DFDFDF;
 	line-height: 30px;
-	color: #DFDFDF;
+	color: #c4c4c4;
 	text-decoration: none;
-	padding-left: 5px;
 }
 .admin-menu-wrapper ul li a:hover{
-	background-color: #C33636;
+	text-decoration: underline;
+}
+.admin-menu-wrapper ul li a.admin-menu-active{
+	color: #000;
+}
+.bb::after{
+	display: block;
+	content: "";
+	height: 1px;
+	width: 240px;
+	position: absolute;
+	bottom: -15px;
+	left: -30px;
+	opacity: .5;
+	background-color: #fff;
 }
 .form-wrapper{
 	background-color: #DFDFDF;
@@ -390,6 +406,7 @@ ul.social-network li a{
 	color: #DFDFDF;
 	min-height: 100%;
 	padding: 20px;
+	background-color: #C33636;
 }
 .admin-list-title{
 	margin: 0 0 10px 0;
@@ -408,13 +425,10 @@ ul.social-network li a{
 	color: #1CBA57;
 }
 .admin-delete{
-	color: #C33636;
+	color: #000;
 }
 .admin-update:hover, .admin-delete:hover{
 	cursor: pointer;
-}
-.admin-list-wrapper{
-	background-color: #0E0E0E;
 }
 .admin-back{
 	color: #A22C2C;

@@ -3,7 +3,8 @@
 class Sport
 {	
 	public function getAllSportByCategory ($dbcon, $category){
-		$sql = "SELECT * FROM sport_news WHERE category = :category";
+		$sql = "SELECT * FROM sport_news
+		WHERE category = :category";
 		$pst = $dbcon->prepare($sql);
 		$pst->bindParam(':category', $category);
 		$pst->execute();
@@ -12,7 +13,10 @@ class Sport
 		return $sport;
 	}
 	public function getAllSport ($dbcon){
-		$sql = "SELECT * FROM sport_news";
+		$sql = "SELECT s.id, s.title, s.category, s.content, s.date, s.image, c.name
+				FROM sport_news AS s
+				JOIN sport_category As c
+				ON s.category=c.id";
 		$pst = $dbcon->prepare($sql);
 		$pst->bindParam(':category', $category);
 		$pst->execute();
@@ -73,7 +77,11 @@ class Sport
 
 	public function getSportById($id, $dbcon)
 	{
-		$sql = "SELECT * FROM sport_news WHERE id = :id";
+		$sql = "SELECT SELECT s.id, s.title, s.category, s.content, s.date, s.image, c.name
+				FROM sport_news AS s
+				JOIN sport_category As c
+				ON s.category=c.id 
+				WHERE id = :id";
 		$pst = $dbcon->prepare($sql);
         $pst->bindParam(':id', $id);
         $pst->execute();

@@ -49,14 +49,26 @@ include dirname( __FILE__) . "../../admin-header.php";
     <div class="container-fluid p-0 fill-height">
     <div class="row no-gutters">
         <div class="col-md-2">
-            <div class="admin-menu-wrapper">
-                <ul>
-                    <li><a href="category-admin.php" >Sport Categories</a></li>
-                    <li><a href="#" class="admin-active">Sport News</a></li>
-            </ul>
-            </div>
+             <div class="admin-menu-wrapper">
+                    <ul>
+                        <li class="bb"><a href="#">Home</a></li>
+                        <li class="bb">Pages <span class="admin-right">></span>
+                            <ul>
+                                <li>Sport <span class="admin-right">></span>
+                                    <ul>
+                                        <li><a href="category-admin.php" >Category</a></li>
+                                        <li ><a href="sport-admin.php" class="admin-menu-active">News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Economics</a></li>
+                                <li><a href="#">Crypto</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                    </ul>
+                </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="form-wrapper">
             <h1 class="admin-form-title">Sport News</h1>
             <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
@@ -78,12 +90,13 @@ include dirname( __FILE__) . "../../admin-header.php";
             </form>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="admin-list-wrapper">
                 <h3 class="admin-list-title">List of News</h3>
                 <?php 
                 foreach($sport_news as $sport){
                 echo "<p>" .  $sport->title . "</p>".
+                     "<p>" . $sport->name . "<p>" .
                     "<form action='updateSport.php' method='post'>" .
                     "<input type='hidden' value='$sport->id' name='id' />".
                     "<input type='submit' value='Update' name='Update' class='admin-update' />".
