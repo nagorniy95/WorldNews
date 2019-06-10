@@ -106,6 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       echo "Something went wrong! Please try again later. user error";
     }
   }
+  // upload an image
   $folder = "uploads/";
   $image = $_FILES['image']['name'];
 
@@ -194,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       ?>
         <!-- if all requirements are met for registeration, redirect to welcome page -->
         <script type="text/javascript">
-        window.location.href = "welcome1.php";
+        window.location.href = "welcome.php";
         </script>
       <?php  
       }
@@ -220,59 +221,45 @@ function display_error() {
 		echo '</div>';
 	}
 }	
-$page_title = "World News";
-include dirname( __FILE__) . "../../header.php";
+$page_title = "WorldNews";
+include "../header.php";
 ?>
 
-<html>
-<head>
-	<title>Registration system PHP and MySQL</title>
-
-
-<!-- Bootstrap CDN -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
 <body>
-<div class="header">
-	<h2>Register</h2>
-</div>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
-	<?php echo display_error(); ?>
-	<div class="input-group">
-		<label>Username</label>
-		<input type="text" name="username" value="<?php echo $username; ?>">
-	</div>
-	<div class="input-group">
-		<label>Email Address</label>
-		<input type="email" name="email" value="<?php echo $email; ?>">
-	</div>
-	<div class="input-group">
-		<label>First Name</label>
-		<input type="text" name="first_name" value="<?php echo $first_name; ?>">
-	</div>
-	<div class="input-group">
-		<label>Last Name</label>
-		<input type="text" name="last_name" value="<?php echo $last_name; ?>">
-	</div>		
-	<div class="input-group">
-		<label>Password</label>
-		<input type="password" name="password" value = "<?php echo $password; ?>">
-	</div>
-	<div class="input-group">
-		<label>Confirm password</label>
-		<input type="password" name="confirm_password"  value = "<?php echo $confirm_password; ?>">
-  </div>
-	<div style="color: white;">
-		<label>Select Your image: </label>
-    <input type="file" name="image" accept="image/*" value="<?php echo $image; ?>">
-	</div>  
-	<div class="input-group d-flex justify-content-center">
-		<button type="submit" class="btn w-50" name="register_btn">Register</button>
-	</div>
-	<p>
-		Already a member? <a href="login.php">Sign in</a>
-	</p>
-</form>
-<?php include dirname( __FILE__) . "../../footer.php"; ?>
+
+<div class="login">
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
+  	<?php echo display_error(); ?>
+    <h2 class="header uppercase red">Sign Up Page</h2>
+  	<div class="input-group">
+  		<input type="text" name="username" placeholder="Username:" value="<?php echo $username; ?>">
+  	</div>
+  	<div class="input-group">
+  		<input type="email" name="email" placeholder="E-mail:" value="<?php echo $email; ?>">
+  	</div>
+  	<div class="input-group">
+  		<input type="text" name="first_name" placeholder="First Name:" value="<?php echo $first_name; ?>">
+  	</div>
+  	<div class="input-group">
+  		<input type="text" name="last_name" placeholder="Last Name:" value="<?php echo $last_name; ?>">
+  	</div>		
+  	<div class="input-group">
+  		<input type="password" name="password" placeholder="Password:" value = "<?php echo $password; ?>">
+  	</div>
+  	<div class="input-group">
+  		<input type="password" name="confirm_password" placeholder="Confirm Password:"  value = "<?php echo $confirm_password; ?>">
+    </div>
+  	<div class="input-group">
+      <input type="file" name="image" accept="image/*" value="<?php echo $image; ?>">
+  	</div>  
+  	<div class="input-group d-flex justify-content-center">
+  		<button type="submit" class="btn w-50" name="register_btn">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="login.php" class="red bold">Sign in</a>
+  	</p>
+  </form>
+</div>  
+<?php include "../footer.php"; ?> 
 </body>
 </html>

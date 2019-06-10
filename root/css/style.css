@@ -51,8 +51,17 @@ a .red{
 	width: auto;
 	height: 100px;
 }
-li.active{
-	border-bottom: 1px solid black;
+.navbar-nav > li{
+	position: relative;
+}
+
+.navbar-light .navbar-nav .active a::after{
+	border-bottom: 2px solid black;
+  bottom: -10px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
 }
 /* ========================== LOGIN & REGISTRATION ==================== */
 .login{
@@ -114,15 +123,44 @@ li.active{
   font-weight: 400;
   font-size: 1em;	
 }
+/*=========================== User Admin ========================================= */
+.user-admin thead, .user-admin tbody{
+	border-radius: 10px;
+	border: 2px solid #C33636;
+}
+.user-admin thead{
+	background-color: #C33636;
+	color: white;
+}
+.user-admin .btn{
+	color: black;
+	background-color: #CCA7A7;
+}
+.user-admin .btn:hover{
+	color: black;
+	background-color: rgb(102, 96, 96);
+}
 /*=========================== WELCOME ============================================ */
 #welcome .card{
 	border: 1px solid #C33636;
+}
+#welcome .card-body{
+	text-align: center;
 }
 #welcome .btn-danger{
 	background-color: #C33636;
 }
 #welcome .btn-danger:hover{
 	background-color: red;
+}
+#sub1{
+	color: black;
+	background-color: #CCA7A7;
+	border-radius: 5px;	
+}
+#sub1:hover{
+	color: black;
+	background-color: rgb(102, 96, 96);	
 }
 /* ========================== Footer Social Media Icons ========================== */
 .find-us{
