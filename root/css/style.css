@@ -411,7 +411,7 @@ ul.social-network li a{
 	background-color: #fff;
 }
 .form-wrapper{
-	background-color: #DFDFDF;
+	background-color: #F2F2F2;
 	padding: 20px;
 }
 .form-wrapper form input, select, textarea{
@@ -581,6 +581,10 @@ border-top: 2px solid #C33636;
 }
 .tech-a:hover{
 	color: #C33636;
+}
+.about-div{
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 @media only screen and (max-width: 768px) {
 	.ArticlePhoto img{
