@@ -573,9 +573,11 @@ border-top: 2px solid #C33636;
 .tech-bold{
 	font-weight: 700;
 }
-
 .tech-a{
 	color: #000;
+}
+.tech-a:link{
+	text-decoration: none;
 }
 .tech-a:hover{
 	color: #C33636;

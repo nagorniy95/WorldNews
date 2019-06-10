@@ -36,7 +36,7 @@
             <?php if(isset($_SESSION["loggedin"])): ?>
                 <a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a>
             <?php else: ?>
-            <a href="../views/login.php"><i class="fa fa-user"></i> Login/</a>
+            <a href="../views/login.php"><i class="fa fa-user"></i> Login</a>
             <a href="../views/register.php"><i class="fa fa-user-plus"></i> Sign up</a>
             <?php endif; ?>
         </div>
@@ -70,10 +70,10 @@
                             <a class="nav-link uppercase" href="../views/finance_news/finance_news.php">Economics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="#">About Us</a>
+                            <a class="nav-link uppercase" href="#">About</a>
                         </li>
                         <li class="nav-item uppercase">
-                            <a class="nav-link" href="../views/Contact/contact_pub.php">Contact</a>
+                            <a class="nav-link" href="../views/Contact/contact_pub.php">Contact Us</a>
                         </li>
                     </ul>
                 </div>

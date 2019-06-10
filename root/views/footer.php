@@ -53,7 +53,7 @@
       <!-- Footer Links -->
       <div class="container ">
         <!-- Footer links -->
-        <div class="row"> 
+        <div class="row "> 
 
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 first-nav">
@@ -111,7 +111,7 @@
               <a href="#">Accessibility Help</a>
             </p>
             <p>
-              <a href="#">Contact the World News</a>
+              <a href="#">Contact Us</a>
 						</p>     
           </div>
           <!-- Grid column -->
@@ -128,7 +128,7 @@
           <div class="col-md-12 col-lg-12">
 
             <!--Copyright-->
-						<p class="copyright" align="center">Copyright &copy; <?=date("Y");?> News World. The News World is not responsible for the content of external sites.</p>
+						<p class="copyright" align="center">Copyright &copy; <?=date("Y");?> World News. The World News is not responsible for the content of external sites.</p>
    
           </div>
         </div>
