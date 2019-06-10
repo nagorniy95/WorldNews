@@ -32,7 +32,7 @@
 
 <body>
     <header id="header-top">
-        <div class="container">
+        <div>
             <?php if(isset($_SESSION["loggedin"])): ?>
                 <a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a>
             <?php else: ?>
@@ -67,7 +67,7 @@
                             <a class="nav-link uppercase" href="../../views/Crypto/crypto.php">Crypto Currency</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../views/finance_news/finance_news.php">Finance</a>
+                            <a class="nav-link uppercase" href="../views/finance_news/finance_news.php">Economics</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link uppercase" href="#">About Us</a>

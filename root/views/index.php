@@ -139,11 +139,11 @@ $data = json_decode($json);
 	// ============================================ Technology NEWS ========================
 	// =====================================================================================
 	//news api
-	$json_url = "https://newsapi.org/v2/everything?q=apple&from=2019-05-09&to=2019-05-09&sortBy=popularity&apiKey=458f68f850bc4146b897905b151b4745";
+	$json_url = "https://newsapi.org/v2/everything?q=apple&from=2019-06-09&to=2019-06-09&sortBy=popularity&apiKey=458f68f850bc4146b897905b151b4745";
 	$json = file_get_contents($json_url);
 	$data = json_decode($json, TRUE);
 
-	echo "<h2 class='uppercase'>Techno News</h2>";
+	echo "<h2 class='uppercase'>Technology</h2>";
 	echo "<hr class='red_line'>";
 
 	echo "<div class='row'>";
