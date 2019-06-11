@@ -1,3 +1,4 @@
+<?php $base_url = "http://localhost/WorldNews/root/views/"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,14 +37,17 @@
             <?php if(isset($_SESSION["loggedin"])): ?>
                 <a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a>
             <?php else: ?>
-            <a href="../views/login.php"><i class="fa fa-user"></i> Login</a>
-            <a href="../views/register.php"><i class="fa fa-user-plus"></i> Sign up</a>
+            <a href="<?=$base_url?>login/login.php"><i class="fa fa-user"></i> Login/</a>
+            <a href="<?=$base_url?>login/register.php"><i class="fa fa-user-plus"></i> Sign up</a>
+
             <?php endif; ?>
         </div>
     </header>
+
     <header id="header">
         <nav class="navbar navbar-light navbar-expand-lg static-top">
             <div class="container">
+                <a class="navbar-brand" href="../../index.php">
                 <a class="navbar-brand" href="../../views/index.php">
                     <img src="../../img/logo.png" alt="WorldNews" class="header-logo">
                 </a>
@@ -51,29 +55,28 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto uppercase">
                         <li class="nav-item active">
-                            <a class="nav-link uppercase" href="../views/index.php">Home
-                            <span class="sr-only">(current)</span>
+                            <a class="nav-link" href="../views/index.php">Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../../views/Sport/">Sport</a>
+                            <a class="nav-link" href="../views/Sport">Sport</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../../views/technology/index.php">Technology</a>
+                            <a class="nav-link" href="../views/Technology">Technology</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../../views/Crypto/crypto.php">Crypto Currency</a>
+                            <a class="nav-link" href="../views/Crypto/crypto.php">Crypto Currency</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../../views/finance_news/finance_news.php">Economics</a>
+                            <a class="nav-link" href="../views/finance_news/finance_news.php">Finance</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../../views/about/index.php">About</a>
+                            <a class="nav-link" href="../views/About">About Us</a>
                         </li>
-                        <li class="nav-item uppercase">
-                            <a class="nav-link" href="../../views/Contact/contact_pub.php">Contact Us</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../views/Contact/contact_pub.php">Contact</a>
                         </li>
                     </ul>
                 </div>

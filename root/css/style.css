@@ -51,8 +51,21 @@ a .red{
 	width: auto;
 	height: 100px;
 }
-li.active{
-	border-bottom: 1px solid black;
+.navbar-nav > li{
+	position: relative;
+}
+
+.navbar-light .navbar-nav .active a::after{
+
+  bottom: -10px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+#header .navbar-nav li.active > a {
+	background-color: #C33636;
+	color: #FFFFFF;
 }
 /* ========================== LOGIN & REGISTRATION ==================== */
 .login{
@@ -114,15 +127,51 @@ li.active{
   font-weight: 400;
   font-size: 1em;	
 }
+/*=========================== User Admin ========================================= */
+.user-admin thead, .user-admin tbody{
+	border-radius: 10px;
+	border: 2px solid #C33636;
+}
+.user-admin thead{
+	background-color: #C33636;
+	color: white;
+}
+.user-admin thead th{
+	border-bottom: 0px;
+}
+.user-admin .btn{
+	color: black;
+	background-color: #CCA7A7;
+}
+.user-admin .btn:hover{
+	color: black;
+	background-color: rgb(102, 96, 96);
+}
+.user-admin .btn-danger:hover{
+	color: white;
+	background-color: #C33636;
+}
 /*=========================== WELCOME ============================================ */
 #welcome .card{
 	border: 1px solid #C33636;
+}
+#welcome .card-body{
+	text-align: center;
 }
 #welcome .btn-danger{
 	background-color: #C33636;
 }
 #welcome .btn-danger:hover{
 	background-color: red;
+}
+#sub1{
+	color: black;
+	background-color: #CCA7A7;
+	border-radius: 5px;	
+}
+#sub1:hover{
+	color: black;
+	background-color: rgb(102, 96, 96);	
 }
 /* ========================== Footer Social Media Icons ========================== */
 .find-us{
@@ -547,10 +596,11 @@ ul.social-network li a{
 	color: #C33636;
 }
 .light{
-	background-color: #a31525;
+	background-color: #C33636;
 }
 .dark{
-	background-color: #7f1425;
+	background-color: #c4c4c4;
+	color: #a31525;
 }
 /*=================================Finance=================================*/
 
@@ -566,15 +616,7 @@ margin-bottom:10px;
 border-top: 2px solid #C33636;
 }
 
-#top_news{
-	width:16rem;
-	margin-bottom:0px;
-	float:left;
-	margin-right:30px;
-	width:250px; 
-	height:450px;
-	max-width:100%;
-}
+
 /*====calendar=====*/
 .thead  {
 	border-top:2px solid #C33636;
@@ -594,7 +636,7 @@ border-top: 2px solid #C33636;
 /*=======rating=========*/
 .rating {
 	border-top: 2px solid #C33636;
-	
+	width:500px;
 }
 .tab-overwrite{
 	width: 100%;
@@ -684,4 +726,37 @@ border-top: 2px solid #C33636;
 	margin-bottom: 30px;
 }
 /*----------------SET ALL MEDIA QUERIES UNDER THIS LINE---------------*/
+@media only screen and (max-width: 768px) {
+	.ArticlePhoto img{
+		width: 90%;
+		margin: 0 auto;
+	}
+	#top-news{
+		width:90%;
+	}
+	.login form, .content{
+		width: 100%;
+	}
+}
 
+@media only screen and (max-width: 576px) {
+	.ArticlePhoto img{
+		width: 90%;
+		margin: 0 auto;
+	}
+	#top-news, #latest_news{
+		width:90%;
+		margin:auto;
+	}
+	.category-content{
+		max-width: 100px;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.category-content{
+
+	}
+	.login form, .content{
+		width: 100%;
+	}
+}

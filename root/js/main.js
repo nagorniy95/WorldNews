@@ -73,3 +73,10 @@ $(document).ready(function () {
         // }
     });
   });
+// ========================================== Navigation active selection
+$(document).ready(function () {
+    $('#header .navbar-nav a').on('click', function(){
+        $('#header .navbar-nav').find('li.active').removeClass('active');
+        $(this).parent('li').addClass('active');
+    })    
+});

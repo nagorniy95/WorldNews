@@ -108,33 +108,31 @@ function display_error() {
 }
 // ================================== HEADER ===========================
 $page_title = "WorldNews";
-include "header.php";
+include "../header.php";
 ?>
 <!-- ================================ MAIN CONTENT AREA ============================= -->
 <body>
-	<div class="header">
-		<h2>Login</h2>
-	</div>
-	<form method="post" class="login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+  <main class="login">
+    <form method="post" class="login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+      <h2 class="header uppercase red">Login Page</h2>
+      <h5>Please fill in your credentials to login</h5>
+      <?php echo display_error(); ?>
 
-		<?php echo display_error(); ?>
-
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password">
-		</div>
-		<div class="input-group d-flex justify-content-center">
-			<button type="submit" class="btn w-50" name="login_btn">Login</button>
-		</div>
-		<p>
-			Not yet a member? <a href="register.php">Sign up</a>
-		</p>
-	</form>
+      <div class="input-group">
+        <input type="text" name="username" placeholder="Username:" value="<?php echo $username; ?>">
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password:">
+      </div>
+      <div class="input-group d-flex justify-content-center">
+        <button type="submit" class="btn w-50" name="login_btn">Login</button>
+      </div>
+      <p>
+        Don't have an account? <a href="register.php" class="red bold">Sign up now</a>
+      </p>
+    </form>
+</main>  
 <!-- ================================ FOOTER =======================================-->
-<?php include "footer.php"; ?>  
+<?php include "../footer.php"; ?>  
 </body>
 </html>
