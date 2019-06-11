@@ -59,23 +59,55 @@ if(isset($_POST['updSport'])){
         echo  "problem updating";
     }
 }
+include dirname( __FILE__) . "../../admin-header.php";
  ?>
-<form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
-		<input type="hidden" name="sid" value="<?= $sport->id; ?>" />
-    	<label for="title">Title:</label><br>
-    	<input type="text" name="title" id="title" value="<?= $sport->title; ?>" /><br/>
-		<label for="category_id">Select the category</label><br>
-		<select name="category_id" id="category_id" >
+
+
+    <div class="container-fluid p-0">
+    <div class="row no-gutters">
+            <div class="col-md-2">
+                <div class="admin-menu-wrapper">
+                    <ul>
+                        <li class="bb"><a href="#">Home</a></li>
+                        <li class="bb">Pages <span class="admin-right">></span>
+                            <ul>
+                                <li>Sport <span class="admin-right">></span>
+                                    <ul>
+                                        <li><a href="category-admin.php">Category</a></li>
+                                        <li><a href="sport-admin.php" class="admin-menu-active">News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Economics</a></li>
+                                <li><a href="#">Crypto</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        <div class="col-md-10">
+            <div class="form-wrapper">
+            <h1 class="admin-form-title">Sport Category</h1>
+            <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+        <input type="hidden" name="sid" value="<?= $sport->id; ?>" />
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" id="title" value="<?= $sport->title; ?>" /><br/>
+        <label for="category_id">Select the category</label><br>
+        <select name="category_id" id="category_id" >
         <?php foreach ($category as $cat){
             echo "<option value='$cat->id'>" . $cat->name . "</option>";
         }?>      
-    	</select><br />
-    	<label for="title">Author:</label><br>
-    	<input type="text" name="author" id="author" value="<?= $sport->author; ?>" /><br/>
-		<label for="content">Content: </label><br>
-    	<textarea type="text" name="content" id="content" cols="30" rows="10"><?= $sport->content; ?></textarea><br>
-    	<label for="upfile">Select Image</label><br>
-    	<input type="file" name="upfile" id="upfile" >
-    	<input type="submit" name="updSport" value="Update Sport News" class="form-button">
-	</form> 	
+        </select><br />
+        <label for="title">Author:</label><br>
+        <input type="text" name="author" id="author" value="<?= $sport->author; ?>" /><br/>
+        <label for="content">Content: </label><br>
+        <textarea type="text" name="content" id="content" cols="30" rows="10"><?= $sport->content; ?></textarea><br>
+        <label for="upfile">Select Image</label><br>
+        <input type="file" name="upfile" id="upfile" >
+        <input type="submit" name="updSport" value="Update Sport News" class="form-button">
+    </form>     
+            </div>
+        </div>
+    </div>
+</div>
 </body>

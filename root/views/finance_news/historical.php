@@ -1,5 +1,5 @@
 <?php
-$url = 'https://api.tradingeconomics.com/markets/historical/AAPL:US?d1=2019.06.01&d2=2019.06.30';
+$url = 'https://api.tradingeconomics.com/markets/historical/AAPL:US?d1=2019.06.01&d2=2019.06.05';
 $headers = array(
     "Accept: application/xml",
     "Authorization: Client guest:guest"

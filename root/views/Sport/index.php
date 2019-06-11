@@ -6,6 +6,7 @@ $dbcon = Database::getDb();
 $c = new Category();
 
 $sport_category = $c->getAllCategories($dbcon);
+$page_title = 'Sport';
 include dirname( __FILE__) . "../../header.php";
  ?>
 	<style>
@@ -30,21 +31,49 @@ include dirname( __FILE__) . "../../header.php";
 		}
 		?>
 	</style>
+	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				scrollingSpeed: 1000
+				scrollingSpeed: 1000,
+				// anchors:['firstSlide', 'secondSlide', '3rdSlide'],
+				anchors:[
+					<?php 
+					$i = 0;
+					foreach ($sport_category as $sport) {
+						$i++;
+						echo "'" . $i . "slide',";
+					}
+				 ?>
+				],
+				
+				menu: '#sport-menu'
 			});
 
 		});
 	</script>
+	<ul id="sport-menu">
+		<?php 
+		$i=0;
+			foreach ($sport_category as $sport) {
+				$i++;
+				echo "<li data-menuanchor='" . $i . "slide'>";
+				echo "<a href='#" . $i . "slide'>" . $sport->name . "</a>"; 
+			}
+	 	?>
+	 </ul>
 	<div id="fullpage">	
 	<?php 
 		foreach ($sport_category as $sport) {
 			echo "<div class='section' id=section" . $sport->id .">";
+			echo "<div class='category-content'>";
 			echo "<h2><a href=news.php?id=" . $sport->id . ">" . $sport->name . "</a></h2>";
 			echo "<p>" . $sport->description . "</p>";
 			echo "</div>";
+			echo $i++;
+			echo "</div>";
+
+
 		}
 	 ?>
 	 </div>

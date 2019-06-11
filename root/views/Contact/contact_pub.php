@@ -76,7 +76,7 @@ require_once '../../model/contact.php';
 <main >
 <div class="container">
          <div class="row">
-		 <div id="contact-form" class="col-md-6">
+		 <div id="contact-form" class="col-md-6 col-sm-12 col-6">
 			<h2 class="contact-heading">CONTACT US</h2>
              <form  method="post" action="contact_pub.php">
                  
@@ -96,11 +96,11 @@ require_once '../../model/contact.php';
 				</div>
                  <div class="txt">
                     <label for="form_name">Name *</label>
-                    <input id="form_name" type="text" name="name" class="form-control"  placeholder="Name" value = "<?= $name; ?>">
+                    <input id="form_name" type="text" name="name" class="form-control"  placeholder="First and Last Name" value = "<?= $name; ?>">
                     </div>
                     <div class="txt">
                     <label for="form_email">Email *</label>
-                    <input id="form_email" type="text" name="email" class="form-control" placeholder="Email" value = "<?= $email; ?>" >
+                    <input id="form_email" type="text" name="email" class="form-control" placeholder="example@gmail.com" value = "<?= $email; ?>" >
                     </div>   
                     <div class="txt">
                     <label for="form_subject">Subject *</label>
@@ -108,7 +108,7 @@ require_once '../../model/contact.php';
                     </div>   
                     <div class="txt">
                     <label for="form_message">Message *</label>
-                    <textarea id="form_message" name="message" class="form-control"  placeholder="Message" cols="40" rows="6" ><?= $message; ?></textarea>
+                    <textarea id="form_message" name="message" class="form-control"  placeholder="Type here..." cols="40" rows="6" ><?= $message; ?></textarea>
                     </div>
                     <input type="submit" name="submit" id="submit_button" class="btn btn-lg btn-primary"  value="Submit"> 
                     </form>				    

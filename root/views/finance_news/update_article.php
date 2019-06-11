@@ -1,6 +1,7 @@
 <?php
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
+require_once '../../views/admin-header.php';
 
 $titleErr = "";
 $categoryErr ="";
@@ -16,7 +17,6 @@ if(isset($_POST['update'])){
 	  $db = Database::getDb();
       $fns = new Finance();
       $count = $fns->getArticleById($id, $db);
-      echo $count->id;
 }
  if(isset($_POST['updateArt'])){
 	  
@@ -65,13 +65,13 @@ if(isset($_POST['update'])){
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/finance.css" >
+	<link rel="stylesheet" href="../../css/style.css" >
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	 <div class="container">
 	  <div class="row">
-	   <h2>Update</h2>
+	   <h2>EDIT ARTICLE</h2>
 		<div class="col-xl-8 offset-xl-2 py-5">
 <form action="" method="post" id="financeUpdate" enctype="multipart/form-data">
    
@@ -97,7 +97,7 @@ if(isset($_POST['update'])){
             </div>
             <div id="content">
                 <label for="content">Article:</label>
-				 <textarea type="text" id="content" name="content" cols="30" rows="10" value="<?=$count->content; ?>"  required rows="12" cols="80" class="form-control"></textarea><br/>
+				 <textarea type="text" id="content" name="content" cols="30" rows="10" required rows="12" cols="80" class="form-control"><?=$count->content; ?></textarea><br/>
             </div>
             <div id="edit_date">
                 <label for="date">Date:</label>
@@ -105,7 +105,7 @@ if(isset($_POST['update'])){
             </div>
 			<div id="edit_image_title">
                 <label for="image_title">Image Title:</label>
-                <input type="text" id="image_title" name="image"  value="<?=$count->image_title; ?>" class="form-control"/><br/>		 
+                <input type="text" id="image_title" name="image_title"  value="<?=$count->image_title; ?>" class="form-control"/><br/>		 
             </div>
 			 <div id="edit_image">
                 <label for="image">Image:</label>
@@ -116,6 +116,7 @@ if(isset($_POST['update'])){
      
 	
 </form>
+<a href="FinanceAdmin.php" >Back to List</a>
   </div>
 	</div>
 	</div>

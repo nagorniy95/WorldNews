@@ -3,8 +3,6 @@ session_start();
 // it will redirect to login page if we dont have the login or register information in a session.
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
-
-    print_r($_SESSION);
     exit;
 }
 $page_title = "WorldNews";
@@ -109,7 +107,7 @@ include '../header.php';
           }
           else if($_SESSION["user_type"] == "admin"){
               ?>
-                  <a href="../admin-dashboard.php" class="btn btn-primary">Admin Dashboard </a>
+                  <a href="login-admin.php" class="btn btn-primary">Admin Dashboard </a>
                   <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>        
               <?php
           }

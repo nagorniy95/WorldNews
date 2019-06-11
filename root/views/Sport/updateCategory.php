@@ -56,8 +56,9 @@ if(isset($_POST['updCategory'])){
         echo  "problem updating";
     }
 }
+include dirname( __FILE__) . "../../admin-header.php";
  ?>
- <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+<!--  <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
  	<input type="hidden" name="cid" value="<?= $category->id; ?>" />
     <label for="name">Name:</label><br>
     <input type="text" name="name" id="name" value="<?= $category->name; ?>" /><br/>
@@ -66,4 +67,45 @@ if(isset($_POST['updCategory'])){
     <label for="upfile">Select Image</label><br>
     <input type="file" name="upfile" id="upfile" >
     <input type="submit" name="updCategory" value="Update Category" class="form-button">
+</form> -->
+<div class="container-fluid p-0">
+    <div class="row no-gutters">
+            <div class="col-md-2">
+                <div class="admin-menu-wrapper">
+                    <ul>
+                        <li class="bb"><a href="#">Home</a></li>
+                        <li class="bb">Pages <span class="admin-right">></span>
+                            <ul>
+                                <li>Sport <span class="admin-right">></span>
+                                    <ul>
+                                        <li><a href="category-admin.php" class="admin-menu-active">Category</a></li>
+                                        <li><a href="sport-admin.php">News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Economics</a></li>
+                                <li><a href="#">Crypto</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        <div class="col-md-10">
+            <div class="form-wrapper">
+            <h1 class="admin-form-title">Sport Category</h1>
+ <form action="" method="post" enctype="multipart/form-data" class="CategoryForm">
+    <input type="hidden" name="cid" value="<?= $category->id; ?>" />
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" id="name" value="<?= $category->name; ?>" /><br/>
+    <label for="description">Description: </label><br>
+    <textarea type="text" name="description" id="description" cols="30" rows="10"><?= $category->description; ?></textarea><br>
+    <label for="upfile">Select Image</label><br>
+    <input type="file" name="upfile" id="upfile" >
+    <input type="submit" name="updCategory" value="Update Category" class="form-button">
 </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</body>

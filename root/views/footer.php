@@ -5,7 +5,7 @@
         </div>
     <div class="container">
   <div class="first-footer">
-      <div class="row pb-4 mt-3 text-center">
+      <div class="row pb-4 mt-3">
         <hr /> 
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -21,7 +21,7 @@
               DAILY NEWS
             </h5>
             <p>
-              <a href="#">Get news from News World in your inbox each weekday morning</a>
+              Get news from News World in your inbox each weekday morning
             </p>   
           </div>
           <!-- Grid column -->
@@ -30,7 +30,7 @@
                 NEWS APP
               </h5>
             <p>
-              <a href="#">Find out more about our News World App</a>
+              Find out more about our News World App
             </p>  
           </div>   
           <!-- Grid column -->
@@ -53,7 +53,7 @@
       <!-- Footer Links -->
       <div class="container ">
         <!-- Footer links -->
-        <div class="row text-center"> 
+        <div class="row "> 
 
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 first-nav">
@@ -111,7 +111,7 @@
               <a href="#">Accessibility Help</a>
             </p>
             <p>
-              <a href="#">Contact the BBC</a>
+              <a href="#">Contact Us</a>
 						</p>     
           </div>
           <!-- Grid column -->
@@ -128,7 +128,7 @@
           <div class="col-md-12 col-lg-12">
 
             <!--Copyright-->
-						<p align="center">Copyright &copy; <?=date("Y");?> News World. The News World is not responsible for the content of external sites.</p>
+						<p class="copyright" align="center">Copyright &copy; <?=date("Y");?> World News. The World News is not responsible for the content of external sites.</p>
    
           </div>
         </div>
@@ -139,7 +139,7 @@
 
       
       <!-- Scripts -->
-       <script src="../js/main.js"></script>
+       <script src="../../js/main.js"></script>
     </footer>
 </body>
 

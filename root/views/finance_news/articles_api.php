@@ -13,6 +13,6 @@ $handle = curl_init();
 	curl_close($handle);
 //parse your data to satisfy your needs....
 //showing result
-	$data_article = json_decode($data_article);
+	$data_article = json_decode($data_article,true);
 	//echo getType($data_article);
 ?>

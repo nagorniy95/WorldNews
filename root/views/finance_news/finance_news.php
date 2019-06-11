@@ -68,7 +68,7 @@ for($i=0; $i<6; $i++){
 	<!--<th scope="col" colspan="2">Source</th>-->
 	<th scope="col">Previous</th>
 	<th scope="col">Forecast</th>
-	<th scope="col">TEForecast</th>
+	<th scope="col" >TEForecast</th>
 	<th scope="col">Ticker</th>
 	<!--<th>Symbol</th>	-->
   </tr>
@@ -148,9 +148,6 @@ for($i=0; $i<6; $i++){
 		echo '<td>' . $data_index->Symbol . '</td>';
 		echo '<td>' . $data_index->Ticker . '</td>';
 		echo '<td>' . $data_index->Name. '</td>';
-		//echo '<td>' . $data_index->Country . '</td>';
-		//echo '<td>' . $data_index->Date. '</td>';
-		//echo '<td>' . $data_index->Market Cap. '</td>';
 		echo '<td>' . $data_index->Importance . '</td>';
 		echo "<td><span id='data_column' ";
          if(( $data_index->DailyChange ) < 0){
@@ -182,6 +179,7 @@ for($i=0; $i<6; $i++){
  </table>
   </div>
  <!--historical-->
+ <!--<div class="container">-->
 <div class="row">
 	<div class="col-sm-12 col-3">
 	<h3  style="text-align:center;margin-top:40px;">Historical</h3>
@@ -221,36 +219,41 @@ for($i=0; $i<6; $i++){
 </div>
 </div>
 
-
+<!--</div>--->
+<!--</div>-->
 <h1 class="heading">FINANCE</h1>
 <hr class="line">
 
 <!----------------------------Articles--------------->
-<div class="row">
 
+<div class="row">
   <div class="col-3 col-sm-12 col-md-3" >
   <h3 style="text-align:center;">LATEST ARTICLES</h3>
 <?php
- foreach($data_article as $data_article)
- //for ($x = 0; $x < 4; $x++){
-	 {
+ //foreach($data_article as $data_article)
+ //echo getType($data_article);
+$x= $data_article;
+
+// print_r( $data_article ); 
+
+
+ for ($x = 0; $x < 4; $x++){
+	 
+	// echo 'URL: '. $data_article[$x]['title'];
+	 
 	echo
-	    "<div class=\"card\" style=\"width: 26rem;border:none;\">".
+	    "<div class=\"card\" style=\"width:24rem;border:none;\">".
 			"<div class=\"card-body\">".			
-			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href=\"'$data_article->url '\" class=\"card-link\" >  $data_article->title </a></p>".
-			"<p><a style=\"color:black;\" href=\"'$data_article->url'\" class=\"card-link\" >  $data_article->description </a></p>".
-			//"<p> $data_article->description </p>".
-			"<p> $data_article->date</p>".
-			"<p style=\"color: #C33636;\"> $data_article->country</p>".
-			"<p> $data_article->category </p>".	
-			"<p> $data_article->symbol</p>".
-			//"<p> $data_article->URL </p>".
-			  
+			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href=\'".$data_article[$x]['url']. "\' class=\"card-link\" id=\"art-link\" > ".$data_article[$x]['title']."</a></p>".
+		    "<p><a style=\"color:black;\" href=\"".$data_article[$x]['url']."\" class=\"card-link\" >" . $data_article[$x]['description']. "</a></p>".
+			"<p>". $data_article[$x]['date']."</p>".
+			"<p style=\"color: #C33636;\">".$data_article[$x]['country']."</p>".
+			"<p> ".$data_article[$x]['category']. "</p>".	
+			"<p>". $data_article[$x]['symbol']."</p>".
+			//"<p> $data_article->URL </p>".			  
 			"</div>".
-			"</div>";
-	
+			"</div>";	
 }
-  
   ?>
 
   
@@ -276,7 +279,7 @@ for($i=0; $i<6; $i++){
   ?>
   </div>
   <!-------------------------list news--------------------------->
-  <!-- nnn-->
+
   <div class="col-3 col-sm-12 col-md-3" >
   <h3  style="text-align:center;"> LATEST NEWS</h3>
   <?php
@@ -345,7 +348,7 @@ for($i=6; $i<12; $i++){
 
 </div>
 </div>
-</div>					
+</div>				
 </main>	
 <!-- CONTAINER -->
 <?php 

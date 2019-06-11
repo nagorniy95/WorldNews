@@ -2,6 +2,8 @@
 //require_once '.php';
 require_once '../../model/Database.php';
 require_once '../../model/contact.php';
+require_once '../../views/admin-header.php';
+
 
 $dbcon = Database::getDb();
 $c = new Contact();
@@ -19,12 +21,11 @@ $contacts = $c->getAllContacts($dbcon);
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/finance.css" >
+	<link rel="stylesheet" href="../../css/style.css" >
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="content">
-	
+
     <div class="container">
        <div class="row">
             <div class="col-sm-8">
@@ -73,8 +74,7 @@ $contacts = $c->getAllContacts($dbcon);
 
 </tbody>
 </table>
-</div>
-    </div>     
+</div>   
 	
 				
 </body>

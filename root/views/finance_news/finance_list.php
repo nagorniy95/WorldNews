@@ -1,7 +1,7 @@
 <?php 
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
-//require_once '../../views/admin-header.php'; 
+
 
 $db = Database::getDb();
 $f = new Finance();
@@ -28,7 +28,7 @@ $finance_news = $f->getAllArticle($db);
                     <tr>
                         <th style="width: 4.5%">Id</th>
                         <th style="width: 12.5%">Title</th>						
-						<th style="width: 7.5%" >Category</th>
+						<th style="width: 7.5%">Category</th>
 						<th style="width: 5.5%">Author</th>
 						<th style="width: 30%" colspan="2">Content</th>
                         <th style="width: 5.5%">Date</th>
