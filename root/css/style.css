@@ -615,7 +615,9 @@ overflow-y: scroll;
 margin-bottom:10px;
 border-top: 2px solid #C33636;
 }
-
+#top_news{
+	
+}
 
 /*====calendar=====*/
 .thead  {
@@ -634,10 +636,7 @@ border-top: 2px solid #C33636;
 	
 }
 /*=======rating=========*/
-.rating {
-	border-top: 2px solid #C33636;
-	width:500px;
-}
+
 .tab-overwrite{
 	width: 100%;
 	max-width: 100%;
@@ -646,7 +645,6 @@ border-top: 2px solid #C33636;
 
 /*========table list articles==========*/
 .table-fin {
-    table-layout: fixed;
     word-wrap: break-word;
 	font-size:10px;
 }
@@ -732,9 +730,13 @@ border-top: 2px solid #C33636;
 		margin: 0 auto;
 	}
 	#top-news{
-		width:90%;
+		width:100%;
+		
 	}
 	.login form, .content{
+		width: 100%;
+	}
+	.contact-pub form, .content{
 		width: 100%;
 	}
 }
@@ -745,11 +747,11 @@ border-top: 2px solid #C33636;
 		margin: 0 auto;
 	}
 	#top-news, #latest_news{
-		width:90%;
+		width:100%;
 		margin:auto;
 	}
 	.category-content{
-		max-width: 100px;
+		max-width: 100%;
 	}
 }
 @media only screen and (max-width: 360px) {

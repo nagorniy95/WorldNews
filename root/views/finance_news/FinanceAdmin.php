@@ -1,21 +1,20 @@
 <?php 
 session_start();
-if(!isset($_SESSION[“loggedin”]) || $_SESSION[“loggedin”] !== true) {
-  header(“location: ../../views/login.php”);
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+  header("location: ../login/login.php");
 }
-else if( $_SESSION[“user_type”] == “user”) {
+else if( $_SESSION["user_type"] == "user") {
 ?>
-  <script type=“text/javascript”>
-  alert(“ You are not authorized to   access this page”);
-  window.location.href=“ ../../views/welcome.php”;
+  <script type="text/javascript">
+  alert(" You are not authorized to   access this page");
+  window.location.href="../login/welcome.php";
 </script>
 <?php
 }
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
 require_once '../../views/admin-header.php';
-require_once '../../views/login.php';
-require_once '../../views/login/welcome.php';
+
 
 $db = Database::getDb();
 $f = new Finance();

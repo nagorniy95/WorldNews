@@ -73,12 +73,12 @@ require_once '../../model/contact.php';
 
 ?>
 <body>
-<main >
+<main class="contact-pub">
 <div class="container">
          <div class="row">
 		 <div id="contact-form" class="col-md-6 col-sm-12 col-6">
 			<h2 class="contact-heading">CONTACT US</h2>
-             <form  method="post" action="contact_pub.php">
+             <form  method="post" action="contact_pub.php" >
                  
 				 <!--message-->
 				<div>

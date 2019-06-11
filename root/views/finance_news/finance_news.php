@@ -1,9 +1,21 @@
 <?php 
+session_start();
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+  header("location: ../login/login.php");
+}
+else if( $_SESSION["user_type"] == "user") {
+?>
+  <script type="text/javascript">
+  alert(" You are not authorized to   access this page");
+  window.location.href="../login/welcome.php";
+</script>
+<?php
+}
+$page_title = "Economics";
+
 require_once '../../views/header.php'; 
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
-//require_once '../../views/login/login.php';
-//require_once '../../views/login/welcome.php';
 require_once 'event.php';
 require_once 'market.php';
 require_once 'rating.php';
@@ -11,24 +23,12 @@ require_once 'articles.php';
 require_once 'historical.php';
 require_once 'articles_api.php';
 
-/*session_start();
-if(!isset($_SESSION[“loggedin”]) || $_SESSION[“loggedin”] !== true) {
-  header(“location:login.php”);
-}
-else if( $_SESSION[“user_type”] == “user”) {
-?>
-  <script type=“text/javascript”>
-  alert(“ You are not authorized to   access this page”);
-  window.location.href=“welcome.php”;
-</script>
-<?php
-}*/
 
 
 //top news
 $API = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=df9979ebd8de4540ba9e6b1233d4ea75";
 $json = file_get_contents ($API);
-$data = json_decode($json, true);
+$data_n = json_decode($json, true);
 
 //list of news
 $API_a = "https://newsapi.org/v2/everything?q=apple&from=2019-05-24&to=2019-05-24&sortBy=popularity&apiKey=df9979ebd8de4540ba9e6b1233d4ea75";
@@ -54,12 +54,12 @@ $myart = $userArticle->getAllArticle(Database::getDb());
 	  <h3 style="text-align:center;"> TOP NEWS</h3>	
 <?php
 
-for($i=0; $i<6; $i++){
-    echo  ' <div class="card-deck" id="top_news" >'
-    . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
+for($i=0; $i<9; $i++){
+    echo  ' <div class="card-deck" id="top_news" style="width: 16rem;float:left;margin-left:5px;margin-right:5px;height:350px;" >'
+    . '<img class="card-img-top" src="'. $data_n['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
     . '<div class="card-body" style="width:250px;" >'
-        . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
-    .'<p><a style="color:black;font-weight:bold;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
+        . '<p class="card-title" style="color:#C33636;">' .  $data_n['articles'][$i]['source']['name'] . '</p>'
+    .'<p><a style="color:black;font-weight:bold;"href="'. $data_n['articles'][$i]['url']. '" class="card-link" > ' . $data_n['articles'][$i]['title'].'</a></p>'
 	//. '<p style="font-size: 14px;class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
     . '</div>'
     . '</div>';
@@ -67,7 +67,7 @@ for($i=0; $i<6; $i++){
 
 ?>
   </div>
-  <div id="tables_finance"class="col-6 col-sm-12 col-md-6">
+  <div class="col-6 col-sm-12 col-md-6">
   <!--------------------economic calendar-------------->
   
   <h3 style="text-align:center;">ECONOMIC CALENDAR</h3>
@@ -136,7 +136,7 @@ for($i=0; $i<6; $i++){
 </div>
 <div>
 	<h3  style="text-align:center;margin-top:20px;">TODAY ON THE MARKET</h3>
-	<table id="tables_finance" class="table table-sm  table-striped  table-hover  "style="font-size:11px;">
+	<table  class="table table-sm  table-striped  table-hover  "style="font-size:11px;">
 	<thead class="thead">
   <tr >
 	<th>Symbol</th>
@@ -220,7 +220,7 @@ for($i=0; $i<6; $i++){
 		"</tr>";
 	
 }
-//var_dump($data_index);
+//var_dump($data_history);
  
    
   ?>
@@ -291,14 +291,14 @@ $x= $data_article;
   <h3 > LATEST NEWS</h3>
   <?php
 
-for($i=6; $i<12; $i++){
+for($i=9; $i<14; $i++){
     echo ' <div class="media" id="latest_news" style="margin-bottom:10px;height:170px;">'
-    . '<img class="media-left" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:130px;width:200px;padding-top:5px;padding-left:10px; " >'
+    . '<img class="media-left" src="'. $data_n['articles'][$i]['urlToImage'] .'" style="height:130px;width:200px;padding-top:5px;padding-left:10px; " >'
     . '<div class="media-body"  style="display:inline-block;padding-left:5px;">'
-    . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
+    . '<p class="card-title" style="color:#C33636;">' .  $data_n['articles'][$i]['source']['name'] . '</p>'
     //. '<p class="card-text">' . 'author'. ': ' . $data['articles'][$i]['author'] . '</p>'
     //. '<h6 class="card-title">' . $data['articles'][$i]['title'] . '</h6>'
-     .'<p><a style="color:black;font-weight:bold;font-size:12px;"href="'. $data['articles'][$i]['url']. '" class="card-link" > ' . $data['articles'][$i]['title'].'</a></p>'
+     .'<p><a style="color:black;font-weight:bold;font-size:12px;"href="'. $data_n['articles'][$i]['url']. '" class="card-link" > ' . $data_n['articles'][$i]['title'].'</a></p>'
    // . '<p class="card-text">' . $data['articles'][$i]['publishedAt'] . '</p>'
     . '</div>'
     . '</div>';
@@ -307,7 +307,7 @@ for($i=6; $i<12; $i++){
 
 
 ?>
-   <div id="tables_finance">
+   <div >
     <h3 class="rating" >CREDIT RATING</h3> 
 		<div id="scroll_fin_articles" > 
 	<table  class="table table-sm  table-striped  table-hover" style="font-size:11px;">
