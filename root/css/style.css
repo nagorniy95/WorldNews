@@ -547,10 +547,11 @@ ul.social-network li a{
 	color: #C33636;
 }
 .light{
-	background-color: #a31525;
+	background-color: #C33636;
 }
 .dark{
-	background-color: #7f1425;
+	background-color: #c4c4c4;
+	color: #a31525;
 }
 /*=================================Finance=================================*/
 
@@ -697,10 +698,5 @@ border-top: 2px solid #C33636;
 	}
 	.category-content{
 		max-width: 100px;
-	}
-}
-@media only screen and (max-width: 360px) {
-	.category-content{
-
 	}
 }
