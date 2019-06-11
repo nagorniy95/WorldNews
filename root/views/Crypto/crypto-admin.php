@@ -2,10 +2,15 @@
 <?php
 session_start();
 // it will redirect to login page if we dont have the login or register information in a session.
+print_r($_SESSION);
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: ../../views/login.php");
-    exit;
 }
+else if ($_SESSION["user_type"] == "user"){
+    header("Location: ../../views/login.php");
+}
+else if ($_SESSION["user_type"] == "admin"){
+    
 
 $page_title = "Add Crypto News";
 // ============ HEADER ==============
@@ -94,4 +99,8 @@ if(isset($_POST['addnews'])){
 
 <!-- ============ Footer ============ -->
 <?php include "../../views/footer.php"; ?>
+
+<!-- close if for admin !!!2 -->
+<?php }; ?>
+
 
