@@ -1,16 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-  header("location: ../login/login.php");
-}
-else if( $_SESSION["user_type"] == "user") {
-?>
-  <script type="text/javascript">
-  alert(" You are not authorized to   access this page");
-  window.location.href="../login/welcome.php";
-</script>
-<?php
-}
+
 $page_title = "Economics";
 
 require_once '../../views/header.php'; 
