@@ -1,4 +1,4 @@
-.section{
+/*.section{
 	position: relative;
 }
 #sport-menu{
@@ -49,3 +49,41 @@
 	border-bottom: 1px solid #C33636;
 	font-size: 20px;
 }
+.last-matches{
+	height: 500px;
+	overflow-y: scroll;
+}
+/*table*/
+.tmatches{
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	color: #fefefe;
+	border: none;
+	background-color: #DFB160;
+}
+.tmatches thead{
+	background-color: #65041d;
+}
+#table-content tr td, #table-B-content tr td{
+	padding: 5px 0;
+	border: 0;
+
+}
+.football-menu{
+	padding: 0;
+}
+.football-menu li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 20px;
+}
+.football-menu li a{
+	color: #C33636;
+}
+.light{
+	background-color: #a31525;
+}
+.dark{
+	background-color: #7f1425;
+}*/

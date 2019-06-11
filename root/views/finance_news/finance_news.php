@@ -244,8 +244,8 @@ $x= $data_article;
 	echo
 	    "<div class=\"card\" style=\"width:24rem;border:none;\">".
 			"<div class=\"card-body\">".			
-			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href=\'".$data_article[$x]['url']. "\' class=\"card-link\" id=\"art-link\" > ".$data_article[$x]['title']."</a></p>".
-		    "<p><a style=\"color:black;\" href=\"".$data_article[$x]['url']."\" class=\"card-link\" >" . $data_article[$x]['description']. "</a></p>".
+			"<p><a style=\"color:black;font-weight:bold;font-size:18px;\" href='https://tradingeconomics.com".$data_article[$x]['url']. "' class=\"card-link\" id=\"art-link\" > ".$data_article[$x]['title']."</a></p>".
+		    "<p><a style=\"color:black;\" href='https://tradingeconomics.com".$data_article[$x]['url']. "' class=\"card-link\" >" . $data_article[$x]['description']. "</a></p>".
 			"<p>". $data_article[$x]['date']."</p>".
 			"<p style=\"color: #C33636;\">".$data_article[$x]['country']."</p>".
 			"<p> ".$data_article[$x]['category']. "</p>".	
@@ -300,15 +300,8 @@ for($i=6; $i<12; $i++){
 
 
 ?>
-  
-  
-  
-  <div >
-    <h3 class="rating"  style="text-align:center;">CREDIT RATING</h3>
-  </div>
- 
-  
-  <div id="scroll_fin_articles" > 
+    <h3 class="rating"  style="text-align:center;">CREDIT RATING</h3> 
+		<div id="scroll_fin_articles" > 
 	<table id="table_rating" class="table table-sm  table-striped  table-hover" style="font-size:11px;">
   <thead>
   <tr >

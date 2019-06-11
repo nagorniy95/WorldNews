@@ -20,8 +20,34 @@ $finance_news = $f->getAllArticle($db);
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-     
+  <div class="container-fluid p-0 fill-height">
+    <div class="row no-gutters">
+        <div class="col-md-2">
+             <div class="admin-menu-wrapper">
+                    <ul>
+                        <li class="bb"><a href="#">Home</a></li>
+                        <li class="bb">Pages <span class="admin-right">></span>
+                            <ul>
+                                <li>Sport <span class="admin-right">></span>
+                                    <ul>
+                                        <li><a href="../../views/sport/category-admin.php" >Category</a></li>
+                                        <li ><a href="../../views/sport/sport-admin.php" >News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../../views/finance_news/FinanceAdmin.php"class="admin-menu-active">Economics</a></li>
+                                <li><a href="../../views/crypto/">Crypto</a></li>
+								<li><a href="../../views/contact/messages.php">Messages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../views/login/logout.php">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-wrapper">
+            <h1 class="admin-form-title">ECONOMIC NEWS</h1>
+           <br/>
+		   <h3><a href="../../views/finance_news/add_article.php" style="color:#C33636;">Create New Article</a></h3>
 			<table class="table table-striped table-hover "style="font-size:11px;">
                 <thead>
                     <tr>
@@ -75,7 +101,10 @@ $finance_news = $f->getAllArticle($db);
 </tbody>
 </table>
 
+          </div>
         </div>
+		</div>
+		</div>
 		   
 	
 </body>

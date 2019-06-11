@@ -21,7 +21,7 @@ include dirname( __FILE__) . "../../header.php";
 			<div class="img-wrapper">
 				<?php echo "<img class='img-responsive' src=" . $sport->image . ">"; ?>
 			</div>
-			<p class="sport-author"><?php echo  $sport->author; ?> <span class="sport-date"> <?php echo $sport->date ?> </span></p>
+			<p class="sport-author">By: <?php echo  $sport->author; ?> <span class="sport-date"> <?php echo $sport->date ?> </span></p>
 			<p class="sport-content"><?php echo $sport->content ?></p>
 		</div>
 	</div>

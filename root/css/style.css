@@ -504,7 +504,96 @@ ul.social-network li a{
 	color: #A22C2C;
 	text-decoration: none;
 }
-/*---------------------------------------------*/
+/*---------------------------------Sport--------------------*/
+.section{
+	position: relative;
+}
+#sport-menu{
+	position: absolute;
+	right: 20px;
+	z-index: 999;
+	bottom: 30vh;
+	list-style: none;
+}
+#sport-menu li{
+	border: 2px solid #761F1F;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	transition: all ease .7s;
+}
+#sport-menu li.active{
+	border: 2px solid #C33636;
+	transform: scale(1.2);
+}
+#sport-menu li a{
+	display: block;
+	width: 100%;
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+	text-decoration: none;
+}
+.category-content{
+	position: absolute;
+	bottom: 40vh;
+	left: 50px;
+}
+.category-content, .category-content a{
+	color: #fff;
+}
+.category-content p{
+	min-width: 200px;
+}
+.sport-author{
+	font-style: italic;
+	margin-top: 20px;
+}
+.sport-date{
+	float: right;
+}
+.sportnews-title{
+	border-bottom: 1px solid #C33636;
+	font-size: 20px;
+}
+.last-matches{
+	height: 500px;
+	overflow-y: scroll;
+}
+/*table*/
+.tmatches{
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	color: #fefefe;
+	border: none;
+	background-color: #DFB160;
+}
+.tmatches thead{
+	background-color: #65041d;
+}
+#table-content tr td, #table-B-content tr td{
+	padding: 5px 0;
+	border: 0;
+
+}
+.football-menu{
+	padding: 0;
+}
+.football-menu li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 20px;
+}
+.football-menu li a{
+	color: #C33636;
+}
+.light{
+	background-color: #a31525;
+}
+.dark{
+	background-color: #7f1425;
+}
 /*=================================Finance=================================*/
 
 
@@ -628,6 +717,7 @@ border-top: 2px solid #C33636;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+/*----------------SET ALL MEDIA QUERIES UNDER THIS LINE---------------*/
 @media only screen and (max-width: 768px) {
 	.ArticlePhoto img{
 		width: 90%;
@@ -646,5 +736,13 @@ border-top: 2px solid #C33636;
 	#top-news, #latest_news{
 		width:90%;
 		margin:auto;
+	}
+	.category-content{
+		max-width: 100px;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.category-content{
+
 	}
 }

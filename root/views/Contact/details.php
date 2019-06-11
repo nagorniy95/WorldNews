@@ -31,12 +31,34 @@ session_start();
 	<title>Contact Us</title>
 </head>
 <body>
-	<div class="container">
-	  <div class="row">
-		<div class="col-md-12">
-			<div class="bg-mattBlackLight my-2 p-3">
+	   <div class="container-fluid p-0 fill-height">
+    <div class="row no-gutters">
+        <div class="col-md-2">
+             <div class="admin-menu-wrapper">
+                    <ul>
+                        <li class="bb"><a href="#">Home</a></li>
+                        <li class="bb">Pages <span class="admin-right">></span>
+                            <ul>
+                                <li>Sport <span class="admin-right">></span>
+                                    <ul>
+                                        <li><a href="../../views/sport/category-admin.php" >Category</a></li>
+                                        <li ><a href="sport-admin.php" >News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../../views/finance_news/FinanceAdmin.php">Economics</a></li>
+                                <li><a href="../../views/crypto/crypto-admin.php">Crypto</a></li>
+								<li><a href="../../views/contact/messages.php" class="admin-menu-active">Messages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#../../views/login/logout.php">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                    </ul>
+                </div>
+        </div>
+        <div style="margin-left:50px;"class="col-md-8">
+			
+			<br/>
 				
-				<h1><?php echo $count->name; ?></h1>
+				<h2><?php echo $count->name; ?></h2>
 		        <?php
 		        echo  "Email : " . $count->email . "<br /><br/>";
 		       echo  "Subject : " . $count->subject . "<br /></br>";
@@ -46,11 +68,11 @@ session_start();
 			<a href="https://mail.google.com/mail/" class="message" title="Message" data-toggle="tooltip"><i class="fas fa-envelope"></i></a>
         <br/>
 		<br/>
-		<a  class="link" href="messages.php" >Back to Contact List</a>
+		<p><a style="color: #C33636;font-size:18px;" href="../../views/finance_news/FinanceAdmin.php">Back to List</a></p>
 		</div>
 	</div>
  </div>
-</div> 
+
 </body>
 </html>
 
