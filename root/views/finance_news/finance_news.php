@@ -2,6 +2,8 @@
 require_once '../../views/header.php'; 
 require_once '../../model/Database.php';
 require_once '../../model/finance_news_mod.php';
+//require_once '../../views/login/login.php';
+//require_once '../../views/login/welcome.php';
 require_once 'event.php';
 require_once 'market.php';
 require_once 'rating.php';
@@ -9,7 +11,19 @@ require_once 'articles.php';
 require_once 'historical.php';
 require_once 'articles_api.php';
 
-//session_start();
+/*session_start();
+if(!isset($_SESSION[“loggedin”]) || $_SESSION[“loggedin”] !== true) {
+  header(“location:login.php”);
+}
+else if( $_SESSION[“user_type”] == “user”) {
+?>
+  <script type=“text/javascript”>
+  alert(“ You are not authorized to   access this page”);
+  window.location.href=“welcome.php”;
+</script>
+<?php
+}*/
+
 
 //top news
 $API = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=df9979ebd8de4540ba9e6b1233d4ea75";
@@ -35,13 +49,13 @@ $myart = $userArticle->getAllArticle(Database::getDb());
 <main>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-12">
+  <div class="col-6 col-sm-12 col-md-6">
   <!-----------------top  news-------------------->
 	  <h3 style="text-align:center;"> TOP NEWS</h3>	
 <?php
 
 for($i=0; $i<6; $i++){
-    echo  ' <div class="card-deck" id="top_news" style="width:16rem;margin-bottom:0px;float:left;margin-right:30px;width:250px; height:450px;">'
+    echo  ' <div class="card-deck" id="top_news" >'
     . '<img class="card-img-top" src="'. $data['articles'][$i]['urlToImage'] .'" style="height:160px;width:250px;" >'
     . '<div class="card-body" style="width:250px;" >'
         . '<p class="card-title" style="color:#C33636;">' .  $data['articles'][$i]['source']['name'] . '</p>'
@@ -53,12 +67,12 @@ for($i=0; $i<6; $i++){
 
 ?>
   </div>
-  <div class="col-sm-12 col-md-6 col-12">
+  <div id="tables_finance"class="col-6 col-sm-12 col-md-6">
   <!--------------------economic calendar-------------->
   
-  <h3 class="title_fin" style="text-align:center;">ECONOMIC CALENDAR</h3>
- <div class="table_fin">
- <table  class="table table-sm  table-striped  table-hover tab-content container-fluid tab-overwrite" style="font-size:11px;"> 
+  <h3 style="text-align:center;">ECONOMIC CALENDAR</h3>
+ <div >
+ <table  class="table table-sm  table-striped  table-hover tab-content  tab-overwrite " style="font-size:11px;"> 
   <thead class="thead">
     <tr>
 	<th scope="col">Date</th>
@@ -122,7 +136,7 @@ for($i=0; $i<6; $i++){
 </div>
 <div>
 	<h3  style="text-align:center;margin-top:20px;">TODAY ON THE MARKET</h3>
-	<table id="table-fin" class="table table-sm  table-striped  table-hover "style="font-size:11px;">
+	<table id="tables_finance" class="table table-sm  table-striped  table-hover  "style="font-size:11px;">
 	<thead class="thead">
   <tr >
 	<th>Symbol</th>
@@ -179,11 +193,9 @@ for($i=0; $i<6; $i++){
  </table>
   </div>
  <!--historical-->
- <!--<div class="container">-->
-<div class="row">
-	<div class="col-sm-12 col-3">
+
 	<h3  style="text-align:center;margin-top:40px;">Historical</h3>
-	<table id="table-fin" class="table table-sm  table-striped  table-hover "style="font-size:11px;">
+	<table id="tables_finance" class="table table-sm  table-striped  table-hover" style="font-size:11px;">
 	<thead class="thead">
   <tr >
 	<th>Symbol</th>
@@ -214,20 +226,15 @@ for($i=0; $i<6; $i++){
   ?>
  </table>
   </div>  
- </div> 
-   
-</div>
-</div>
+ </div>   
 
-<!--</div>--->
-<!--</div>-->
+
 <h1 class="heading">FINANCE</h1>
 <hr class="line">
 
 <!----------------------------Articles--------------->
-
 <div class="row">
-  <div class="col-3 col-sm-12 col-md-3" >
+  <div class="col-3 col-md-3 col-sm-12" >
   <h3 style="text-align:center;">LATEST ARTICLES</h3>
 <?php
  //foreach($data_article as $data_article)
@@ -258,7 +265,7 @@ $x= $data_article;
 
   
   </div>
-  <div class="col-6 col-md-6 col-sm-12 ">
+  <div class="col-6 col-md-6 col-sm-12">
   <?php
   foreach($myart as $finance){
     echo 
@@ -280,8 +287,8 @@ $x= $data_article;
   </div>
   <!-------------------------list news--------------------------->
 
-  <div class="col-3 col-sm-12 col-md-3" >
-  <h3  style="text-align:center;"> LATEST NEWS</h3>
+  <div class="col-3 col-md-3 col-sm-12" >
+  <h3 > LATEST NEWS</h3>
   <?php
 
 for($i=6; $i<12; $i++){
@@ -300,9 +307,10 @@ for($i=6; $i<12; $i++){
 
 
 ?>
-    <h3 class="rating"  style="text-align:center;">CREDIT RATING</h3> 
+   <div id="tables_finance">
+    <h3 class="rating" >CREDIT RATING</h3> 
 		<div id="scroll_fin_articles" > 
-	<table id="table_rating" class="table table-sm  table-striped  table-hover" style="font-size:11px;">
+	<table  class="table table-sm  table-striped  table-hover" style="font-size:11px;">
   <thead>
   <tr >
 	<th>Country</th>
@@ -335,12 +343,12 @@ for($i=6; $i<12; $i++){
   
    
   ?>
- </table>
- 
+ </table> 
  </div>
+ </div>
+</div>
+</div>
 
-</div>
-</div>
 </div>				
 </main>	
 <!-- CONTAINER -->

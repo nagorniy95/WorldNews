@@ -58,22 +58,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../views/Sport">Sport</a>
+                            <a class="nav-link uppercase" href="../../views/Sport/">Sport</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="#">Technology</a>
+                            <a class="nav-link uppercase" href="../../views/technology/index.php">Technology</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link uppercase" href="../../views/Crypto/crypto.php">Crypto Currency</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="../views/finance_news/finance_news.php">Economics</a>
+                            <a class="nav-link uppercase" href="../../views/finance_news/finance_news.php">Economics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link uppercase" href="#">About</a>
+                            <a class="nav-link uppercase" href="../../views/about/index.php">About</a>
                         </li>
                         <li class="nav-item uppercase">
-                            <a class="nav-link" href="../views/Contact/contact_pub.php">Contact Us</a>
+                            <a class="nav-link" href="../../views/Contact/contact_pub.php">Contact Us</a>
                         </li>
                     </ul>
                 </div>

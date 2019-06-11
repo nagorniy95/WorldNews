@@ -50,7 +50,7 @@ session_start();
 								<li><a href="../../views/contact/messages.php" class="admin-menu-active">Messages</a></li>
                             </ul>
                         </li>
-                        <li><a href="#../../views/login/logout.php">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                        <li><a href="../../views/login/logout.php">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
                     </ul>
                 </div>
         </div>

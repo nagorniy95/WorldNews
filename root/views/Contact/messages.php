@@ -1,9 +1,21 @@
 <?php
-//require_once '.php';
+
+/*session_start();
+if(!isset($_SESSION[“loggedin”]) || $_SESSION[“loggedin”] !== true) {
+  header(“location: ../../views/login.php”);
+}
+else if( $_SESSION[“user_type”] == “user”) {
+?>
+  <script type=“text/javascript”>
+  alert(“ You are not authorized to   access this page”);
+  window.location.href=“welcome.php”;
+</script>
+<?php*/
 require_once '../../model/Database.php';
 require_once '../../model/contact.php';
 require_once '../../views/admin-header.php';
-
+//require_once '../../views/login/login.php';
+//require_once '../../views/login/welcome.php';
 
 $dbcon = Database::getDb();
 $c = new Contact();
@@ -99,5 +111,4 @@ $contacts = $c->getAllContacts($dbcon);
 </div>	
 </div>				
 </body>
-
 </html>
