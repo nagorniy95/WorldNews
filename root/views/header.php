@@ -64,7 +64,7 @@
                             <a class="nav-link" href="../views/Sport">Sport</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Technology</a>
+                            <a class="nav-link" href="../views/Technology">Technology</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../views/Crypto/crypto.php">Crypto Currency</a>
@@ -73,7 +73,7 @@
                             <a class="nav-link" href="../views/finance_news/finance_news.php">Finance</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="../views/About">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../views/Contact/contact_pub.php">Contact</a>
