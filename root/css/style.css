@@ -136,6 +136,9 @@ a .red{
 	background-color: #C33636;
 	color: white;
 }
+.user-admin thead th{
+	border-bottom: 0px;
+}
 .user-admin .btn{
 	color: black;
 	background-color: #CCA7A7;
@@ -144,6 +147,7 @@ a .red{
 	color: black;
 	background-color: rgb(102, 96, 96);
 }
+
 /*=========================== WELCOME ============================================ */
 #welcome .card{
 	border: 1px solid #C33636;
@@ -726,6 +730,9 @@ border-top: 2px solid #C33636;
 	#top-news{
 		width:90%;
 	}
+	.login form, .content{
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 576px) {
@@ -744,5 +751,14 @@ border-top: 2px solid #C33636;
 @media only screen and (max-width: 360px) {
 	.category-content{
 
+	}
+	.login form, .content{
+		width: 100%;
+	}
+	.users-table{
+		width: 100%;
+	}
+	.users-table td{
+		display: none;
 	}
 }
