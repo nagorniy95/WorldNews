@@ -147,7 +147,10 @@ a .red{
 	color: black;
 	background-color: rgb(102, 96, 96);
 }
-
+.user-admin .btn-danger:hover{
+	color: white;
+	background-color: #C33636;
+}
 /*=========================== WELCOME ============================================ */
 #welcome .card{
 	border: 1px solid #C33636;
@@ -593,10 +596,11 @@ ul.social-network li a{
 	color: #C33636;
 }
 .light{
-	background-color: #a31525;
+	background-color: #C33636;
 }
 .dark{
-	background-color: #7f1425;
+	background-color: #c4c4c4;
+	color: #a31525;
 }
 /*=================================Finance=================================*/
 
@@ -754,11 +758,5 @@ border-top: 2px solid #C33636;
 	}
 	.login form, .content{
 		width: 100%;
-	}
-	.users-table{
-		width: 100%;
-	}
-	.users-table td{
-		display: none;
 	}
 }
