@@ -497,8 +497,8 @@ border-top: 2px solid #C33636;
 /*=======rating=========*/
 .rating {
 	border-top: 2px solid #C33636;
-	width:500px;
 }
+
 .tab-overwrite{
 	width: 100%;
 	max-width: 100%;
@@ -586,6 +586,7 @@ border-top: 2px solid #C33636;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+
 @media only screen and (max-width: 768px) {
 	.ArticlePhoto img{
 		width: 90%;

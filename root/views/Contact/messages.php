@@ -22,16 +22,38 @@ $contacts = $c->getAllContacts($dbcon);
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style.css" >
+	<link rel="stylesheet" href="../../css/sport.css" >
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
-       <div class="row">
-            <div class="col-sm-8">
-			<h2>Messages</h2>
-			</div>
-			<table class="table table-striped table-hover">
+   <div class="container-fluid p-0 fill-height">
+    <div class="row no-gutters">
+        <div class="col-md-2">
+             <div class="admin-menu-wrapper">
+                    <ul>
+                        <li class="bb"><a href="#">Home</a></li>
+                        <li class="bb">Pages <span class="admin-right">></span>
+                            <ul>
+                                <li>Sport <span class="admin-right">></span>
+                                    <ul>
+                                        <li><a href="../../views/sport/category-admin.php" >Category</a></li>
+                                        <li ><a href="../../views/sport/sport-admin.php">News</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../../views/finance_news/FinanceAdmin.php">Economics</a></li>
+                                <li><a href="../../views/crypto/crypto-admin.php">Crypto</a></li>
+								<li><a href="../../views/contact/messages.php" class="admin-menu-active">Messages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../views/login/logout.php">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="col-md-8">
+			<h2 style="margin-left:30px;">MESSAGES</h2>
+			<br/>
+			<table class="table table-striped table-hover" style="margin-left:30px;" >
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -75,8 +97,8 @@ $contacts = $c->getAllContacts($dbcon);
 </tbody>
 </table>
 </div>   
-	
-				
+</div>	
+</div>				
 </body>
 
 </html>

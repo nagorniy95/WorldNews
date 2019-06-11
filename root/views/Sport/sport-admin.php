@@ -60,8 +60,9 @@ include dirname( __FILE__) . "../../admin-header.php";
                                         <li ><a href="sport-admin.php" class="admin-menu-active">News</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Economics</a></li>
+                                <li><a href="../../views/finance_news/FinanceAdmin.php">Economics</a></li>
                                 <li><a href="#">Crypto</a></li>
+								<li><a href="../../views/contact/messages.php">Messages</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Log Out <i class="fas fa-sign-in-alt admin-right"></i></a></li>
